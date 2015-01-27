@@ -1,0 +1,1 @@
+$c->{adminemail} = 'template@template';
