@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE phrases SYSTEM "entities.dtd">
+<epp:phrases xmlns="http://www.w3.org/1999/xhtml" xmlns:epp="http://eprints.org/ep3/phrase" xmlns:epc="http://eprints.org/ep3/control">
+
+  <!-- This file is used to add phrases from the phrase editor screen -->
+
+    <epp:phrase id="Plugin/InputForm/Component/Upload:title">Add new files</epp:phrase>
+
+    <epp:phrase id="document_fieldname_formatdesc">File description</epp:phrase>
+
+    <epp:phrase id="document_fieldname_content">Purpose of file</epp:phrase>
+
+    <epp:phrase id="document_fieldname_date_embargo">Embargo date (if necessary)</epp:phrase>
+
+    <epp:phrase id="document_fieldname_format">Content type</epp:phrase>
+
+    <epp:phrase id="recollect_content_typename_licence_form">Licence form</epp:phrase>
+
+    <epp:phrase id="metapage_title_data_collection_additional">Describe how it was created</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_abstract">Abstract</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_divisions">LSHTM Faculty/Department</epp:phrase>
+
+    <epp:phrase id="metapage_title_data_collection">Describe your data's content</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_alt_title">Alternative title (e.g. non-English)</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_contributors_orcid">ORCID (optional)</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_creators_orcid">ORCID (optional)</epp:phrase>
+
+    <epp:phrase id="user_fieldname_orcid">ORCID</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_collection_method">Method of Data Collection</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_language">Language(s) of written materials</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_contact_email">Email of LSHTM Faculty/Dept contact responsible for the data collection</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_funders">Funder/sponsor</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_primary_contact_email">email</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_primary_contact">Primary contact</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_primary_contact">The person to contact for further information on this study</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_study_abstract">Description of study</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_study_abstract">A brief description of the project or study.</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/NewEPrint:action:create:title">New Data Collection</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/NewCollection:action:create:title">New Study</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_primary_contact_name">Name</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_research_centre">Research Centre</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_year">Year</epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_year_menu_1">Browse by completion year</epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_year_list">Items where completion year is <epc:pin name="value1"/></epp:phrase>
+
+    <epp:phrase id="viewname_eprint_divisions">Faculty by year</epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_divisions_list">Items where faculty/department is "<epc:pin name="value1"/>" and Year is <epc:pin name="value2"/></epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_divisions_menu_1">Browse by faculty &amp; department</epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_divisions_menu_2">Browse by year where faculty/department is "<epc:pin name="value1"/>"</epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_subjects_menu_2">Browse by Year where Subject is "<epc:pin name="value1"/>"</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_research_centre">Research centre by year</epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_research_centre_list">Items where research centre is "<epc:pin name="value1"/>" and year is <epc:pin name="value2"/></epp:phrase>
+
+    <epp:phrase id="viewtitle_eprint_research_centre_menu_2">Browse by year where research centre is "<epc:pin name="value1"/>"
+</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_funders">Research funders/sponsors</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_types">Study Collection</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_geographic_cover">Location</epp:phrase>
+
+    <epp:phrase id="request_fieldname_requester_name">Full name</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_research_centre">The Research centre(s) with which this data collection is associated</epp:phrase>
+
+    <epp:phrase id="eprint_typename_data_collection">Data Collection</epp:phrase>
+
+    <epp:phrase id="eprint_typename_collection">Study</epp:phrase>
+
+    <epp:phrase id="request_fieldhelp_requester_name">The name of the person who will be using the data or leading the analysis process</epp:phrase>
+
+    <epp:phrase id="request_fieldname_organisation">Institution or Organisation affiliation</epp:phrase>
+
+    <epp:phrase id="request_fieldname_time_period">Expected time period of use</epp:phrase>
+
+    <epp:phrase id="request_fieldname_time_period_date_from">from</epp:phrase>
+
+    <epp:phrase id="request_fieldname_time_period_date_to">until</epp:phrase>
+
+    <epp:phrase id="eprint_collection_parent">Part of study</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_nd">Creative Commons: Attribution-Noncommercial-No Derivative Works 3.0</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by">Creative Commons: Attribution 3.0</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_sa">Creative Commons: Attribution-Noncommercial-Share Alike 3.0</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc">Creative Commons: Attribution-Noncommercial 3.0</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nd">Creative Commons: Attribution-No Derivative Works 3.0</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_sa">Creative Commons: Attribution-Share Alike 3.0</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_public_domain">Creative Commons: Public Domain Dedication"</epp:phrase>
+
+    <epp:phrase id="recollect_content_typename_data_visualisation">Graphical representation of data</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_img"><a href="http://creativecommons.org/licenses/by/2.5/"><img src="/images/by.png" style="width: 100px;" title="Creative Commons: Attribution 3.0"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_img"><a href="http://creativecommons.org/licenses/by-nc/2.5/"><img src="/images/by-nc.png" style="width: 100px;" title="Creative Commons: Attribution-Noncommercial 3.0"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_nd_img"><a href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img src="/images/by-nc-nd.png" style="width: 100px;" title="Creative Commons: Attribution-Noncommercial-No Derivative Works 3.0"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_sa_img"><a href="http://creativecommons.org/licenses/by-nc-sa/2.5/"><img src="/images/by-nc-sa.png" style="width: 100px;" title="Creative Commons: Attribution-Noncommercial-Share Alike 3.0"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_zero">licenses_typename_cc_zero</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_sa_img"><a href="http://creativecommons.org/licenses/by-sa/2.5/"><img src="/images/by-sa.png" style="width: 100px;" title="Creative Commons: Attribution-Share Alike 3.0"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nd_img"><a href="http://creativecommons.org/licenses/by-nd/2.5/"><img src="/images/by-nd.png" style="width: 100px;" alt="Creative Commons: Attribution-No Derivative Works 3.0" title="Creative Commons: Attribution-No Derivative Works 3.0"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_public_domain_img"><a href="http://creativecommons.org/licenses/publicdomain/"><img src="/images/publicdomain.png" style="width: 100px;" title="Creative Commons: Public Domain Dedication"/></a></epp:phrase>
+
+    <epp:phrase id="licenses_typename_attached">Other data licence</epp:phrase>
+
+    <epp:phrase id="licenses_typename_attached_img"><a href="#" onclick="jQuery('#files_box_rdlicence &gt; div &gt; div').find('[id$=_meta_bar]').find('a').trigger('click'); return false;">Licence document attached to this item</a></epp:phrase>
+
+    <epp:phrase id="archive:workflow:stage:files:title">Upload your files</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_note">Additional information</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_creators">LSHTM Author</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_geographic_cover">Geographic regions covered</epp:phrase>
+
+    <epp:phrase id="request_fieldname_terms_and_conditions">I agree to the terms and conditions for this dataset, as set out in the associated licence</epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_formatdesc">Enter a brief description of this file.
+<br/>Example: <span class="ep_form_example">Example: Perceptions of smoking among teenagers in Wales survey results; SPSS format</span></epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_content">The content of the data file
+<ul class="lshtm_ul_with_bullets">
+<li>Data: research outputs in a re-usable form, e.g. CSV, SPSS, etc.</li>
+<li>Data visualization: graphical representation of the data, e.g. a bar chart held in a PDF document</li>
+<li>Documentation: supporting information that aids in understanding the data</li>
+<li>Licence form: documentation that specify conditions of access and use for the data</li>
+</ul></epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_security">The security level will specify who is allowed to download the file:
+<ol>
+<li>Anyone – all users</li>
+<li>Registered users – LSHTM staff and other registered users</li>
+<li>Repository staff – Repository staff only. Request access for others</li>
+</ol></epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_date_embargo">You may set an embargo period for this file, indicating the date that it will be made public. Leave this field blank if it can be made available immediately </epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_license"><p>Specify a licence that specifies how the file may be used by a user. This does not affect the access rights you grant to the repository at the end of this deposit process.</p>
+
+<p>You are encouraged to upload any Material Transfer Agreement, Data Sharing Agreement, or other licence form as an associated file</p>
+
+<p>If you require an explanation of <a href="http://creativecommons.org/about/licenses/" target="_blank">Creative Commons</a> and <a href="http://opendatacommons.org/licenses/">Open Data Commons</a>, please contact the <a href="http://www.lshtm.ac.uk/research/researchdataman/rdm_service.html">RDM Support Service</a></p></epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_title">The title of the data colleciton/study. The title should not end with a full stop, but may end with a question mark. If there is a subtitle, it should be preceded with a colon [:]. Use capitals only for the first word and for proper nouns. 
+<br/><span class="ep_form_example">Example: Perceptions of smoking among teenagers in Wales survey</span>
+</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_alt_title">An alternative title used to refer to the item. Leave blank if unnecessary.
+<br/>Example: <span class="ep_form_example">A non-english title</span>
+<br/>The title should not end with a full stop, but may end with a question mark. If there is a subtitle, it should be preceded with a colon [:]. Use capitals only for the first word and for proper nouns.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_abstract">A written description of the item. If a formal abstract has been produced, it should be entered here. No complicated text formatting is possible.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_creators">State the name and details of the creators/authors in the format indicated below. A look-up of LSHTM staff members will be performed when the surname is provided. An optional <a href="http://orcid.org/">ORCID researcher ID</a> may also be provided, if known. If there are more than two creators, click the [More input rows] button. 
+<br/>Example: [<span class="ep_form_example">Smith</span>] [<span class="ep_form_example">Richard.</span>] [<span class="ep_form_example">richard.smith@lshtm.ac.uk</span>]
+<br/>Example: [<span class="ep_form_example">Archer</span>] [<span class="ep_form_example">Jonathan</span>] [<span class="ep_form_example">jonathan.archer@udsm.ac.tz</span>]</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_corp_creators">Institutions that were involved in the creation of this dataset, e.g. a collaborating university, an external laboratory</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_contributors"><p>Indicate any other individuals who had a part in the data’s creation and their role. Names will be displayed on the public data collection page, but will not be used for browsing purposes.</p>
+<p>To suggest other contribution types, email researchdatamanagement@lshtm.ac.uk</p>
+</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_contact_email">If there are access restrictions on any of the files in this dataset, requests to view and access these items will be sent to this email address. The email address will not be made public.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_divisions">The faculty and department with which this item is associated</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_copyright_holders">State the institutions or individuals that are involved in the work. E.g. LSHTM, a funding body, etc.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_language">Language of any written material</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_date">The date this dataset was completed, submitted for publication, or published. If you do not know the day or month, these can be left blank.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_ispublished">If the dataset is to be published alongside a paper in a third party system, please indicate if it has been submitted, in press, or published. If your dataset is only held in this repository, select ‘unpublished’.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_publisher">If the data collection has been published prior to deposit here, please state by whom. Do not use abbreviations, enter in full.
+<br/>Example: <span class="ep_form_example">Oxford University Press</span>
+</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_official_url">If the dataset has been published prior to deposit here (e.g. in a journal’s data repository), provide a URL indicating its location.
+</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_related_resources">Enter any additional external resources related to the data. If the data has been published elsewhere the URL should be provided and classified as an 'Online Data Resource'.</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/EPrint/Staff/CoinDOI:action:coindoi:description">This will add a coin-DOI event to the event queue (i.e. Will not happen immediately)</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/EPrint/Staff/CoinDOI:action:coindoi:title">Coin DOI</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/EPrint/Staff/CoinDOI:coiningdoi">This item will have a DOI coined when the indexer gets around to it.</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_divisions_feed">Faculty</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_research_centre_feed">Research Centre</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_related_resources_type">Website Type</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_collab">Collaborator</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_sponsor">Sponsor</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_project">Project</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_other">Other</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_research_groups">Research groups with which the data collection is associated</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_research_groups">Research Group</epp:phrase>
+
+    <epp:phrase id="page:nofulltext">Dataset not available from this repository.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_creators_lshtmid">LSHTM ID</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_creators_lshtm_flag">LSHTM Staff?</epp:phrase>
+
+    <epp:phrase id="lib/metafield:join_name">, </epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_ContactPerson">Contact Person</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_contributors_lshtmid">LSHTM ID</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_DataCollector">Data Collector</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_DataManager">Data Manager</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Distributor">Distributor</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Editor">Editor</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Funder">Funder</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_HostingInstitution">Hosting Institution</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Other">Other</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Producer">Producer</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_ProjectLeader">Project Leader</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_ProjectManager">Project Manager</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_ProjectMember">Project Member</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_RegistrationAgency">Registration Agency</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_RegistrationAuthority">Registration Authority</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_RelatedPerson">Related Person</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Researcher">Researcher</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_ResearchGroup">Research Group</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_RightsHolder">Rights Holder</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Sponsor">Sponsor</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_Supervisor">Supervisor</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_WorkPackageLeader">Work Package Leader</epp:phrase>
+
+    <epp:phrase id="document_fieldname_license">Licence</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_contributors_lshtm_flag">LSHTM Staff?</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_contributors_name">Contributors</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_collection_date">Data Collection Period</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_collection_date">The start and end date of the data collection period</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_unknown">Unknown</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_transcription">Transcription</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_synthesis">Synthesis</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_simulation">Simulation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_self-completed_questionnaire_web-based">Self-completed questionnaire: Web-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_self-completed_questionnaire_paper_pencil">Self-completed questionnaire: Paper/pencil</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_self-completed_questionnaire_CASI">Self-completed questionnaire: CASI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_self-completed_questionnaire_ACASI">Self-completed questionnaire: ACASI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_self-completed_questionnaire">Self-completed questionnaire</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_coding">Coding</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_compilation">Compilation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_experiments">Experiments</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_focus_group">Focus Group</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_interview">Interview</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_interview_CAPI">Interview: CAPI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_observation">Observation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_interview_telephone">Interview: Telephone</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_interview_E-mail">Interview: E-mail</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_interview_CATI">Interview: CATI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_observation_laboratory">Observation: Laboratory</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_observation_field">Observation: Field</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_recording">Recording</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_other">Other</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_observation_participant">Observation: Participant</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_interview_face_to_face">Interview: Face-to-face</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_collection_mode">Indicate the method (or methods) that were used to capture data. E.g. interview, questionnaire.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_collection_mode">Mode of Collection</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_collection_mode">Mode of Collection</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_project_date">The start and end date of the study/project</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_project_date">Project start and completion date</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_project_date_date_from">From</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_project_date_date_to">To</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_uri">http://creativecommons.org/licenses/by/2.5/</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_uri">http://creativecommons.org/licenses/by-nc/2.5/</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nc_nd_uri">http://creativecommons.org/licenses/by-nc-nd/2.5/</epp:phrase>
+
+    <epp:phrase id="licenses_typename_cc_by_nd_uri">http://creativecommons.org/licenses/by-nd/2.5/</epp:phrase>
+
+    <epp:phrase id="user_fieldname_lshtmid">LSHTM ID</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Aggregation">Aggregation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_CompilationSynthesis">Compilation/Synthesis</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_ContentCoding">Content Coding: Qualitative data converted into quantitative</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Experiment">Experiment</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Experiment.FieldIntervention">Experiment: Field Intervention</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Experiment.Laboratory">Experiment: Laboratory</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Experiment.WebBased">Experiment: Web-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_FocusGroup">Focus Group</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_FocusGroup.FaceToFace">Focus Group: Face-to-Face</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_FocusGroup.Online">Focus Group: Internet-based interaction</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_FocusGroup.Telephone">Focus Group: Telephone</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview">Interview</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.Email">Interview: Email</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.FaceToFace">Interview: Face-to-face</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.FaceToFace.CAPI">Interview: Face-to-face - CAPI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.FaceToFace.PAPI">Interview: Face-to-face - PAPI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.Telephone">Interview: Telephone-delivery</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.Telephone.CATI">Interview: Telephone - CATI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Interview.WebBased">Interview: Web-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_MeasurementsAndTests">Measurements and tests</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_MeasurementsAndTests.Educational">Measurements and tests: Educational</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_MeasurementsAndTests.Physical">Physical measurements and tests</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_MeasurementsAndTests.Psychological">Measurements and tests: Psychological</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation">Observation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.ComputerBased">Computer-based observation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.Field">Field observation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.Field.Nonparticipant">Field observation: Non-participant</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.Field.Participant">Field observation: Participant</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.Laboratory">Lab observation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.Laboratory.Nonparticipant">Lab observation: Non-participant</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Observation.Laboratory.Participant">Lab observation: Participant</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Other">Other</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Recording">Recording</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire">Questionnaire</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.FixedForm">Questionnaire: Fixed form</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.FixedForm.SMSorMMS">Questionnaire: Fixed form - SMS/MMS</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.FixedForm.WebBased">Questionnaire: Fixed form - Web-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.Interactive">Questionnaire: Interactive</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.Interactive.CASI">Questionnaire: Interactive - CASI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.Interactive.CASI.ACASI">Questionnaire: Interactive - CASI/ACASI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.Interactive.CASI.TACASI">Questionnaire: Interactive - CASI/TACASI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.FixedForm.Email">Questionnaire: Fixed form - Email</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.FixedForm.Paper">Questionnaire: Fixed form - Paper</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.Interactive.CAWI">Questionnaire: Interactive - CAWI</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredWritingsAndDiaries.Email">Writing/diary: Email-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredWritingsAndDiaries.Paper">Writing/diary: Paper-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredWritingsAndDiaries.WebBased">Writing/diary: Web-based</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Simulation">Simulation</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Summary">Summary</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_Transcription">Transcription</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredWritingsAndDiaries">Writing and/or diary</epp:phrase>
+
+    <epp:phrase id="collection_mode_typename_SelfAdministeredQuestionnaire.Interactive.CASI.VCASI">Questionnaire: Interactive - CASI/VCASI</epp:phrase>
+
+    <epp:phrase id="metapage_title_core">Describe study</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_primary_contact_lshtm_flag">LSHTM Staff?</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_primary_contact_lshtmid">LSHTM ID</epp:phrase>
+
+    <epp:phrase id="request_fieldname_reason">Intended use</epp:phrase>
+
+    <epp:phrase id="request/request_email:body"><p xmlns:epc="http://eprints.org/ep3/control">This item has been requested from <epc:phrase ref="archive_name"/> by <epc:pin name="requester"/>. Please can you respond.</p>
+
+<p xmlns:epc="http://eprints.org/ep3/control"><epc:pin name="eprint"/><br/><epc:pin name="document"/></p>
+
+<p>The following reason was given:</p>
+
+<epc:pin name="reason"/>
+
+<p>Please consider removing restrictions or uploading the data to the archive so that it will be available immediately to future searchers.</p>
+</epp:phrase>
+
+    <epp:phrase id="cgi:view_eprint:view_eprint">View Item</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/EPrint/View:title">Edit Item</epp:phrase>
+
+    <epp:phrase id="default_corp_creators_value">London School of Hygiene &amp; Tropical Medicine</epp:phrase>
+
+    <epp:phrase id="default_copyright_holders_value">London School of Hygiene &amp; Tropical Medicine</epp:phrase>
+
+    <epp:phrase id="default_language_value">en</epp:phrase>
+
+    <epp:phrase id="default_publisher_value">London School of Hygiene &amp; Tropical Medicine</epp:phrase>
+
+    <epp:phrase id="default_place_of_pub_value">London, United Kingdom</epp:phrase>
+
+    <epp:phrase id="licenses_description_attached">Other data licence</epp:phrase>
+
+    <epp:phrase id="request_fieldhelp_organisation">An institution with which you are associated</epp:phrase>
+
+    <epp:phrase id="request_fieldhelp_terms_and_conditions">Terms and conditions for access and use of data set are set out in the accompanying licence document.</epp:phrase>
+
+    <epp:phrase id="viewname_eprint_keywords">Keywords</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_related_resources_title">Title</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_primary_contact_orcid">ORCID</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_academic">Academic institution</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_dataresource">Online Data Resource</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_collection_mode_cm">Mode(s) used</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:search_heading"><h3>Search For data collections to associate with this the study</h3></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:title">Associated Data Collections</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:current_selected"><p class="ep_cs_current_header">Data collections currently associated with this study:</p></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:nothing_selected">No data collections currently selected.</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:your_deposits_heading"><h3>Your Deposited Data Collections</h3></epp:phrase>
+
+    <epp:phrase id="document_typename_Audiovisual">Video</epp:phrase>
+
+    <epp:phrase id="document_typename_Dataset">Dataset</epp:phrase>
+
+    <epp:phrase id="document_typename_Image">Still Image</epp:phrase>
+
+    <epp:phrase id="document_typename_InteractiveResource">Interactive Resource</epp:phrase>
+
+    <epp:phrase id="document_typename_Model">3D Model</epp:phrase>
+
+    <epp:phrase id="document_typename_Other">Other</epp:phrase>
+
+    <epp:phrase id="document_typename_Slideshow">Slideshow</epp:phrase>
+
+    <epp:phrase id="document_typename_Software">Software</epp:phrase>
+
+    <epp:phrase id="document_typename_Sound">Audio</epp:phrase>
+
+    <epp:phrase id="document_typename_Text">Textual content</epp:phrase>
+
+    <epp:phrase id="security_typename_validuser">LSHTM staff &amp; other registered users (request access for others)</epp:phrase>
+
+    <epp:phrase id="security_typename_staffonly">Repository administrators only (request access for others)</epp:phrase>
+
+    <epp:phrase id="document_typename_Archive">Compressed Archive</epp:phrase>
+
+    <epp:phrase id="recollect_content_typename_">typename</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_language_l">Language</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Upload:help"><div class="ep_msg_warning"><div class="ep_msg_warning_content"><table><tr><td><img class="ep_msg_warning_icon" src="/style/images/warning.png" alt="Warning"/></td><td><p style="color:black">If this is your first time depositing, or if you require more information on any aspect of the deposit process, you may wish to view our <a href="{$config{rel_path}}/help/">Help page</a>.</p></td></tr></table></div></div>
+
+<p style="margin-top: 0px">Click the Browse button below to select a file and the Upload button to upload it to the repository. If you are uploading a large number of files, you may find uploading and describing each file separately cumbersome. In these situations we suggest you upload the files in logically grouped zip archives instead.</p>
+
+<p>Please note that your progress will automatically be saved when you click 'Next' or 'Save and Return' above. Clicking 'Cancel' will result in the loss of any changes since last save.</p>
+
+<p>The orange star symbol <img src="{$config{rel_path}}/style/images/required.png" a="Mandatory field symbol"/> indicates a mandatory field.</p></epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_format">Please indicate the type of file that has been provided</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_keywords">Enter keywords or phrases that best describe this data collection.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_date_type">An important date in the dataset lifecycle
+<ol>
+<li>Completion: Date the dataset was completed</li>
+<li>Submission: Date the dataset was submitted for publication elsewhere</li>
+<li>Publication: Date the dataset was published elsewhere</li>
+</ol>
+It is advisable to indicate the completion date for most purposes</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_date_type_submitted">Submitted for publication (e.g. in a journal)</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_date_type_published">Published in a 3rd party system</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_date_type_completed">Completed</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_note">Use this field for any useful information about your study/data that can't be entered anywhere else. This information will appear on the public summary page for this deposit.</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_projects">If the dataset was created for a project, indicate its title here. This will enable the relational linking of multiple data collections.</epp:phrase>
+
+    <epp:phrase id="deposit_agreement_text">
+<p xmlns:epc="http://eprints.org/ep3/control"><strong>For work being deposited by its own author:</strong> 
+By depositing this collection of files and associated metadata, I grant <epc:phrase ref="archive_name"/> the right to store and to make them available for online access.
+I declare that this material is my own intellectual property and I 
+understand that <epc:phrase ref="archive_name"/> does not assume any 
+responsibility if there is any breach of copyright, data protection or other legal requirement in distributing these files or metadata.</p>
+
+<p xmlns:epc="http://eprints.org/ep3/control"><strong>For work being deposited by someone other than its 
+author:</strong> I hereby declare that the collection of files and 
+associated metadata that I am archiving at <epc:phrase ref="archive_name"/>) is being deposited with the permission of the data creator and/or rights holder. If this is not the case, I accept full responsibility for any breach of copyright or other legal requirement that distributing these files or metadata may entail.</p>
+
+<p>Clicking on the deposit button indicates your agreement to these 
+terms.</p></epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_relation">This field describes relationships this item has to other entities.</epp:phrase>
+
+    <epp:phrase id="lib/searchfield:help_counter">Counter</epp:phrase>
+
+    <epp:phrase id="request_fieldhelp_reason">Describe the purpose for which you intend to use the dataset</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/Public/RequestCopy:title">Data Request</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/Items:title">User Homepage</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_corp_creators">Participating Institutions</epp:phrase>
+
+    <epp:phrase id="eprint_fieldopt_related_resources_type_author">Creator</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_CoInvestigator">Co-Investigator</epp:phrase>
+
+    <epp:phrase id="contributor_type_typename_PrincipalInvestigator">Principal Investigator</epp:phrase>
+
+    <epp:phrase id="recollect_content_typename_documentation">Documentation / Metadata</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_contributors">Associated roles</epp:phrase>
+
+    <epp:phrase id="recollect_content_typename_study_instrument">Study Instrument</epp:phrase>
+
+    <epp:phrase id="licenses_typename_datasharingagreement">Data Sharing Agreement</epp:phrase>
+
+    <epp:phrase id="licenses_typename_materialtransferagreement">Material Transfer Agreement</epp:phrase>
+
+    <epp:phrase id="licenses_typename_none">None</epp:phrase>
+
+    <epp:phrase id="document_fieldhelp_retention_period">Period for which LSHTM can retain data files</epp:phrase>
+
+    <epp:phrase id="document_fieldname_retention_period">Retention Period</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_1">1 year</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_10">10 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_indefinite">Indefinite</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_9">9 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_8">8 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_7">7 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_6">6 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_5">5 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_4">4 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_3">3 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_20">20 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_2">2 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_19">19 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_18">18 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_17">17 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_16">16 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_15">15 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_14">14 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_13">13 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_12">12 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_11">11 years</epp:phrase>
+
+    <epp:phrase id="validate:embargo_too_far_in_future">A file embargo date cannot be more than <epc:pin name="embargo_cap"/> in the future.</epp:phrase>
+
+    <epp:phrase id="request_fieldhelp_variables_required">Variables required</epp:phrase>
+
+    <epp:phrase id="request_fieldname_variables_required">Variables required</epp:phrase>
+
+    <epp:phrase id="request_fieldhelp_supporting_information">Additional information to support request</epp:phrase>
+
+    <epp:phrase id="request_fieldname_supporting_information">Additional information to support request</epp:phrase>
+
+    <epp:phrase id="metapage_title_recollect_files">Upload Files</epp:phrase>
+
+    <epp:phrase id="eprint:workflow:stage:data_collection:title">Describe you data's content</epp:phrase>
+
+    <epp:phrase id="eprint:workflow:stage:data_collection_additional:title">Describe how it was created</epp:phrase>
+
+    <epp:phrase id="eprint:workflow:stage:recollect_files:title">Upload files</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/MapView:title">Geographic location of data collection</epp:phrase>
+
+</epp:phrases>

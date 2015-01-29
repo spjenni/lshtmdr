@@ -1,0 +1,428 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE html SYSTEM "entities.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epc="http://eprints.org/ep3/control">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><epc:pin ref="title" textonly="yes"/> - <epc:phrase ref="archive_name"/></title>
+
+    <link rel="icon" href="{$config{rel_path}}/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{$config{rel_path}}/favicon.ico" type="image/x-icon"/>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{$config{rel_path}}/javascript/jquery.md5.js"></script>
+
+ 
+<script>
+$.noConflict();
+// Code that uses other library's $ can follow here.
+</script>
+    <epc:pin ref="head"/>
+    
+   <!-- SJ: date picker stylesheet added here rather than by trigger for ease -->
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+
+    <style type="text/css" media="print">@import url(<epc:print expr="$config{rel_path}"/>/style/print.css);</style>
+    <!-- LSHTM styles-->
+    <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/reset.css);</style>
+    <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/styles.css);</style>
+    <style type="text/css" media="print">@import url(<epc:print expr="$config{rel_path}"/>/style/lshtm_print.css);</style>
+<style type="text/css" media="print">@import url(<epc:print expr="$config{rel_path}"/>/style/lshtmdr_additional.css);</style>
+    <!-- END LSHTM styles -->
+    <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/ulcc_overrides.css);</style>
+    
+    <!-- TAB choosing -->
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+      
+        if(location.pathname == '/'){
+          jQuery("#ep_home").addClass("current");
+          jQuery("#inline_search").hide();
+          return;
+        }
+        if(location.pathname.match(/^\/information\.html/)){
+          jQuery("#ep_about").addClass("current");
+          return;
+        }
+        if(location.pathname.match(/^\/view\/year\//)){
+          jQuery("#ep_year").addClass("current");
+          return;
+        }
+        if(location.pathname.match(/^\/view\/subjects\//)){
+          jQuery("#ep_subjects").addClass("current");
+          return;
+        }
+        if(location.pathname.match(/^\/view\/divisions\//)){
+          jQuery("#ep_divisions").addClass("current");
+          return;
+        }
+        if(location.pathname.match(/^\/view\/research_centre\//)){
+          jQuery("#ep_research_centre").addClass("current");
+          return;
+        }
+        if(location.pathname.match(/^\/view\/creators\//)){
+          jQuery("#ep_creators").addClass("current");
+          return;
+        }
+      if(location.pathname.match(/^\/view\/types\/collection\//)){
+          jQuery("#ep_studies").addClass("current");
+          return;
+        }  
+      if(location.pathname.match(/^\/view\/geographic_cover\//)){
+          jQuery("#ep_geographic_cover").addClass("current");
+          return;
+        }  
+
+      if(location.pathname.match(/^\/MapView\//)){
+          jQuery("#ep_geographic_cover").addClass("current");
+          return;
+        }
+
+      });
+    </script>
+
+    <!-- IRStats2 -->
+<script type="text/javascript" src="http://www.google.com/jsapi">// <!-- No script --></script>
+<script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart", "geochart"]});
+</script>
+    <!-- Altmetrics script -->
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+  </head>
+  
+  
+  <body id="theme-3">
+    <!--<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="padding-bottom: 50px; padding-right: 50px; display: none;"><div id="cboxWrapper" style=""><div style=""><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" class="" style="width: 0px; height: 0px; overflow: hidden;"></div><div id="cboxLoadingOverlay" class="" style=""></div><div id="cboxLoadingGraphic" class="" style=""></div><div id="cboxTitle" class="" style=""></div><div id="cboxCurrent" class="" style=""></div><div id="cboxNext" class="" style=""></div><div id="cboxPrevious" class="" style=""></div><div id="cboxSlideshow" class="" style=""></div><div id="cboxClose" class="" style=""></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>-->
+
+    <div id="siteWrapper">
+      <div id="everythingButTheFooter">
+        <div class="clearfix" id="masthead">
+
+          <table border="0">
+            <tbody>
+              <tr>
+                <td width="100%" align="left">
+                  <a href="http://www.lshtm.ac.uk/">
+                    <div class="logo"></div>
+                   </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+    
+
+        <ul id="primary-nav">
+          <li>
+            <a href="http://www.lshtm.ac.uk/study/">STUDY</a>
+            <ul class="dropdown theme-1 first">
+              <li><a href="http://www.lshtm.ac.uk/study/masters/">Masters Degrees</a></li>
+              <li><a href="http://www.lshtm.ac.uk/study/research/">Research Degrees</a></li>
+              <li><a href="http://www.lshtm.ac.uk/study/distancelearning/">Distance Learning</a></li>
+              <li><a href="http://www.lshtm.ac.uk/study/cpd/">Short Courses and CPD</a></li>
+              <li><a href="http://www.lshtm.ac.uk/study/funding/">Funding and Scholarships</a></li>
+              <li><a href="http://www.lshtm.ac.uk/study/newstudents/">New Students</a></li>
+              <li><a href=" http://www.lshtm.ac.uk/study/currentstudents/">Current Students</a></li>
+              <li><a href="http://www.lshtm.ac.uk/prospectus/usefulinfo/">Useful Information</a></li>
+              <li><a href="http://www.lshtm.ac.uk/library/">Library</a></li>
+              <li><a href="http://www.lshtm.ac.uk/careers/">Careers Service</a></li>
+              <li><a href="http://www.lshtm.ac.uk/study/openday/index.html">Open Day</a></li>
+            </ul>  
+          </li> 
+          <li>
+            <a href="http://www.lshtm.ac.uk/faculties/">FACULTIES</a>
+            <ul class="dropdown theme-2">
+              <li><a href="http://www.lshtm.ac.uk/eph/">Epidemiology and Population Health</a></li>
+              <li><a href="http://www.lshtm.ac.uk/itd/">Infectious and Tropical Diseases</a></li>
+              <li><a href="http://www.lshtm.ac.uk/php/">Public Health and Policy</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="http://www.lshtm.ac.uk/research/">RESEARCH</a>
+            <ul class="dropdown theme-3">
+              <li><a href="http://www.lshtm.ac.uk/research/researcharoundtheworld/">Research around the world</a></li>
+              <li><a href=" http://www.lshtm.ac.uk/research/governanceandresearchintegrity">Governance and research integrity</a></li>
+              <li><a href="http://www.lshtm.ac.uk/research/publicationsandimpact/">Publications and impact</a></li>
+              <li><a href="http://www.lshtm.ac.uk/research/schoolcentres/">School Centres</a></li>
+              <li><a href="http://www.lshtm.ac.uk/research/researchopportunitiesandcareers/">Research opportunities and careers</a></li>
+              <li><a href="http://www.lshtm.ac.uk/research/operations/">Research Operations</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="http://www.lshtm.ac.uk/aboutus/">ABOUT US</a>
+            <ul class="dropdown theme-4">
+              <li><a href="http://www.lshtm.ac.uk/aboutus/introducing/">Introducing our School</a></li>
+              <li><a href="http://www.lshtm.ac.uk/aboutus/governance/">Governance and Organisation</a></li>
+              <li><a href="http://www.lshtm.ac.uk/alumni/">Alumni</a></li>
+              <li><a href="http://www.lshtm.ac.uk/aboutus/development/">Giving to the School</a></li>
+              <li><a href="http://lshtm.giftfindershop.co.uk/">Online Gift Shop</a></li>
+              <li><a href="http://www.lshtm.ac.uk/aboutus/introducing/publicengagement/index.html">Public Engagement</a></li>
+              <li><a href="http://jobs.lshtm.ac.uk/">Jobs</a></li>
+              <li><a href="http://www.lshtm.ac.uk/aboutus/contact/">Contact Us</a></li>
+            </ul>
+          </li>
+          <li class="last">
+            <a href="http://www.lshtm.ac.uk/newsevents/">NEWS &amp; EVENTS</a>
+            <ul class="dropdown theme-5 last">
+              <li><a href="http://www.lshtm.ac.uk/newsevents/news/">News</a></li>
+              <li><a href="http://www.lshtm.ac.uk/newsevents/events/">Events</a></li>
+              <li><a href="http://www.lshtm.ac.uk/newsevents/features/">Features</a></li>
+              <li><a href="http://www.lshtm.ac.uk/newsevents/multimedia/">Videos and Podcasts</a></li>
+            </ul>
+          </li>
+        </ul>
+   
+
+        <div id="page-heading">
+          <h1><epc:phrase ref="archive_name"/></h1>
+         
+          <ul class="course" id="tabs">
+            <li>
+          <a id="ep_home" href="{$config{http_url}}">
+            <epc:phrase ref="template/navigation:home"/>
+          </a>
+        </li>
+             <li>
+          <a id="ep_about" href="{$config{http_url}}/information.html">
+            <epc:phrase ref="template/navigation:about"/>
+          </a>
+        </li>
+        <li><a href="{$config{http_url}}/view/">Browse options</a></li>
+            <li>
+              <a id="ep_year" href="{$config{http_url}}/view/year/">
+      <!--          <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
+                <epc:phrase ref="viewname_eprint_year"/>
+              </a>
+            </li>
+            <li>
+              <a id="ep_divisions" href="{$config{http_url}}/view/divisions/">
+                <!--          <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
+                <epc:phrase ref="viewname_eprint_divisions_feed"/>
+              </a>
+            </li>
+            <li>
+              <a id="ep_research_centre" href="{$config{http_url}}/view/research_centre/">
+            <!--          <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
+                <epc:phrase ref="viewname_eprint_research_centre_feed"/>
+              </a>
+            </li>
+            <li>
+              <a id="ep_creators" href="{$config{http_url}}/view/creators/">
+                <!--          <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
+                <epc:phrase ref="viewname_eprint_creators"/>
+              </a>
+            </li>
+            <!--<li>
+              <a href="{$config{http_url}}/view/funders/">
+                <epc:phrase ref="viewname_eprint_funders"/>
+              </a>
+            </li>-->
+            <li>
+              <a id="ep_studies" href="{$config{http_url}}/view/types/collection/">
+                <!--          <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
+                <epc:phrase ref="viewname_eprint_types"/>
+              </a>
+            </li>
+             
+            <li>
+              <a id="ep_geographic_cover" href="{$config{http_url}}/cgi/users/home?screen=MapView">
+                
+                <epc:phrase ref="viewname_eprint_geographic_cover"/>
+              </a>
+            </li>
+
+          <!--</ul>
+        </li>-->
+          </ul> <!-- end tabs -->
+        </div>
+        <div id="content">
+         
+           <epc:pin ref="login_status"/>
+          
+          <div id="inline_search" class="inline_search">
+            <form method="get" accept-charset="utf-8" action="{$config{http_cgiurl}}/search" style="display:inline">
+              <input class="ep_tm_searchbarbox" size="20" type="text" name="q"/>
+              <!-- <input class="ep_tm_searchbarbutton" value="Search" type="submit" name="_action_search"/> -->
+              <input class="ep_form_action_button" value="Search" type="submit" name="_action_search"/>
+              <input type="hidden" name="_action_search" value="Search"/>
+              <input type="hidden" name="_order" value="bytitle"/>
+              <input type="hidden" name="basic_srchtype" value="ALL"/>
+              <input type="hidden" name="_satisfyall" value="ALL"/>
+            </form>
+            <br/>
+             <a href="{$config{http_cgiurl}}/search/advanced">More search options...</a>
+          </div>
+    
+	      <div class="ep_tm_page_content">
+	        <h1 class="ep_tm_pagetitle">
+	          <epc:pin ref="title"/>
+	        </h1>
+	        <epc:pin ref="page"/>
+	      </div>
+    
+        </div>
+      </div><!-- everything but the footer -->
+
+      <div id="footer">
+        <div style="float: right; margin-left: 1em">
+          <a href="http://eprints.org/software/"><img alt="EPrints Logo" src="/images/eprintslogo.gif" border="0"/></a>
+        </div>
+        <div>
+        <div style="font-size: 80%;">      
+          <epc:phrase ref="archive_name"/> is powered by <em><a href="http://eprints.org/software/">EPrints 3</a></em> and is hosted by <a href="http://www.ulcc.ac.uk/">ULCC</a>.<br/>
+			
+            Website Content &copy; 2014 London School of Hygiene &amp; Tropical Medicine | 
+            <a href="http://www.lshtm.ac.uk/aboutus/policies/foi/dppolicy/">Privacy policy</a> | 
+            <a href="http://www.lshtm.ac.uk/aboutus/policies/foi/">Freedom of Information</a>
+          </div>
+        </div>
+      </div>
+      <div id="stats_block" style="display: none;"></div>
+    </div> <!-- sitewrapper -->
+  
+    <script type="text/javascript">
+<!--
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-4741566-14']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+-->
+    </script>
+
+</body>
+  
+  
+  
+  
+  
+  
+  <!--
+  
+  
+  
+  
+  
+  
+  <body>
+    <epc:pin ref="pagetop"/>
+    <div class="ep_tm_header ep_noprint">
+      <div class="ep_tm_site_logo">
+        <a href="{$config{frontpage}}" title="{phrase('archive_name')}">
+          <img alt="{phrase('archive_name')}" src="{$config{rel_path}}{$config{site_logo}}"/>
+        </a>
+      </div>
+      <ul class="ep_tm_menu">
+        <li>
+          <a href="{$config{http_url}}">
+            <epc:phrase ref="template/navigation:home"/>
+          </a>
+        </li>
+        <li>
+          <a href="{$config{http_url}}/information.html">
+            <epc:phrase ref="template/navigation:about"/>
+          </a>
+        </li>
+        <li>
+          <a href="{$config{http_url}}/view/" menu="ep_tm_menu_browse">
+            <epc:phrase ref="template/navigation:browse"/>
+          </a>
+          <ul id="ep_tm_menu_browse" style="display:none;">
+             <li>
+               <a href="{$config{http_url}}/cgi/latest_tool">
+                <epc:phrase ref="cgi/latest:title"/>
+              </a>
+            </li>
+            <li>
+              <a href="{$config{http_url}}/view/year/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_year"/>
+              </a>
+            </li>
+           <li>
+              <a href="{$config{http_url}}/view/subjects/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_subjects"/>
+              </a>
+            </li> 
+            <li>
+              <a href="{$config{http_url}}/view/divisions/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_divisions"/>
+              </a>
+            </li>
+            <li>
+              <a href="{$config{http_url}}/view/research_centre/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_research_centre"/>
+              </a>
+            </li>
+            <li>
+              <a href="{$config{http_url}}/view/creators/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_creators"/>
+              </a>
+            </li>
+            <li>
+              <a href="{$config{http_url}}/view/funders/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_funders"/>
+              </a>
+            </li>
+            <li>
+              <a href="{$config{http_url}}/view/types/collection/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_types"/>
+              </a>
+            </li>
+             <li>
+              <a href="{$config{http_url}}/view/geographic_cover/">
+                <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                <epc:phrase ref="viewname_eprint_geographic_cover"/>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <table class="ep_tm_searchbar">
+        <tr>
+          <td align="left">
+            <epc:pin ref="login_status"/>
+          </td>
+          <td align="right" style="white-space: nowrap">
+            <epc:pin ref="languages"/>
+            <form method="get" accept-charset="utf-8" action="{$config{http_cgiurl}}/search" style="display:inline">
+              <input class="ep_tm_searchbarbox" size="20" type="text" name="q"/>
+              <input class="ep_tm_searchbarbutton" value="{phrase('lib/searchexpression:action_search')}" type="submit" name="_action_search"/>
+              <input type="hidden" name="_action_search" value="Search"/>
+              <input type="hidden" name="_order" value="bytitle"/>
+              <input type="hidden" name="basic_srchtype" value="ALL"/>
+              <input type="hidden" name="_satisfyall" value="ALL"/>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <div class="ep_tm_page_content">
+        <h1 class="ep_tm_pagetitle">
+          <epc:pin ref="title"/>
+        </h1>
+        <epc:pin ref="page"/>
+      </div>
+    </div>
+    <div class="ep_tm_footer ep_noprint">
+      <div class="ep_tm_eprints_logo">
+        <a href="http://eprints.org/software/">
+          <img alt="EPrints Logo" src="{$config{rel_path}}/images/eprintslogo.gif"/>
+        </a>
+      </div>
+      <epc:phrase ref="template:about_eprints"/>
+    </div>
+  </body>
+-->
+</html>
