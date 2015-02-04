@@ -1,0 +1,97 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+title_duplicates - warn of duplicate entries based on title
+
+=head1 SYNOPSIS
+
+        title_duplicates?q=Field+studies+&field=title&dataset=eprint&id=23
+
+=head1 DESCRIPTION
+
+Provides a warning box for any other eprints where q prefixes the title.
+
+=cut
+
+use EPrints;
+
+use strict;
+use warnings;
+
+use LWP::UserAgent;
+#use WWW::Curl;
+
+my $repo = EPrints->new->current_repository;
+
+my $db = $repo->get_database;
+
+my $rl_conf = $repo->get_conf("repo_link");
+
+my $q = $repo->param( "q" ) || "";
+my $jsonp = $repo->param( "json" ) || $repo->param( "jsonp" ) || $repo->param( "callback" ) || "send_data";
+
+unless (length( $q ) >= $rl_conf->{min_chars}) {
+	my $res_str = "{lookup_response: [] }";
+
+	if($jsonp){
+		$jsonp =~ s/[^=A-Za-z0-9_]//g;
+		$res_str = "$jsonp(\n".$res_str;
+		$res_str .= ");\n";
+	}
+	print $res_str;
+	exit;
+
+}
+
+my $id = $repo->param( "eprintid" );
+$id = $repo->param( "id" ) if !EPrints::Utils::is_set( $id );
+
+if( !defined($id) )
+{
+        $repo->log( "ext lookup script called without id argument: ".join(',',$repo->param));
+        exit(0);
+}
+elsif( $id =~ /^([0-9]+)$/ )
+{
+        $id = $1;
+}
+else
+{
+        EPrints::abort "Requires numeric id argument";
+}
+
+for my $remote_repo (@{$rl_conf->{remote_repos}}){
+
+	my $remote_request_string = $remote_repo->{repo_uri};
+	$remote_request_string .= ":".$remote_repo->{repo_port} if(defined $remote_repo->{repo_port} && $remote_repo->{repo_port}=~ /\d+/);
+	$remote_request_string .= $remote_repo->{search_script}."?q=$q";
+
+	#print STDERR $remote_request_string."\n";
+	if($remote_request_string !~ /^http:\/\//){
+		$remote_request_string = "http://".$remote_request_string;
+	}
+
+	my $browser = LWP::UserAgent->new;
+	my $req =  HTTP::Request->new( GET => $remote_request_string);
+#	$req->authorization_basic( $rl_conf->{link_user}, $rl_conf->{link_password});
+	my $response = $browser->request( $req );
+
+	my $res_str = $response->decoded_content;
+
+	$res_str = "{lookup_response: $res_str, ".
+			"eprintid: $id, ".
+		      #  "update_script: '".$repo->get_conf("base_url").$roar->{internal_link_update_script}."'".
+			"}";
+
+	if($jsonp){
+		$jsonp =~ s/[^=A-Za-z0-9_]//g;
+		$res_str = "$jsonp(\n".$res_str;
+		$res_str .= ");\n";
+	}
+
+#	print STDERR $res_str;
+	print $res_str;
+
+}
+

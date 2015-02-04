@@ -1,0 +1,59 @@
+#!/usr/bin/perl
+
+use EPrints;
+
+use strict;
+
+my $session = new EPrints::Session;
+exit( 0 ) unless( defined $session && $session->get_repository->get_conf( "meprints_enabled" ));
+
+$session->send_http_header( content_type=>"text/javascript" );
+
+my $userid = $session->param( "userid" );
+my $username = $session->param( "username" );
+my $widgetname = $session->param( "widgetname" );
+
+unless( defined $userid || defined $username )
+{
+	$session->terminate;
+	return;
+}
+
+my $user;
+if( defined $userid )
+{
+	$user = EPrints::DataObj::User->new( $session, $userid );
+}
+
+if( defined $username && !defined $user )
+{
+	$user = EPrints::DataObj::User::user_with_username( $session, $username );
+}
+
+unless( defined $user && $user->is_profile_visible() )
+{
+	$session->terminate;
+	return;
+}
+
+my $widget;
+if( defined $widgetname )
+{
+	$widget = $session->plugin( "MePrints::Layout::Embed", user => $user, widgetname => $widgetname );
+}
+else
+{
+	$widget = $session->plugin( "MePrints::Layout::Embed", user => $user );
+}
+
+unless( defined $widget )
+{
+	$session->terminate;
+	return;
+}
+
+print $widget->render_javascript();
+
+$session->terminate;
+return;
+

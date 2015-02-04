@@ -1,0 +1,86 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+title_duplicates - warn of duplicate entries based on title
+
+=head1 SYNOPSIS
+
+=head1 DESCRIPTION
+
+Provides a warning box for any other eprints where q prefixes the title.
+
+=cut
+
+use EPrints;
+
+use strict;
+use warnings;
+
+#use LWP::UserAgent;
+#use WWW::Curl;
+
+my $repo = EPrints->new->current_repository;
+
+my $db = $repo->get_database;
+my $xml = $repo->xml;
+
+my $rl_conf = $repo->get_conf("repo_link");
+
+my $jsonp = $repo->param( "json" ) || $repo->param( "jsonp" ) || $repo->param( "callback" ) || "send_data";
+
+my $id = $repo->param( "eprintid" );
+$id = $repo->param( "id" ) if !EPrints::Utils::is_set( $id );
+
+if( !defined($id) )
+{
+        $repo->log( "export_proxy script called without id argument: ".join(',',$repo->param));
+        exit(0);
+}
+elsif( $id =~ /^([0-9]+)$/ )
+{
+        $id = $1;
+}
+else
+{
+        EPrints::abort "Requires numeric id argument";
+}
+
+#print STDERR $rl_conf->{master_repo_host}."\n";
+my $export_req = $rl_conf->{master_repo_host};
+#print STDERR "*".$rl_conf->{masster_repo_port}."*\n";
+$export_req .= ":".$rl_conf->{master_repo_port} if(defined $rl_conf->{master_repo_port} && $rl_conf->{master_repo_port}=~ /\d+/);
+
+$export_req .= "/cgi/search/archive/advanced/";
+$export_req .= int(rand(1000000)).".js";
+$export_req .= "?screen=Search&dataset=archive&_action_export=1&output=JSON&exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Crepo_link_link%3Arepo_link_link%3AALL%3AIN%3A";
+$export_req .= "http%253A%2F%2F".$repo->get_conf("host")."%2Fid%2Feprint%2F$id";
+$export_req .= "%7C-%7Ceprint_status%3Aeprint_status%3AANY%3AEQ%3Aarchive%7Cmetadata_visibility%3Ametadata_visibility%3AANY%3AEQ%3Ashow";
+
+#print STDERR $export_req."\n";
+if($export_req !~ /^http:\/\//){
+        $export_req = "http://".$export_req;
+}
+
+my $ua = LWP::UserAgent->new;
+my $req =  HTTP::Request->new( GET => $export_req);
+$ua->default_header('Accept' => "application/json");
+my $response = $ua->request( $req );
+
+my $res_str = $response->decoded_content;
+
+#Lets send back some useful config data to the client too....
+$res_str = "{lookup_response: $res_str, ".
+                "eprintid: $id, ".
+                "export_script: '".$export_req.
+                "'}";
+#binmode(STDOUT, ":utf8"); # data from curl will already be utf8, this seems to double-encode it
+$repo->send_http_header( content_type => "application/json; charset=UTF-8" );
+
+if($jsonp){
+        $jsonp =~ s/[^=A-Za-z0-9_]//g;
+        $res_str = "$jsonp(\n".$res_str;
+        $res_str .= ");\n";
+}
+print $res_str;
+

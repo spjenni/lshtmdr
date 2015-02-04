@@ -1,0 +1,44 @@
+use EPrints;
+use EPrints::Plugin::MePrints;
+use strict;
+
+my $repo = EPrints->new->current_repository;
+return unless( defined $repo && $repo->config( 'meprints_enabled' ) );
+
+my $user = EPrints::Plugin::MePrints::get_user( $repo );
+return unless( defined $user );
+
+my $can_view_pic = $user->can_request_view_profile( $repo );
+
+my %VALID_SIZES = map { $_ => 1 } ( 'small', 'preview' );
+
+my $size = $repo->param( 'size' );
+$size = 'preview' unless( defined $size && $VALID_SIZES{$size} );
+
+my $pic_path = $user->get_picture_path()."/$size.png";
+
+unless( -e $pic_path && $can_view_pic )
+{
+	#$pic_path = $repo->config( 'archiveroot' )."/meprints/defaults/$size.png";
+	$pic_path = $repo->config( 'base_path' )."/lib/static/images/meprints/defaults/$size.png";
+}
+
+EPrints::Apache::AnApache::header_out(
+        $repo->get_request,
+        "Cache-Control" => "no-store, no-cache, must-revalidate"
+);
+
+my $fh;
+open( $fh, "$pic_path" );
+
+if( defined $fh )
+{
+	$repo->send_http_header( content_type=>"image/png" );
+	my $buffer;
+	while( read( $fh, $buffer, 4096 ) )
+	{
+		print $buffer;
+	}
+	close( $fh );
+}
+

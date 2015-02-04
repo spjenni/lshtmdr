@@ -1,0 +1,196 @@
+# warns of duplicates based on a simple string match
+
+use EPrints;
+
+use strict;
+use warnings;
+use EPrints::Const qw( :http );
+
+my $repository = EPrints->new->current_repository;
+my $session = $repository;
+
+# security??
+
+# How many chars needed before we try and suggest duplicates?
+my $need = 5; #have min limit here... but should really be in sync with over repo...
+
+my $q = $session->param( "q" ) || "";
+
+exit unless length( $q ) >= $need; 
+
+my $field = $session->param( "field" );
+$field = 'title' if !EPrints::Utils::is_set( $field );
+
+my $dataset_name = 'eprint'; #only eprints
+
+my $database = $session->get_database;
+my $dataset = $session->dataset( $dataset_name );
+
+my $Q_table = $database->quote_identifier($dataset->get_sql_table_name);
+my $Q_id = $database->quote_identifier( $dataset_name . "id" );
+my $Q_eprint_status = $database->quote_identifier( "eprint_status" );
+my $Q_field_name = $database->quote_identifier( $field );
+
+my $sql = "SELECT $Q_id" .
+	" FROM $Q_table" .
+	" WHERE ";
+if ($dataset_name eq "eprint") {
+	$sql .= " $Q_eprint_status=" .  $database->quote_value( "archive" );
+} 
+$sql .=	" AND $Q_field_name IS NOT NULL" .
+	" AND $Q_field_name " .
+	$database->sql_LIKE() .
+	$database->quote_value( '%' . EPrints::Database::prep_like_value( $q ) . '%' );
+#print STDERR $sql."\n";
+my $sth = $session->get_database->prepare_select( $sql, 'limit' => 10 );
+$session->get_database->execute( $sth , $sql );
+
+my $row = $sth->fetch;
+
+
+my $plugin = $repository->plugin( "Export::JSON" );
+if( !$plugin )
+{
+	$repository->not_found;
+	exit;
+}
+
+my %arguments = %{$plugin->param( "arguments" )};
+# fetch the plugin arguments, if any
+foreach my $argname (keys %arguments)
+{
+	if( defined $repository->param( $argname ) )
+	{
+		$arguments{$argname} = $repository->param( $argname );
+	}
+}
+
+#$session->send_http_header( content_type => "application/json; charset=UTF-8" );
+$session->send_http_header( content_type => "application/javascript; charset=UTF-8" );
+
+print "[\n";
+if(defined $row){
+do
+{
+	my( $id, $value ) = @$row;
+	
+	export_dataobj( $repository, $plugin, \%arguments, "eprint", $id );
+	print ",\n";
+} while( defined($row = $sth->fetch) );
+}
+print "]\n";
+
+
+$sth->finish;
+
+sub export_dataobj
+{
+	my( $repository, $plugin, $args, $datasetid, $id ) = @_;
+
+	my $r = $repository->get_request;
+
+	my $dataset = $repository->dataset( $datasetid );
+	$repository->not_found( "No such dataset" ), exit if !defined $dataset;
+
+	if( !$plugin->can_accept( "dataobj/".$dataset->base_id ) )
+	{
+		$repository->not_found;
+		exit;
+	}
+
+	my $dataobj = $dataset->dataobj( $id );
+	$repository->not_found( "No such dataobj" ), exit if !defined $dataobj;
+
+	if( $dataobj->isa( "EPrints::DataObj::EPrint" ) )
+	{
+		$dataset = $dataobj->get_dataset;
+	}
+
+	my $rc;
+
+	my $crud = EPrints::Apache::CRUD->new(
+			repository => $repository,
+			request => $r,
+			dataset => $dataset,
+			dataobj => $dataobj,
+			plugin => $plugin,
+			scope => EPrints::Apache::CRUD::CRUD_SCOPE_DATAOBJ,
+		);
+
+	$rc = $crud->authen;
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+
+	$rc = $crud->authz;
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+
+	$rc = $crud->handler;
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+}
+#########################################################################
+#### 3.3.8 version though above should work with ealier 3.3 versions ####
+=comment
+sub export_dataobj
+{
+	my( $repository, $plugin, $args, $datasetid, $id ) = @_;
+
+	my $r = $repository->get_request;
+	
+	my $dataset = $repository->dataset( $datasetid );
+	$repository->not_found( "No such dataset" ), exit if !defined $dataset;
+
+	if( !$plugin->can_accept( "dataobj/".$dataset->base_id ) )
+	{
+		$repository->not_found;
+		exit;
+	}
+
+	my $dataobj = $dataset->dataobj( $id );
+	$repository->not_found( "No such dataobj" ), exit if !defined $dataobj;
+
+	if( $dataobj->isa( "EPrints::DataObj::EPrint" ) )
+	{
+		$dataset = $dataobj->get_dataset;
+	}
+
+	$r->pnotes->{dataset} = $dataset;
+	$r->pnotes->{dataobj} = $dataobj;
+	$r->pnotes->{plugin} = $plugin;
+
+	my $rc;
+
+	$rc = EPrints::Apache::CRUD::authen( $r );
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+
+	$rc = EPrints::Apache::CRUD::authz( $r );
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+
+	$rc = EPrints::Apache::CRUD::handler( $r );
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+}
+
+=cut
+
