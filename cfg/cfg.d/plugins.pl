@@ -61,6 +61,9 @@ $c->{plugin_alias_map}->{"Export::lshtmdr_HTML"} = undef;
 $c->{plugin_alias_map}->{"Export::DC"} = "Export::DC_LSHTM";
 $c->{plugin_alias_map}->{"Export::DC_LSHTM"} = undef;
 
+$c->{plugin_alias_map}->{"Screen::Public::RequestCopy"} = "Screen::Public::RequestCopy_LSHTM";
+$c->{plugin_alias_map}->{"Screen::Public::RequestCopy_LSHTM"} = undef;
+
 
 # CrossRef registration
 
