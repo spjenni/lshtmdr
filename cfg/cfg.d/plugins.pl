@@ -6,7 +6,6 @@
 # To enable the plugin "Export::LocalThing":
 # $c->{plugins}->{"Export::LocalThing"}->{params}->{disable} = 0;
 $c->{plugins}->{"Export::OAI_DataCite"}->{params}->{disable} = 0;
-$c->{plugins}->{"Screen::::EPrint::Staff::CoinDOI"}->{params}->{disable} = 0;
 
 # Screen Plugin Configuration
 # (Disabling a screen will also remove it and it's actions from all lists)
@@ -58,9 +57,9 @@ $c->{plugins}->{"Screen::::EPrint::Staff::CoinDOI"}->{params}->{disable} = 0;
 
 $c->{plugin_alias_map}->{"Export::HTML"} = "Export::lshtmdr_HTML";
 $c->{plugin_alias_map}->{"Export::lshtmdr_HTML"} = undef;
-#$c->{plugins}->{"Export::DC_with_corp_creators"}->{params}->{disable} = 0;
-$c->{plugin_alias_map}->{"Export::DC"} = "Export::DC_with_corp_creators";
-$c->{plugin_alias_map}->{"Export::DC_with_corp_creators"} = undef;
+
+$c->{plugin_alias_map}->{"Export::DC"} = "Export::DC_LSHTM";
+$c->{plugin_alias_map}->{"Export::DC_LSHTM"} = undef;
 
 
 # CrossRef registration
