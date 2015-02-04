@@ -9,8 +9,8 @@ cc_by_nc_nd
 cc_by_nc_sa
 cc_by_sa
 cc_public_domain
-odc_by required_by="recollect"
-odc_odbl required_by="recollect"
-odc_dbcl required_by="recollect"
+odc_by
+odc_odbl
+odc_dbcl
 cc_gnu_gpl
 cc_gnu_lgpl
