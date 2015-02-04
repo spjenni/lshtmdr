@@ -14,7 +14,8 @@ $c->{datacitedoi}{prefix} = "10.4124";
 $c->{datacitedoi}{repoid} = "LS";
 $c->{datacitedoi}{apiurl} = "https://test.datacite.org/mds/";
 $c->{datacitedoi}{user} = "BL.LSHTM";
-$c->{datacitedoi}{pass} = "tropical";
+my $password_file =$c->{"base_path"}."/archives/lshtmdr/cfg/datacite.passwd";
+$c->{datacitedoi}{pass} = `cat $password_file`;
 
 # datacite requires a Publisher 
 # The name of the entity that holds, archives, publishes, 
