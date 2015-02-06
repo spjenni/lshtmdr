@@ -1,0 +1,745 @@
+<?xml version='1.0' encoding='utf-8'?>
+<subjects xmlns='http://eprints.org/ep2/data/2.0'>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ADDE'>
+    <subjectid>ADDE</subjectid>
+    <rev_number>4</rev_number>
+    <name>
+      <item>
+        <name>Academic Administration</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ASAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ASAA'>
+    <subjectid>ASAA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Academic Services &amp; Administration</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>divisions</item>
+    </parents>
+    <depositable>FALSE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ASLB'>
+    <subjectid>ASLB</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Library</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ASAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPAA'>
+    <subjectid>EPAA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Faculty of Epidemiology and Population Health</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>divisions</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPDL'>
+    <subjectid>EPDL</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>EPH Distance Learning</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPID'>
+    <subjectid>EPID</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Infectious Disease Epidemiology</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPMS'>
+    <subjectid>EPMS</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Medical Statistics</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPNC'>
+    <subjectid>EPNC</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Non-Communicable Disease Epidemiology</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPNP'>
+    <subjectid>EPNP</subjectid>
+    <rev_number>4</rev_number>
+    <name>
+      <item>
+        <name>Dept of Nutrition and Public Health Interventions Research (2003-2012)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPPH</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPPH'>
+    <subjectid>EPPH</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Population Health (2012- )</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/EPPS'>
+    <subjectid>EPPS</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Population Studies (1974-2012)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>EPPH</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/IPTI-INSIST'>
+    <subjectid>IPTI-INSIST</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>IPTi and INSIST studies in Southern Tanzania</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ITAA'>
+    <subjectid>ITAA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Faculty of Infectious and Tropical Diseases</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>divisions</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ITCR'>
+    <subjectid>ITCR</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Clinical Research</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ITAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ITDC'>
+    <subjectid>ITDC</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Disease Control</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ITAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ITDL'>
+    <subjectid>ITDL</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>ITD Distance Learning</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ITAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ITIM'>
+    <subjectid>ITIM</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Immunology and Infection</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ITAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/ITPM'>
+    <subjectid>ITPM</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Pathogen Molecular Biology</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ITAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/PHAA'>
+    <subjectid>PHAA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Faculty of Public Health and Policy</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>divisions</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/PHDL'>
+    <subjectid>PHDL</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>PHP Distance Learning</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>PHAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/PHGH'>
+    <subjectid>PHGH</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Global Health and Development</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>PHAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/PHSE'>
+    <subjectid>PHSE</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Social and Environmental Health Research</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>PHAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/PHSR'>
+    <subjectid>PHSR</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Dept of Health Services Research and Policy</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>PHAA</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XACT'>
+    <subjectid>XACT</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>ACT Consortium</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XALPHA'>
+    <subjectid>XALPHA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>ALPHA Network</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XCSG'>
+    <subjectid>XCSG</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Cancer Survival Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XECO'>
+    <subjectid>XECO</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>ECOHOST</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XEVA'>
+    <subjectid>XEVA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Centre for Evaluation</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XGMH'>
+    <subjectid>XGMH</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Centre for Global Mental Health</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XHIV'>
+    <subjectid>XHIV</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>HIV Research Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XHPH'>
+    <subjectid>XHPH</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Centre for History in Public Health</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XHPT'>
+    <subjectid>XHPT</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>HPTN 071 (PopART)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XIDE'>
+    <subjectid>XIDE</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>IDEAS</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XMAL'>
+    <subjectid>XMAL</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Malaria Centre</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XMCH'>
+    <subjectid>XMCH</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Centre for Maternal, Reproductive and Child Health (MARCH)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XNCD'>
+    <subjectid>XNCD</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Centre for Global Non-Communicable Diseases (NCDs)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XPHC'>
+    <subjectid>XPHC</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Public Health in Humanitarian Crises Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>FALSE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XPSG'>
+    <subjectid>XPSG</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Population Studies Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XSAM'>
+    <subjectid>XSAM</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Social and Mathematical Epidemiology (SaME)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XSHA'>
+    <subjectid>XSHA</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>SHARE (Sanitation and Hygiene Applied Research for Equity)</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XSIG'>
+    <subjectid>XSIG</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Sigma Research</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XSMH'>
+    <subjectid>XSMH</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Centre for Statistical Methodology</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XSMO'>
+    <subjectid>XSMO</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>SaME Modelling &amp; Economics</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XSTR'>
+    <subjectid>XSTR</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>STRIVE</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XTBC'>
+    <subjectid>XTBC</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>TB Centre</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XTEG'>
+    <subjectid>XTEG</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Tropical Epidemiology Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XTHG'>
+    <subjectid>XTHG</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Transport &amp; Health Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/XVAC'>
+    <subjectid>XVAC</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Vaccine Centre</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/aabrg'>
+    <subjectid>aabrg</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Anthropologies of African Biosciences Research Group</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/crf'>
+    <subjectid>crf</subjectid>
+    <rev_number>3</rev_number>
+    <name>
+      <item>
+        <name>Campylobacter Resource Facility</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>research_centre</item>
+    </parents>
+    <depositable>TRUE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/divisions'>
+    <subjectid>divisions</subjectid>
+    <rev_number>2</rev_number>
+    <name>
+      <item>
+        <name>LSHTM Organisational Structure</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ROOT</item>
+    </parents>
+    <depositable>FALSE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/research_centre'>
+    <subjectid>research_centre</subjectid>
+    <rev_number>2</rev_number>
+    <name>
+      <item>
+        <name>Research Centres</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ROOT</item>
+    </parents>
+    <depositable>FALSE</depositable>
+  </subject>
+  <subject id='http://plug.ep.devorkin:8081/id/subject/subjects'>
+    <subjectid>subjects</subjectid>
+    <rev_number>2</rev_number>
+    <name>
+      <item>
+        <name>LSHTM Subject Headings</name>
+        <lang>en</lang>
+      </item>
+    </name>
+    <parents>
+      <item>ROOT</item>
+    </parents>
+    <depositable>FALSE</depositable>
+  </subject>
+</subjects>
