@@ -194,7 +194,6 @@ push @{$c->{fields}->{eprint}},
 {
 	name => 'date',
 	type => 'date',
-    input_style => 'short',
 	#min_resolution => 'year',
 },
 
