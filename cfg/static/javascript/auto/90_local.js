@@ -159,9 +159,12 @@ jQuery(document).ready(function(){
 	});
   }
 
+/***********************************************************************************/
+/**                         .js functions added by SJ                             **/
+/***********************************************************************************/
 
 /*SJ: Simple logged in check to show request document link if user is not logged in*/
-/*future versions will need to relate login status to document security level               */
+/*future versions will need to relate login status to document security level      */
 
 if(jQuery("#file_security").length && eprints_logged_in == false){
 
