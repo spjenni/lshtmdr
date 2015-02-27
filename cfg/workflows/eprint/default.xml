@@ -401,7 +401,7 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
      
     <!--SJ: moved-->
      <component>
-      <field ref="keywords" required="yes"/>
+      <field ref="keywords" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/keywords" />
     </component>
     <!--end of moved-->
      
@@ -432,13 +432,13 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     </component>
     <!--end of moved-->
  
-    <!--SJ: moved-->
+    <!--SJ: moved
     <component type="Field::Multi_map" show_help="always" collapse="no">
       <title>Geographic location</title>
       <help>Enter if applicable the Longitude and Latitude values of a theoretical geographic bounding rectangle that would cover the region in which your data were collected. You can use</help>
       <field ref="bounding_box"/>
     </component>
-    <!--end of moved-->
+    end of moved-->
              
     <!--SJ: moved-->
     <epc:if test="!$item{bounding_box_east_edge}">
@@ -507,9 +507,10 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     <h2>Tell us about your project and faculty</h2>
     </component>
      
-    <!--SJ: moved-->
+     
+    <!--SJ: moved
     <component type="Field::SelectCollection"><field ref="relation" /></component>
-    <!--end of moved-->
+    end of moved-->
      
     <component type="Field::Multi">
       <title>Project details</title>

@@ -1,0 +1,89 @@
+# SJ: created using name cgi as template
+# keywords filed added as multi because
+# seperate db table required
+
+use EPrints;
+
+use strict;
+
+my $session = EPrints::Session->new();
+
+# call for logging if needed
+# my $repo = $session->get_repository; 
+# example: $repo->log( "eprintid is: ".$Q_eprintid );
+
+#security ?
+
+#my $content = "text/xml";
+#$session->send_http_header( content_type=>$content );
+my $q = $session->param( "q" ) || "";
+
+my $database = $session->get_database;
+my $dataset = $session->dataset( "eprint" );
+
+# get the metafield
+my $keywords_field = $dataset->get_field( "keywords" );
+
+my @fields = ($keywords_field->get_sql_names);
+
+my $Q_table = $database->quote_identifier($dataset->get_sql_table_name);
+#my $Q_keywords_table = $database->quote_identifier($dataset->get_sql_table_name($keywords_field));
+my $Q_keywords = $database->quote_identifier( "keywords" );
+my $Q_num_matches = $database->quote_identifier( "num_matches" );
+my $Q_pos = $database->quote_identifier( "pos" );
+
+my $Q_name_table = $database->quote_identifier($dataset->get_sql_sub_table_name($keywords_field));
+my $Q_eprintid = $database->quote_identifier( "eprintid" );
+
+my $Q_eprint_status = $database->quote_identifier( "eprint_status" );
+
+my $sql = "SELECT $Q_name_table.$Q_pos, ".
+	join(",", map { $Q_name_table.".".$database->quote_identifier($_) } @fields) .
+	" FROM $Q_table" .
+	" LEFT JOIN $Q_name_table" .
+	" ON $Q_table.$Q_eprintid=$Q_name_table.$Q_eprintid" .
+	" WHERE" .
+	" $Q_table.$Q_eprint_status=".$database->quote_value( "archive" ) .
+	" AND $Q_name_table.$Q_keywords ".$database->sql_LIKE().$database->quote_value( EPrints::Database::prep_like_value($q) . '%' ) .
+	"GROUP BY $Q_keywords";
+	
+my @rows;
+
+my $sth = $session->get_database->prepare_select( $sql, 'limit' => 40 );
+$session->get_database->execute( $sth , $sql );
+
+while( my @row = $sth->fetchrow_array )
+{
+	my $cnt = shift @row;
+	my $word = $keywords_field->value_from_sql_row( $session, \@row );
+   
+	my $item = {};
+	push @rows, $item;
+
+	my $frag = $session->make_doc_fragment;
+
+	$frag->appendChild( $keywords_field->render_single_value( $session, $word ) );
+	
+	$item->{xhtml} = $frag;
+	$item->{values} = [
+		"for:value:relative:" => $word,
+	];
+}
+
+$sth->finish();
+
+my $ul = EPrints::Extras::render_lookup_list( $session, \@rows );
+
+$session->send_http_header( content_type => "text/xml; charset=UTF-8" );
+
+binmode(STDOUT,":utf8");
+print <<END;
+<?xml version="1.0" encoding="UTF-8" ?>
+
+END
+print EPrints::XML::to_string( $ul, "utf-8", 1 );
+
+EPrints::XML::dispose( $ul );
+
+$session->terminate;
+
