@@ -46,5 +46,10 @@ push @{$c->{fields}->{eprint}},
         },
     ],
 },
-
+{ 
+	name=>"date_embargo", 
+	type=>"date", 
+	required=>0,
+	min_resolution=>"year" 
+},	
 ;
