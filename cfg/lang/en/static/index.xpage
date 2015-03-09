@@ -48,7 +48,7 @@
 
 <!--<iframe src="http://w01.lshtmdrtest.da.ulcc.ac.uk/cgi/user/home/screen?='MapView'" />-->
 
-<iframe id="tester" src="{$config{http_cgiurl}}/cgi/latest_tool?output=HTML" />
+<iframe id="tester" src="{$config{http_cgiurl}}/latest_tool?output=HTML" />
 
 
 </div>
