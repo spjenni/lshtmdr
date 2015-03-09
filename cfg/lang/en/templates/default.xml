@@ -21,7 +21,6 @@ $.noConflict();
     <epc:pin ref="head"/>
     
    <!-- SJ: date picker stylesheet added here rather than by trigger for ease -->
-   
    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
    
 
@@ -34,13 +33,17 @@ $.noConflict();
     <!-- END LSHTM styles -->
     <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/ulcc_overrides.css);</style>
     
+      
+     <!-- Extra LSHTM styles by SJ required by new layout elements. Can be removed for ULCC reset-->
+    <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/lshtm_overrides.css);</style>
+    
     <!-- TAB choosing -->
     <script type="text/javascript">
       jQuery(document).ready(function(){
       
         if(location.pathname == '/'){
           jQuery("#ep_home").addClass("current");
-          jQuery("#inline_search").hide();
+          //jQuery("#inline_search").hide();
           return;
         }
         if(location.pathname.match(/^\/information\.html/)){

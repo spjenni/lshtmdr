@@ -10,24 +10,36 @@
 <xpage:title>Welcome to <epc:phrase ref="archive_name" /></xpage:title>
 <xpage:body>
 
-<div class="lshtmdr_home" id="lshtmdr_home_text">
-<p>LSHTM Data Compass is a curated digital repository of research datasets produced by the London School of Hygiene &amp; Tropical Medicine and its collaborators. It addresses the <a href="http://www.lshtm.ac.uk/aboutus/introducing/mission/">School's mission</a> to improve health and health equity in the UK and worldwide and maximise the benefit and impact of its research by ensuring the underlying data can be safeguarded, shared and cited.</p>
+
+<!-- this is the slider code-->
+
+
+
+<div class="lshtmdr_home_slider" id="lshtmdr_home_text">
+<ul class="bxslider">
+	<li>
+      <img src="display_images/top_left_1.jpg" />
+      <div class="bx-caption"> 
+        <span>LSHTM Data Compass is a curated digital repository of research datasets produced by the London School of Hygiene &amp; Tropical Medicine and its collaborators.</span>
+      </div>
+	</li>
+	<li>
+      <img src="display_images/top_left_3.jpg" />
+      <div class="bx-caption"> 
+        <span>It addresses the <a href="http://www.lshtm.ac.uk/aboutus/introducing/mission/">School's mission</a>, to improve health and health equity in the UK and worldwide and maximise the benefit and impact of its research by ensuring the underlying data can be safeguarded, shared and cited.</span>
+      </div>
+ </li>
+</ul>
+
 </div>
-<div class="lshtmdr_home" id="lshtmdr_home_search_submit">
-  <div>
+<div class="lshtmdr_home" id="lshtmdr_home_search_submit">  
+	
+		<h4>How to deposit to Data Compass</h4>
+
+<p>If you are a LSHTM member or a registered user, please login. If not, please take a moment to read our <a href="researchdata.html">Deposit Guide</a></p>
+<div>
     <form method="get" accept-charset="utf-8" action="{$config{http_cgiurl}}/users/home">
      <input value="Submit your data to  Data Compass" type="submit" class="ep_form_action_button"/></form>
-  </div>
-  <div>
-            <form method="get" accept-charset="utf-8" action="{$config{http_cgiurl}}/search" style="display:inline">
-              <input class="ep_tm_searchbarbox"  type="text" name="q"/>
-              <!-- <input class="ep_tm_searchbarbutton" value="Search" type="submit" name="_action_search"/> -->
-              <input class="ep_form_action_button" value="Search" type="submit" name="_action_search"/>
-              <input type="hidden" name="_action_search" value="Search"/>
-              <input type="hidden" name="_order" value="bytitle"/>
-              <input type="hidden" name="basic_srchtype" value="ALL"/>
-              <input type="hidden" name="_satisfyall" value="ALL"/>
-            </form>
   </div>
 </div>
 
@@ -36,22 +48,28 @@
 
 <!--<iframe src="http://w01.lshtmdrtest.da.ulcc.ac.uk/cgi/user/home/screen?='MapView'" />-->
 
-<iframe src="http://w01.lshtmdrtest.da.ulcc.ac.uk/cgi/latest_tool?output=HTML" />
+<iframe id="tester" src="http://eprints.example.my:8081/cgi/latest_tool?output=HTML" />
 
 
 </div>
 
 <div class="lshtmdr_home" id="lshtmdr_home_howto">
-<h4>How to deposit to Data Compass</h4>
-<p>If you are a LSHTM member or a registered user, please login. If not, please take a moment to read our <a href="researchdata.html">Deposit Guide</a></p>
+<!--<epc:phrase ref="carousel"/>-->
+	
+
+<a class="twitter-timeline"  href="https://twitter.com/simongirasol" data-widget-id="573863180440592384">Tweets by @simongirasol</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
 
 </div>
 
+<a href="http://eprints.example.my:8081/cgi/users/home?screen=MapView">
 <div class="lshtmdr_home" id="lshtmdr_home_map">
 <h4>Collections map</h4>
-<p><img alt="world map" src="{$config{rel_path}}/display_images/lshtmdr_map.png" /></p>
+<p></p>
 
 </div>
+</a>
 
 <!--
 <div style="text-align: right">

@@ -1,0 +1,333 @@
+/***************************************************************************
+*Second set of LSHTMDR specific overrides  by SJ  
+*Unable to gain access to backend and epm imports unable to overwrite local styles, 
+*therefore additonal overwrites added here. Note: auto additions will not work due to 
+*loading order via default.xml import
+***************************************************************************/
+
+#page-heading {
+  position: relative;
+  background: url(../display_images/page_heading_bg_compass.png) bottom right no-repeat #000000;
+  padding: 17px 2em 0;
+  color: #F1F1F1;
+  overflow: hidden;
+}
+
+div.lshtmdr_home {
+    margin: 1em;
+    display: inline-block;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+div#lshtmdr_home_map {
+ 	width: 30%; 
+    float: right;
+}
+	   
+	   
+/* overrides for lshtm surround component */     
+/* ep_sr */
+
+
+.ep_sr_component_lshtm {
+	clear:both;
+	padding: 0px;
+	font-size:93%;
+}
+
+.ep_sr_component_lshtm .ep_sr_content {
+  font-size: 0.86em;
+/*  text-align: center;  messes Type */
+}
+
+.ep_sr_component_lshtm table, .ep_sr_content table {
+  font-size: 86%;
+}
+
+.ep_sr_component_lshtm_large{
+	clear:both;
+	padding: 0px;
+	font-size:90%;
+}
+
+.ep_sr_component_lshtm_large .ep_sr_content {
+  font-size: 0.93em;
+/*  text-align: center;  messes Type */
+}
+
+.ep_sr_component_lshtm table_large .ep_sr_content table {
+  font-size: 86%;
+}
+
+.ep_sr_component_lshtm .ep_sr_title_bar_lshtm {
+	padding: 2px 6px 2px 6px; 
+	min-height: 25px;
+	width: 330px;
+	font-weight: normal;
+	background-image:none;
+	background-color: #e6e9f5;
+	border-radius: 6px;
+}
+
+.ep_sr_component_lshtm .ep_sr_title_bar_lshtm table {
+	
+}
+.ep_sr_component_lshtm .ep_sr_title_lshtm {
+	padding-top:3px;
+	font-size: 92%;
+	color: #444;
+	font-weight: normal;
+}
+.ep_sr_component_lshtm .ep_sr_content_lshtm {
+	float:right;
+	padding: 6px;
+	width: 580px;
+	margin-top:-50px;
+	background-image:none;
+	background-color: transparent;
+	border: none;
+}
+
+/* collapse bar */
+
+.ep_sr_collapse_bar_lshtm {
+	padding: 2px 6px 2px 6px; 
+	min-height: 25px;
+	font-weight: normal;
+	font-size: 92%;
+	width:330px;
+	background-color: #e6e9f5;
+	background-image:none;
+	border-radius: 6px;
+}
+.ep_sr_collapse_bar_lshtm a {
+	text-decoration: none;
+}
+.ep_sr_title_lshtm a {
+	text-decoration: none;
+}
+.ep_sr_collapse_link img
+{
+	vertical-align: -2px;
+}
+
+
+
+/* used for multi, maybe should be elsewhere */
+.ep_sr_component_lshtm .ep_sr_help_chunk {
+	border-bottom: 1px solid #888;
+	padding-bottom: 4px; 
+	margin-bottom: 4px;
+}
+
+.ep_sr_component_lshtm .ep_form_input_grid {
+	margin-left: 0px;
+
+}
+.ep_multi_input .ep_form_input_grid {
+	margin-left: 0px;
+
+}
+
+/* extras for input box borders */
+textarea {
+	border-radius: 8px;
+}
+
+img.ep_required{
+	vertical-align:middle;
+}
+
+.ep_sr_component_lshtm input{
+	border-radius: 8px;
+	width: auto;
+}
+
+
+/* for large surround */
+.ep_sr_component_lshtm .ep_sr_title_bar_lshtm_large {
+	padding: 2px 6px 2px 6px; 
+	height: 25px;
+	width: 330px;
+	font-weight: normal;
+	background-image:none;
+	background-color: #e6e9f5;
+	border-radius: 6px;
+}
+
+.ep_sr_component_lshtm .ep_sr_content_lshtm_large {
+	border: 1px solid #b6adad;
+	border-radius: 6px;
+	padding: 6px;
+	width:98%;
+	background-image:none;
+	background-color: transparent;
+
+}
+
+.ep_sr_collapse_bar_lshtm_large {
+	padding: 2px 6px 2px 6px; 
+	height: 25px;
+	width: 330px;
+	font-weight: normal;
+	font-size: 92%;
+	background-color: #e6e9f5;
+	background-image:none;
+	border-radius: 6px;
+}
+
+.ui-tooltip {
+    background: #c9e5f5;
+    color: black;
+    max-width: 500px;
+    font-size: 0.9em;
+    border: none;
+}
+.ui-tooltip-content {
+    position: relative;
+    padding: 1em;
+}
+
+/* overrides for form buttons */
+.ep_sr_help_icon{
+	margin-left:310px;
+	position:absolute;
+	margin-top:-28px;
+	
+}
+
+.ep_form_action_button {
+	background-color: #6788ae !important;
+	border: 0px none white !important;
+
+}
+
+.ep_form_internal_button {
+	border: 0px none white !important;
+	background-color: #6788ae !important;
+	font-family: Arial !important;
+	border-radius:10px;
+	-moz-border-radius:10px;
+}
+
+.ep_blister_bar{
+	clear:both;
+}
+
+.ep_blister_node_selected {
+	border: 0px none white !important;
+	background-color: #1f4f76 !important;
+	background-image: none !important;
+	color: #555;
+	border-radius:10px;
+	-moz-border-radius:10px;
+} 
+
+.ep_blister_node {
+	
+	border: 0px none white !important;
+	background-color: #e6e9f5 !important;
+	background-image: none !important;
+	color:black;
+	border-radius:10px;
+	-moz-border-radius:10px;
+} 
+
+
+#content h2 {
+    font-family: Arial, sans-serif; 
+	width: 64%;
+	float: left;
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+h1.ep_tm_pagetitle {
+	font-family: Arial, sans-serif; 
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+
+/* home page overrides */
+div.lshtmdr_home_slider {
+  	margin: 1em;  
+  	display: inline-block;	
+	background-color: white;
+	padding: 0.5em 0.5em 0.5em 0.5em; 
+  	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+div.lshtmdr_home_slider p {
+  	margin-bottom: 1em;
+}
+
+div#lshtmdr_home_text {
+ 	padding-top:0px;
+ 	width: 60%;
+  	float: left;
+}
+
+div#lshtmdr_home_search_submit{
+
+	border-width: 1px 0px 1px 0px;
+	border-style: dashed;
+	border-color: grey;
+	border-radius: 0px;
+	font-size:0.9em;
+	
+}
+
+div#lshtmdr_home_map {
+ 	width: 30%; 
+    float: right;
+    min-height:200px;
+    background-image: url("/display_images/map.png");
+}
+
+#lshtmdr_home_map h4{
+	color:white;
+}
+
+#lshtmdr_home_search_submit{
+	color:black;
+	
+}
+
+#lshtmdr_home_search_submit h4{
+	color:black;
+}
+
+div#lshtmdr_home_latest {
+ 	width: 60%; 
+  	float: left;
+  
+}
+div#lshtmdr_home_latest iframe .citation{
+  	width: 100%;
+  	height: 300px;
+  	overflow: auto;
+  	color: red;
+}
+
+div#lshtmdr_home_latest{
+  	background-color: #eee;
+  	min-height: 450px;
+}
+
+
+.twitter-timeline {
+
+height: 140px !important;
+
+}
+
+div#lshtmdr_home_howto {
+ 	width: 30%; 
+    border:none;
+}
+

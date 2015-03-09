@@ -715,4 +715,35 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="Plugin/Screen/MapView:title">Geographic location of data collection</epp:phrase>
 
+    <epp:phrase id="eprint_fieldname_repo_link">Include publications from LSHTM Research Online</epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_repo_link_link">Link to the publication (URI)</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_repo_link">Type the first 5 letters of the title and select the correct publication from the search list. </epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_repo_link_title">Title</epp:phrase>
+
+    <epp:phrase id="cgi/register:title">Register</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Surround/Default_lshtm:show_help">	
+<epc:pin xmlns="http://www.w3.org/1999/xhtml" name="link"><img alt="+" title="Show help" src="{$config{rel_path}}/style/images/help.gif" border="0"/></epc:pin></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Surround/Default_lshtm:icon_help">	
+<img class="ep_sr_help_icon" alt="+" src="{$config{rel_path}}/display_images/help_lshtm.png" border="0"/></epp:phrase>
+
+    <epp:phrase id="lib/session:show_help">	
+<img class="ep_sr_help_icon_ex" alt="+" src="{$config{rel_path}}/display_images/help_lshtm.png" border="0"/></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Surround/Default:show_help"/>
+
+    <epp:phrase id="lib/session:hide_help">	
+<img class="ep_sr_help_icon_ex" alt="+" src="{$config{rel_path}}/display_images/help_lshtm.png" border="0"/></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Surround/Default:hide_help"/>
+
+    <epp:phrase id="sys:ep_form_required"><img src="{$config{rel_path}}/display_images/required_lshtm.png" border="0" class="ep_required" alt="Required" style="display: inline"/> <epc:pin name="label"/></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Surround/Default_lshtm_large:icon_help">	
+<img class="ep_sr_help_icon" alt="+" src="{$config{rel_path}}/display_images/help_lshtm.png" border="0"/></epp:phrase>
+
 </epp:phrases>

@@ -365,7 +365,7 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
    
    
    
-  <stage name="recollect_files" required_by="recollect">
+ <stage name="recollect_files" required_by="recollect">
     <component type="Upload" show_help="always"/>
     <component type="Documents">
       <field ref="formatdesc"  required="yes"/>
@@ -389,31 +389,31 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     <h2>Tell us about your data</h2>
     </component>
  
-    <component>
+    <component surround="Default_lshtm">
       <field ref="title" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/title_duplicates" input_lookup_params="id={eprintid}&amp;dataset=eprint&amp;field=title"/>
     </component>
-     <component collapse="yes">
+      <component surround="Default_lshtm" collapse="yes">
       <field ref="alt_title"/>
     </component>
-    <component show_help="always">
+    <component surround="Default_lshtm" show_help="always">
       <field ref="abstract" required="yes"/>
     </component>
      
     <!--SJ: moved-->
-     <component>
+     <component surround="Default_lshtm">
       <field ref="keywords" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/keywords" />
     </component>
     <!--end of moved-->
      
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm_large">
       <!--<title>Time period covered in dataset</title>-->
       <field ref="collection_date"/>
     </component>
     <!--end of moved-->
      
     <!--SJ: moved-->
-    <component type="Field::Multi">
+    <component type="Field::Multi" surround="Default_lshtm_large">
       <title>Date information</title>
       <field ref="date_type" required="yes"/>
       <field ref="date" required="yes"/>
@@ -421,13 +421,13 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     <!--end of moved-->
  
     <!--SJ: moved-->
-      <component>
+      <component surround="Default_lshtm">
       <field ref="collection_mode"/>
     </component>
     <!--end of moved-->
  
     <!--SJ: moved-->
-    <component collapse="yes">
+    <component collapse="yes" surround="Default_lshtm">
       <field ref="collection_method"/>
     </component>
     <!--end of moved-->
@@ -442,20 +442,20 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
              
     <!--SJ: moved-->
     <epc:if test="!$item{bounding_box_east_edge}">
-    <component>
+    <component surround="Default_lshtm">
       <field ref="geographic_cover"/>
     </component>
     </epc:if>
     <!--end of moved-->
  
     <!--SJ: moved-->
-     <component collapse="yes">
+     <component collapse="yes" surround="Default_lshtm">
       <field ref="language"/>
     </component>
     <!--end of moved-->
  
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm">
       <field ref="note"/>
     </component>
     <!--end of moved-->
@@ -472,32 +472,32 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     </component>
      
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm_large">
       <!--<field ref="creators" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/name"/>-->
       <field ref="creators" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/name_and_lshtmid"/>
     </component>
     <!--end of moved-->
      
     <!--SJ: moved-->
-    <component collapse="yes">
+    <component collapse="yes" surround="Default_lshtm_large">
       <field ref="contributors" input_lookup_url="{$config{rel_cgipath}}/users/lookup/name_and_lshtmid"/>
-    </component>
+    </component>g
     <!--end of moved-->  
      
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm">
       <field ref="contact_email" required="yes"/>
     </component>
     <!--end of moved-->  
  
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm_large">
         <field ref="repo_link" input_lookup_url="{$config{rel_cgipath}}{$config{repo_link}{lookup_script}}" input_lookup_params="id={eprintid}"/>
     </component>
     <!--end of moved-->  
  
     <!--SJ: moved-->
-    <component collaspe="yes">
+    <component collaspe="yes" surround="Default_lshtm">
       <field ref="related_resources"/>
     </component>
     <!--end of moved-->  
@@ -512,7 +512,7 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     <component type="Field::SelectCollection"><field ref="relation" /></component>
     end of moved-->
      
-    <component type="Field::Multi">
+    <component type="Field::Multi" surround="Default_lshtm_large">
       <title>Project details</title>
       <field ref="projects" input_lookup_url="{$config{rel_cgipath}}/users/lookup/projects" input_lookup_params="_type=collection"/>
       <field ref="grant"/>
@@ -521,31 +521,31 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     </component>
  
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm_large">
       <field ref="corp_creators" required="yes"/>
     </component>
     <!--end of moved-->
  
     <!--SJ: moved-->
-    <component>
+    <component surround="Default_lshtm_large">
       <field ref="divisions"/>
     </component>  
-    <component>
+    <component surround="Default_lshtm_large">
       <field ref="research_centre"/>
     </component> 
-    <component>
+    <component surround="Default_lshtm_large">
       <field ref="research_groups"/>
     </component> 
     <!--end of moved-->
      
     <!--SJ: moved--> 
-     <component>
+     <component surround="Default_lshtm">
       <field ref="copyright_holders" required="yes"/>
     </component>   
     <!--end of moved-->
      
     <!--SJ: moved--> 
-    <component type="Field::Multi">
+    <component type="Field::Multi" surround="Default_lshtm_large">
        <title>Publication details</title>
       <field ref="publisher"/>
       <field ref="place_of_pub"/>
