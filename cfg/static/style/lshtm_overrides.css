@@ -4,6 +4,10 @@
 *therefore additonal overwrites added here. Note: auto additions will not work due to 
 *loading order via default.xml import
 ***************************************************************************/
+h1 {
+	font-family: Arial;
+	font-size:2.9em;
+}
 
 #page-heading {
   position: relative;
@@ -321,8 +325,8 @@ div#lshtmdr_home_latest{
 
 
 .twitter-timeline {
-
-height: 140px !important;
+margin-top:-15px !important;
+height: 200px !important;
 
 }
 
@@ -331,3 +335,6 @@ div#lshtmdr_home_howto {
     border:none;
 }
 
+div#footer{
+	font-family:Arial;
+}

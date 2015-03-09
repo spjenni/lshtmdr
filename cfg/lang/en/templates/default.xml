@@ -279,7 +279,8 @@ $.noConflict();
           <epc:phrase ref="archive_name"/> is powered by <em><a href="http://eprints.org/software/">EPrints 3</a></em> and is hosted by <a href="http://www.ulcc.ac.uk/">ULCC</a>.<br/>
 			
             Website Content &copy; 2014 London School of Hygiene &amp; Tropical Medicine | 
-            <a href="http://www.lshtm.ac.uk/aboutus/policies/foi/dppolicy/">Privacy policy</a> | 
+            <!-- Remmoved, GK requested-->
+            <!--<a href="http://www.lshtm.ac.uk/aboutus/policies/foi/dppolicy/">Privacy policy</a> | -->
             <a href="http://www.lshtm.ac.uk/aboutus/policies/foi/">Freedom of Information</a>
           </div>
         </div>

@@ -34,7 +34,7 @@
 </div>
 <div class="lshtmdr_home" id="lshtmdr_home_search_submit">  
 	
-		<h4>How to deposit to Data Compass</h4>
+		<h4>How to deposit</h4>
 
 <p>If you are a LSHTM member or a registered user, please login. If not, please take a moment to read our <a href="researchdata.html">Deposit Guide</a></p>
 <div>
@@ -44,7 +44,7 @@
 </div>
 
 <div class="lshtmdr_home" id="lshtmdr_home_latest">
-<h4>Latest additions to Data Compass</h4>
+<h4>Latest additions</h4>
 
 <!--<iframe src="http://w01.lshtmdrtest.da.ulcc.ac.uk/cgi/user/home/screen?='MapView'" />-->
 
@@ -53,15 +53,6 @@
 
 </div>
 
-<div class="lshtmdr_home" id="lshtmdr_home_howto">
-<!--<epc:phrase ref="carousel"/>-->
-	
-
-<a class="twitter-timeline"  href="https://twitter.com/simongirasol" data-widget-id="573863180440592384">Tweets by @simongirasol</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          
-
-</div>
 
 <a href="http://eprints.example.my:8081/cgi/users/home?screen=MapView">
 <div class="lshtmdr_home" id="lshtmdr_home_map">
@@ -70,6 +61,15 @@
 
 </div>
 </a>
+
+<div class="lshtmdr_home" id="lshtmdr_home_howto">
+            <a class="twitter-timeline"  href="https://twitter.com/LSHTMrdm" data-widget-id="574951400381280257">Tweets by @LSHTMrdm</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              
+</div>
+
+
+         
 
 <!--
 <div style="text-align: right">

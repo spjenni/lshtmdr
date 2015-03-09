@@ -395,7 +395,7 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
       <component surround="Default_lshtm" collapse="yes">
       <field ref="alt_title"/>
     </component>
-    <component surround="Default_lshtm" show_help="always">
+    <component surround="Default_lshtm">
       <field ref="abstract" required="yes"/>
     </component>
      
