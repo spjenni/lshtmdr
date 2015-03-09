@@ -554,6 +554,10 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     </component>
     <!--end of moved-->
  
+    <component surround="Default_lshtm_large">
+      <field ref="date_embargo"/>
+    </component> 
+ 
    <!--
  <component>
       <field ref="keywords" required="yes"/>
