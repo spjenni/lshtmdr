@@ -39,7 +39,6 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
       <field ref="content"/>
       <field ref="security"/>
       <field ref="date_embargo"/>
-       
       <field ref="format"/>
       <field ref="license"/>
        
@@ -372,6 +371,8 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
       <field ref="content" set_name="recollect_content"/>
       <field ref="security"/>     
       <field ref="date_embargo"/>
+      <field ref="embargo_reasons"/> 
+      <field ref="embargo_reasons_other"/> 
       <field ref="license" required="yes"/>
       <field ref="format"/>
       <field ref="retention_period"/>

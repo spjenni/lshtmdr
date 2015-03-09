@@ -30,4 +30,16 @@ push @{$c->{fields}->{document}},
             '20',
 		],
 	},
+	{
+		name => "embargo_reasons",
+		type => "namedset",
+        	input_rows => 1,
+		set_name => "embargo_reasons",
+	},
+	{
+		name => "embargo_reasons_other",
+		type => "longtext",
+		input_rows => 2
+	}
+
 ;
