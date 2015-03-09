@@ -10,7 +10,9 @@
  * name in this directory. eg. messages.css
  * 
 */
-
+div.ep_tm_page_content {
+	border: none;
+}
 
 ul.lshtm_ul_with_bullets {
  	list-style-type: disc; 
