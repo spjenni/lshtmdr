@@ -29,8 +29,7 @@ $.noConflict();
     <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/reset.css);</style>
     <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/styles.css);</style>
     <style type="text/css" media="print">@import url(<epc:print expr="$config{rel_path}"/>/style/lshtm_print.css);</style>
-	<style type="text/css" media="print">@import url(<epc:print expr="$config{rel_path}"/>/style/lshtmdr_additional.css);</style>
-    <!-- END LSHTM styles -->
+	
     <style type="text/css" media="screen">@import url(<epc:print expr="$config{rel_path}"/>/style/ulcc_overrides.css);</style>
     
       
