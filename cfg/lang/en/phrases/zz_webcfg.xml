@@ -232,7 +232,7 @@
 
     <epp:phrase id="eprint_fieldname_related_resources_type">Website Type</epp:phrase>
 
-    <epp:phrase id="eprint_fieldopt_related_resources_type_collab">Collaborator</epp:phrase>
+    <epp:phrase id="eprint_fieldopt_related_resources_type_journal">journal</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_related_resources_type_sponsor">Sponsor</epp:phrase>
 
@@ -631,7 +631,7 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="eprint_fieldname_corp_creators">Participating Institutions</epp:phrase>
 
-    <epp:phrase id="eprint_fieldopt_related_resources_type_author">Creator</epp:phrase>
+    <epp:phrase id="eprint_fieldopt_related_resources_type_personalsite">PersonalSite</epp:phrase>
 
     <epp:phrase id="contributor_type_typename_CoInvestigator">Co-Investigator</epp:phrase>
 
@@ -649,51 +649,34 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="licenses_typename_none">None</epp:phrase>
 
-    <epp:phrase id="document_fieldhelp_retention_period">Period for which LSHTM can retain data files</epp:phrase>
+    <epp:phrase id="document_fieldhelp_retention_period">Minimum period for which LSHTM should retain data files</epp:phrase>
 
     <epp:phrase id="document_fieldname_retention_period">Retention Period</epp:phrase>
 
-    <epp:phrase id="document_fieldopt_retention_period_1">1 year</epp:phrase>
+    <epp:phrase id="document_fieldopt_retention_period_indefinite">Indefinite</epp:phrase>
 
     <epp:phrase id="document_fieldopt_retention_period_10">10 years</epp:phrase>
 
-    <epp:phrase id="document_fieldopt_retention_period_indefinite">Indefinite</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_9">9 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_8">8 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_7">7 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_6">6 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_5">5 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_4">4 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_3">3 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_20">20 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_2">2 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_19">19 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_18">18 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_17">17 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_16">16 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_15">15 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_14">14 years</epp:phrase>
-
-    <epp:phrase id="document_fieldopt_retention_period_13">13 years</epp:phrase>
+    <epp:phrase id="document_fieldopt_retention_period_11">11 years</epp:phrase>
 
     <epp:phrase id="document_fieldopt_retention_period_12">12 years</epp:phrase>
 
-    <epp:phrase id="document_fieldopt_retention_period_11">11 years</epp:phrase>
+    <epp:phrase id="document_fieldopt_retention_period_13">13 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_14">14 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_15">15 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_16">16 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_17">17 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_18">18 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_19">19 years</epp:phrase>
+
+    <epp:phrase id="document_fieldopt_retention_period_20">20 years</epp:phrase>
+
 
     <epp:phrase id="validate:embargo_too_far_in_future">A file embargo date cannot be more than <epc:pin name="embargo_cap"/> in the future.</epp:phrase>
 
@@ -741,7 +724,7 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="Plugin/InputForm/Surround/Default:hide_help"/>
 
-    <epp:phrase id="sys:ep_form_required"><img src="{$config{rel_path}}/display_images/required_lshtm.png" border="0" class="ep_required" alt="Required" style="display: inline"/> <epc:pin name="label"/></epp:phrase>
+    <epp:phrase id="sys:ep_form_required"><img src="{$config{rel_path}}/display_images/required_lshtm.png" border="0" class="ep_required" alt="Required" style="display: inline"/> <epc:pin name="label"/></epp:phrase>
 
     <epp:phrase id="Plugin/InputForm/Surround/Default_lshtm_large:icon_help">	
 <img class="ep_sr_help_icon" alt="+" src="{$config{rel_path}}/display_images/help_lshtm.png" border="0"/></epp:phrase>
