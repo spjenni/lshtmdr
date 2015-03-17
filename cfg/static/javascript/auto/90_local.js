@@ -25,7 +25,6 @@ jQuery.expr[':'].regex = function(elem, index, match) {
     return regex.test(jQuery(elem)[attr.method](attr.property));
 }
 
-
 var keep_id = [];
 function hide_lshtmid(){
   
@@ -117,6 +116,7 @@ function init_clear_buttons(fields){
   
   
 }
+
 function clear_row(row_id){
   jQuery("#"+row_id+" input, #"+row_id+" select").each(function(){
     if(jQuery(this).attr("type") === "checkbox"){
@@ -158,39 +158,41 @@ jQuery(document).ready(function(){
 
 	});
   }
+});
+
 
 /***********************************************************************************/
 /**                         .js functions added by SJ                             **/
 /***********************************************************************************/
-
-/*SJ: Simple logged in check to show request document link if user is not logged in*/
-/*future versions will need to relate login status to document security level      */
-
-if(jQuery("#file_security").length && eprints_logged_in == false){
-
-  jQuery("div#hide_request").css("display","inline");  
-   
-   /*get user credentials for future versions */
-   // jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
-         //alert("in JSON:" + data["usertype"]);
-   //});
-
-   }
-
-});
-
-/* SJ: Call to load jquery function for qr_codes */
-jQuery(function()
-{
-	//jQuery('#ep_qrcode').qrcode({width: 75, height: 75, text: window.location.href});
-});
-
-/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
 jQuery(document).ready(function(){
-	jQuery("[id$=_tooltip]").each(function() {
-		var element_id = this.id;
-		//element_id = element_id.substring(0,3);
-		
+	
+	/*SJ: Simple logged in check to show request document link if user is not logged in*/
+	/*future versions will need to relate login status to document security level      */
+	if(jQuery("#file_security").length && eprints_logged_in == false){
+
+	  jQuery("div#hide_request").css("display","inline");  
+	   
+	   /*get user credentials for future versions */
+	   // jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
+			 //alert("in JSON:" + data["usertype"]);
+	   //});
+
+	   }
+
+	});
+
+	/* SJ: Call to load jquery function for qr_codes */
+	jQuery(function()
+	{
+		//jQuery('#ep_qrcode').qrcode({width: 75, height: 75, text: window.location.href});
+	});
+
+	/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
+	jQuery(document).ready(function(){
+		jQuery("[id$=_tooltip]").each(function() {
+			var element_id = this.id;
+			//element_id = element_id.substring(0,3);
+			
 		   jQuery( this ).tooltip({
 			   items: "[id]",
 			   content: function () {
@@ -203,14 +205,13 @@ jQuery(document).ready(function(){
 		var element_id = this.id;
 		var final = element_id.replace("show", "inner"); 
 
-
-		   jQuery( this ).tooltip({
-			   items: "[id]",
-			   content: function () {
-					return jQuery("#" + final).html();
-			
-			   }
-			});
+	   jQuery( this ).tooltip({
+		   items: "[id]",
+		   content: function () {
+				return jQuery("#" + final).html();
+		
+		   }
+		});
 	});
 	
    //config for bxslider
@@ -222,16 +223,6 @@ jQuery(document).ready(function(){
 		
 		hyperlinks: true,     
 	});
-	
-	
-	//required to style the front page iframe
-     jQuery('iframe').load(function() {
-        var frame = jQuery('iframe').contents().find("p");
-        var link = jQuery('iframe').contents().find("a");
-        frame.css("font-family", "Arial");
-        frame.css("font-size", "0.8em");
-        link.css("color","#25688F");
-    });
 });
 
 
