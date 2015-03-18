@@ -56,6 +56,9 @@ var Component_Field = Class.create({
   				sync_lshtmid_and_flag();
                 init_clear_buttons(["creators","contributors"]); 
                 
+                //SJ: call to 90_local.js to reinstate tooltip
+                //after ajax component restart
+                reinstate_tooltip(this.prefix);
 
 			}).bind (this),
 			parameters: params,
