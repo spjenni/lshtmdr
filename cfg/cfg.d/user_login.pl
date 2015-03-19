@@ -41,10 +41,11 @@ $c->{check_user_password} = sub {
 	print STDERR "Have an LDAP connection\n";
 
  	# Get password for the search-bind-account
- 	my $id = $repo->get_id;
- 	my $dir = $id;
- 	$dir =~ s/test/-test/;
- 	my $ldappass = `cat /www/$dir/eprints3/archives/$id/cfg/ldap.passwd`;
+# 	my $id = $repo->get_id;
+# 	my $dir = $id;
+ #	$dir =~ s/test/-test/;
+ #	my $ldappass = `cat /www/$dir/eprints3/archives/$id/cfg/ldap.passwd`;
+	my $ldappass = `cat $c->{ldap_pw_location}`;
  	chomp($ldappass);
 
  	my $mesg = $ldap->bind( $dn, password=>$ldappass );

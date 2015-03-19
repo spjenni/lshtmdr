@@ -35,10 +35,12 @@ unless( $ldap )
 #print STDERR "Have an LDAP connection\n";
 
 # Get password for the search-bind-account
-my $repoid = $repo->get_id;
-my $dir = $repoid;
-$dir =~ s/test/-test/;
-my $ldappass = `cat /www/$dir/eprints3/archives/$repoid/cfg/ldap.passwd`;
+#my $repoid = $repo->get_id;
+#my $dir = $repoid;
+#$dir =~ s/test/-test/;
+#my $ldappass = `cat /www/$dir/eprints3/archives/$repoid/cfg/ldap.passwd`;
+my $ldappass = `cat $c->{ldap_pw_location}`;
+
 chomp($ldappass);
 
 my $mesg = $ldap->bind( $dn, password=>$ldappass );
