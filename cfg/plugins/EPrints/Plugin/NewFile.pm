@@ -6,13 +6,14 @@
 
 package EPrints::Plugin::NewFile;
 
-@ISA = ( 'EPrints::DataObj::File' );
+@ISA = ( 'EPrints::Plugin' );
 
 use strict;
 
 # This line allows the core package to be overwitten
 package EPrints::DataObj::File;
 
+no warnings;
 
 sub set_file
 {
