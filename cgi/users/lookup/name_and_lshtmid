@@ -39,7 +39,8 @@ unless( $ldap )
 #my $dir = $repoid;
 #$dir =~ s/test/-test/;
 #my $ldappass = `cat /www/$dir/eprints3/archives/$repoid/cfg/ldap.passwd`;
-my $ldappass = `cat $c->{ldap_pw_location}`;
+my $ldap_loc = $repo->get_conf("ldap_pw_location");
+my $ldappass = `cat $ldap_loc`;
 
 chomp($ldappass);
 
