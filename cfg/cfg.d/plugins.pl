@@ -65,8 +65,8 @@ $c->{plugin_alias_map}->{"Screen::Public::RequestCopy"} = "Screen::Public::Reque
 $c->{plugin_alias_map}->{"Screen::Public::RequestCopy_LSHTM"} = undef;
 
 # SJ Alias map for the File.pm to allow SHA256 checksum generation
-$c->{plugin_alias_map}->{"Plugin::DataObj::File"} = "EPrints::Plugin::NewFile";
-$c->{plugin_alias_map}->{"EPrints::Plugin::NewFile"} = undef;
+#$c->{plugin_alias_map}->{"Plugin::DataObj::File"} = "EPrints::Plugin::NewFile";
+#$c->{plugin_alias_map}->{"EPrints::Plugin::NewFile"} = undef;
 
 # CrossRef registration
 

@@ -32,86 +32,62 @@ div#lshtmdr_home_map {
     float: right;
 }
 	   
-	   
 /* overrides for lshtm surround component */     
 /* ep_sr */
-
-
-.ep_sr_component_lshtm {
+.ep_sr_component {
 	clear:both;
 	padding: 0px;
-	font-size:93%;
 }
 
-.ep_sr_component_lshtm .ep_sr_content {
-  font-size: 0.86em;
+.ep_sr_component .ep_sr_content {
+	font-size: 94%;
 /*  text-align: center;  messes Type */
-}
-
-.ep_sr_component_lshtm table, .ep_sr_content table {
-  font-size: 86%;
-}
-
-.ep_sr_component_lshtm_large{
-	clear:both;
-	padding: 0px;
-	font-size:90%;
-}
-
-.ep_sr_component_lshtm_large .ep_sr_content {
-  font-size: 0.93em;
-/*  text-align: center;  messes Type */
-}
-
-.ep_sr_component_lshtm table_large .ep_sr_content table {
-  font-size: 86%;
-}
-
-.ep_sr_component_lshtm .ep_sr_title_bar_lshtm {
-	padding: 2px 6px 2px 6px; 
-	min-height: 25px;
-	width: 330px;
-	font-weight: normal;
-	background-image:none;
-	background-color: #e6e9f5;
-	border-radius: 6px;
-}
-
-.ep_sr_component_lshtm .ep_sr_title_bar_lshtm table {
-	
-}
-.ep_sr_component_lshtm .ep_sr_title_lshtm {
-	padding-top:3px;
-	font-size: 92%;
-	color: #444;
-	font-weight: normal;
-}
-.ep_sr_component_lshtm .ep_sr_content_lshtm {
-	float:right;
+	margin-left: 35px;
+	margin-bottom: 40px;
+	margin-top: 5px;
+	float:left;
 	padding: 6px;
-	width: 580px;
-	margin-top:-50px;
 	background-image:none;
 	background-color: transparent;
 	border: none;
 }
 
-/* collapse bar */
+.ep_sr_component .ep_sr_content table {
+  font-size: 86%;
+}
 
-.ep_sr_collapse_bar_lshtm {
+.ep_sr_component .ep_sr_title_bar {
 	padding: 2px 6px 2px 6px; 
-	min-height: 25px;
+	height: 31px;
+	margin-left: 14px;
+	font-weight: normal;
+	background-image:none;
+	background-color: #e6e9f5;
+	
+}
+
+.ep_sr_component .ep_sr_title {
+	padding-top:3px;
+	font-size: 92%;
+	color: #444;
+	font-weight: normal;
+}
+
+
+/* collapse bar */
+.ep_sr_collapse_bar {
+	height: 29px;
+	padding-top:5px;
+	margin-left: 14px;
 	font-weight: normal;
 	font-size: 92%;
-	width:330px;
 	background-color: #e6e9f5;
 	background-image:none;
-	border-radius: 6px;
 }
-.ep_sr_collapse_bar_lshtm a {
+.ep_sr_collapse_bar a {
 	text-decoration: none;
 }
-.ep_sr_title_lshtm a {
+.ep_sr_title a {
 	text-decoration: none;
 }
 .ep_sr_collapse_link img
@@ -119,16 +95,20 @@ div#lshtmdr_home_map {
 	vertical-align: -2px;
 }
 
+select {
+	font-size:95%;
+}
+
 
 
 /* used for multi, maybe should be elsewhere */
-.ep_sr_component_lshtm .ep_sr_help_chunk {
+.ep_sr_component .ep_sr_help_chunk {
 	border-bottom: 1px solid #888;
 	padding-bottom: 4px; 
 	margin-bottom: 4px;
 }
 
-.ep_sr_component_lshtm .ep_form_input_grid {
+.ep_sr_component .ep_form_input_grid {
 	margin-left: 0px;
 
 }
@@ -137,53 +117,20 @@ div#lshtmdr_home_map {
 
 }
 
+
 /* extras for input box borders */
 textarea {
-	border-radius: 8px;
+	
 }
 
 img.ep_required{
 	vertical-align:middle;
 }
 
-.ep_sr_component_lshtm input{
-	border-radius: 8px;
+.ep_sr_component input{
 	width: auto;
+	height: 20px;
 }
-
-
-/* for large surround */
-.ep_sr_component_lshtm .ep_sr_title_bar_lshtm_large {
-	padding: 2px 6px 2px 6px; 
-	height: 25px;
-	width: 330px;
-	font-weight: normal;
-	background-image:none;
-	background-color: #e6e9f5;
-	border-radius: 6px;
-}
-
-.ep_sr_component_lshtm .ep_sr_content_lshtm_large {
-	border: 1px solid #b6adad;
-	border-radius: 6px;
-	padding: 6px;
-	width:98%;
-	background-image:none;
-	background-color: transparent;
-
-}
-
-.ep_sr_collapse_bar_lshtm_large {
-	padding: 2px 6px 2px 6px; 
-	height: 25px;
-	width: 330px;
-	font-weight: normal;
-	font-size: 92%;
-	background-color: #e6e9f5;
-	background-image:none;
-	border-radius: 6px;
-}
-
 .ui-tooltip {
     background: #c9e5f5;
     color: black;
@@ -214,8 +161,7 @@ img.ep_required{
 	border: 0px none white !important;
 	background-color: #6788ae !important;
 	font-family: Arial !important;
-	border-radius:10px;
-	-moz-border-radius:10px;
+
 }
 
 .ep_blister_bar{
@@ -227,8 +173,7 @@ img.ep_required{
 	background-color: #1f4f76 !important;
 	background-image: none !important;
 	color: #555;
-	border-radius:10px;
-	-moz-border-radius:10px;
+
 } 
 
 .ep_blister_node {
@@ -237,8 +182,7 @@ img.ep_required{
 	background-color: #e6e9f5 !important;
 	background-image: none !important;
 	color:black;
-	border-radius:10px;
-	-moz-border-radius:10px;
+
 } 
 
 
@@ -337,4 +281,9 @@ div#lshtmdr_home_howto {
 
 div#footer{
 	font-family:Arial;
+}
+
+.ui-datepicker-trigger{
+	margin-left:15px;
+
 }

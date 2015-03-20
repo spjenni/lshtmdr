@@ -9,7 +9,7 @@ $c->{check_user_password} = sub {
 	return $ok ? $username : undef;
 };
 
-=cut
+
 
 $c->{check_user_password} = sub {
 
@@ -117,7 +117,7 @@ $c->{check_user_password} = sub {
 	return $username;	
 
 }
-
+=cut
 # Maximum time (in seconds) before a user must log in again
 # $c->{user_session_timeout} = undef; 
 

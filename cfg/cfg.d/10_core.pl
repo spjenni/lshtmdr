@@ -1,7 +1,7 @@
 # This file was created by bin/epadmin
 # You can regenerate this file by doing ./bin/epadmin config_core template
-$c->{host} = 'w01.lshtmdr.da.ulcc.ac.uk';
-$c->{port} = 80;
+$c->{host} = 'eprints.example.my';
+$c->{port} = 8081;
 $c->{aliases} = [];
 $c->{securehost} = '';
 $c->{secureport} = 443;

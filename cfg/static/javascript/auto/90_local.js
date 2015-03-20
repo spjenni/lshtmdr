@@ -166,8 +166,8 @@ jQuery(document).ready(function(){
 /***********************************************************************************/
 jQuery(document).ready(function(){
 	
-	/*SJ: Simple logged in check to show request document link if user is not logged in*/
-	/*future versions will need to relate login status to document security level      */
+	//SJ: Simple logged in check to show request document link if user is not logged in//
+	//future versions will need to relate login status to document security level      //
 	if(jQuery("#file_security").length && eprints_logged_in == false){
 
 	  jQuery("div#hide_request").css("display","inline");  
@@ -177,44 +177,15 @@ jQuery(document).ready(function(){
 			 //alert("in JSON:" + data["usertype"]);
 	   //});
 
-	   }
+	 }
+});
 
-	});
-
-	/* SJ: Call to load jquery function for qr_codes */
-	jQuery(function()
-	{
-		//jQuery('#ep_qrcode').qrcode({width: 75, height: 75, text: window.location.href});
-	});
-
-	/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
-	jQuery(document).ready(function(){
-		jQuery("[id$=_tooltip]").each(function() {
-			var element_id = this.id;
-			//element_id = element_id.substring(0,3);
-			
-		   jQuery( this ).tooltip({
-			   items: "[id]",
-			   content: function () {
-					return jQuery("#"+element_id+"_inner").html();
-			   }
-			});
-	});
+/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
+jQuery(document).ready(function(){
 	
-	jQuery("[id$=_show]").each(function() {
-		var element_id = this.id;
-		var final = element_id.replace("show", "inner"); 
-
-	   jQuery( this ).tooltip({
-		   items: "[id]",
-		   content: function () {
-				return jQuery("#" + final).html();
-		
-		   }
-		});
-	});
+	load_tooltips();
 	
-   //config for bxslider
+	//config for bxslider
    jQuery('.bxslider').bxSlider({
 		mode:'fade',
 		infiniteLoop: true,  
@@ -223,8 +194,49 @@ jQuery(document).ready(function(){
 		
 		hyperlinks: true,     
 	});
+
+
+
+/* SJ: Call to load jquery function for qr_codes */
+	jQuery(function()
+	{
+		//jQuery('#ep_qrcode').qrcode({width: 75, height: 75, text: window.location.href});
+	});
+	
 });
 
 
-
+//redefine the behaviour of the help button on the default surround
+	//icon is also changed
+function load_tooltips(){
+	
+	
+	jQuery("[id$=_show]").each(function() {
+		var element_id = this.id;
+		var link = jQuery( this ).children();
+		
+		link.bind("click", function (e) {
+			e.preventDefault();
+		});
+		link.prop("onclick", null);
+		link.css('cursor','default');
+		link.children().attr("src","/display_images/help_lshtm.png");
+		
+		var final = element_id.replace("show", "inner"); 
+		
+		
+		//console.log(jQuery("#" + final).html());
+			jQuery(this).tooltip({
+				items: "[id]",
+				content: function () {
+					return jQuery("#" + final).html();
+				}
+			});	
+	});
+}
+	
+function reinstate_tooltip(container){
+		
+		console.log(help);
+}
 

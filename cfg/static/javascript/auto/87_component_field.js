@@ -56,6 +56,7 @@ var Component_Field = Class.create({
   				sync_lshtmid_and_flag();
                 init_clear_buttons(["creators","contributors"]); 
                 
+                reinstate_tooltip(this.prefix);
 
 			}).bind (this),
 			parameters: params,
