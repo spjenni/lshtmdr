@@ -46,15 +46,14 @@
 <div class="lshtmdr_home" id="lshtmdr_home_latest">
 <h4>Latest additions</h4>
 
-<!--<iframe src="http://w01.lshtmdrtest.da.ulcc.ac.uk/cgi/user/home/screen?='MapView'" />-->
 
-<iframe id="tester" src="{$config{http_cgiurl}}/latest_tool?output=HTML" />
+<iframe src="{$config{http_cgiurl}}/latest_tool?output=HTML" />
 
 
 </div>
 
 
-<a href="http://eprints.example.my:8081/cgi/users/home?screen=MapView">
+<a href="{$config{http_cgiurl}}/MapView">
 <div class="lshtmdr_home" id="lshtmdr_home_map">
 <h4>Collections map</h4>
 <p></p>

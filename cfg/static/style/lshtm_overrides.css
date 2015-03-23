@@ -5,7 +5,6 @@
 *loading order via default.xml import
 ***************************************************************************/
 h1 {
-	font-family: Arial;
 	font-size:2.9em;
 }
 
@@ -17,19 +16,12 @@ h1 {
   overflow: hidden;
 }
 
-div.lshtmdr_home {
-    margin: 1em;
-    display: inline-block;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #CCC;
-    background-color: #FFF;
-    padding: 0.5em;
-    border-radius: 5px;
-}
 
 div#lshtmdr_home_map {
- 	width: 30%; 
+ 	width: 304 !important; 
+ 	height: 207px !important;
     float: right;
+    border: none;
 }
 	   
 /* overrides for lshtm surround component */     
@@ -72,7 +64,6 @@ div#lshtmdr_home_map {
 	color: #444;
 	font-weight: normal;
 }
-
 
 /* collapse bar */
 .ep_sr_collapse_bar {
@@ -160,7 +151,7 @@ img.ep_required{
 .ep_form_internal_button {
 	border: 0px none white !important;
 	background-color: #6788ae !important;
-	font-family: Arial !important;
+	font-family: "Arial, Georgia, Serif" !important;
 
 }
 
@@ -187,7 +178,7 @@ img.ep_required{
 
 
 #content h2 {
-    font-family: Arial, sans-serif; 
+    font-family: "Arial, Georgia, Serif";
 	width: 64%;
 	float: left;
 	font-weight: normal;
@@ -195,7 +186,7 @@ img.ep_required{
 }
 
 h1.ep_tm_pagetitle {
-	font-family: Arial, sans-serif; 
+	font-family: "Arial, Georgia, Serif";
 	font-weight: normal;
 	font-size: 1.5em;
 }
@@ -264,7 +255,8 @@ div#lshtmdr_home_latest iframe .citation{
 
 div#lshtmdr_home_latest{
   	background-color: #eee;
-  	min-height: 450px;
+  	/*min-height: 450px;*/
+  	font-family: "Arial, Georgia, Serif";
 }
 
 
@@ -280,7 +272,7 @@ div#lshtmdr_home_howto {
 }
 
 div#footer{
-	font-family:Arial;
+	font-family: "Arial, Georgia, Serif";
 }
 
 .ui-datepicker-trigger{
