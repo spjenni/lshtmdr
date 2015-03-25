@@ -205,8 +205,7 @@ jQuery(document).ready(function(){
         frame.css("font-size", "0.8em");
         link.css("color","#25688F");
     });
-    
-   
+
 });
 
 
@@ -224,36 +223,40 @@ function load_tooltips(){
 	jQuery("img[src$='multi_up.png']").each(function() {
 		jQuery(this).attr("src","/display_images/lshtm_up_arrow.gif");
 	});
-    
-    jQuery("[id$=_show]").each(function() {
-        var element_id = this.id;
-        var link = jQuery( this ).children();
-       
-        //bind to help link and switch off
-        link.bind("click", function (e) {
-            e.preventDefault();
-        });
-        //stop click blur event for help show
-        link.prop("onclick", null);
-        link.css('cursor','default');
-        //add new help icon
-        link.children().attr("src","/display_images/help_lshtm.png");
-              
-        //get the help text div
-        var final = element_id.replace("show", "inner");
-       
-        //add help text to object
-        help_text[final] = jQuery("#" + final).html();
-        
-        //add the tool tip to _inner_show div
-        jQuery(this).tooltip({
-			items: "[id]",
-            content: function () {
-				return jQuery("#" + final).html();
-            }
-		});   
-    });
 
+    jQuery("[id$=_show]").each(function() {
+		
+        var element_id = this.id;
+       
+		if(element_id.contains("opt") != true){
+			
+			var link = jQuery( this ).children();
+		   
+			//bind to help link and switch off
+			link.bind("click", function (e) {
+				e.preventDefault();
+			});
+			//stop click blur event for help show
+			link.prop("onclick", null);
+			link.css('cursor','default');
+			//add new help icon
+			link.children().attr("src","/display_images/help_lshtm.png");
+				  
+			//get the help text div
+			var final = element_id.replace("show", "inner");
+		   
+			//add help text to object
+			help_text[final] = jQuery("#" + final).html();
+			
+			//add the tool tip to _inner_show div
+			jQuery(this).tooltip({
+				items: "[id]",
+				content: function () {
+					return jQuery("#" + final).html();
+				}
+			});	
+		} 
+    });
 
     /* SJ: extra jQuery functions for the implementation of date picker for deposit workflow */
 
@@ -303,6 +306,10 @@ function reinstate_tooltip(container){
 
 	jQuery('div[id^='+container+']div[id$=_show]').each(function() {
 		
+		if(jQuery(this).attr("class") == "ep_update_doc_options"){
+		console.log("ck 1");
+	}
+
 		element_id = this.id;
 		
 		var link = jQuery( this ).children();
