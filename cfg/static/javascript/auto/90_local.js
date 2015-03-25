@@ -11,7 +11,6 @@
 */
 
 /* Genius: http://james.padolsey.com/javascript/regex-selector-for-jquery/ */
-
 jQuery.expr[':'].regex = function(elem, index, match) {
     var matchParams = match[3].split(','),
         validLabels = /^(data|css):/,
@@ -50,7 +49,7 @@ function auto_check_lshtmid_flag(){
 //  jQuery('input:regex(id,c[0-9]+_.+(|_[0-9]+)_lshtmid)').on("change", function(){   
   //  jQuery("table.ep_form_input_grid").on("change", 'input:regex(id,c[0-9]+_.+(|_[0-9]+)_lshtmid)', function() {
   jQuery("table.ep_form_input_grid").on("change", 'input', function() {
-    
+
     if(jQuery(this).attr("id").match(/c[0-9]+_.+(|_[0-9]+)_lshtmid/)){
         console.log("regex match...");   
         console.log("auto checking...");
@@ -113,8 +112,6 @@ function init_clear_buttons(fields){
                jQuery(tr).attr("id", row_id ).append('<td class="clear_button"><a type="image" src="/display_images/close.png" alt="clear" title="Clear row" href="javascript:clear_row(\''+row_id+'\')"><img src="/display_images/close.png"></a></td>'); 
       });
     }
- 
- 
 }
 
 function clear_row(row_id){
@@ -162,7 +159,7 @@ jQuery(document).ready(function(){
 
 
 /***********************************************************************************/
-/**                         .js functions added by SJ                             **/
+/*                         .js functions added by SJ                               */
 /***********************************************************************************/
 jQuery(document).ready(function(){
    
@@ -178,11 +175,8 @@ jQuery(document).ready(function(){
        //});
 
      }
-});
 
-/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
-jQuery(document).ready(function(){
-   
+	/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
 	//call the function to bind tooltips to help button
     load_tooltips();
    
@@ -259,6 +253,42 @@ function load_tooltips(){
             }
 		});   
     });
+
+
+    /* SJ: extra jQuery functions for the implementation of date picker for deposit workflow */
+
+    // attach a new datepicker to each date field instance in the workflow
+    jQuery("[id*=_year]").each(function() {
+	
+	jQuery( this ).datepicker({
+		showOn: "button",
+		dateFormat: 'yy-mm-dd',
+		buttonImage: "/display_images/calendar.png",
+		buttonImageOnly: true,
+		buttonText: "Select date",
+		onSelect: function(date)
+		{
+			// get the specific instance ids for the 3 parts of the date
+			var element_id = this.id;
+			var day_id = element_id.replace("year", "day"); 
+			var month_id = element_id.replace("year", "month"); 
+			
+			//	get substrings for each date part
+			var yy=date.substring(0,4);
+			var mm=date.substring(5,7);
+			var dd=date.substring(8,11);
+			
+			// populate the parts of the date
+			jQuery("#" + this.id).val(yy);
+			jQuery("#" + day_id).val(dd);
+			jQuery("#" + month_id).val(mm);
+		},
+	});
+	
+	// attach the date graphic to the field
+	jQuery(".ui-datepicker-trigger").css("float","left");
+	jQuery(".ui-datepicker-trigger").css("margin-right","10px");	
+     });
 }
 
 //function called from 87_component.js to rebind the 
@@ -267,7 +297,6 @@ function load_tooltips(){
 function reinstate_tooltip(container){
        
     var container_id = container + "_content";
-    console.log(container_id);
     
     jQuery("#" + container_id).find('img[src$="multi_down.png"]').attr("src","/display_images/lshtm_down_arrow.gif");
     jQuery("#" + container_id).find('img[src$="multi_up.png"]').attr("src","/display_images/lshtm_up_arrow.gif");
