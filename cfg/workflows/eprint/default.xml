@@ -433,13 +433,13 @@ Action buttons (Previous/Save/Next) can be shown "top", "bottom" or "both":
     </component>
     <!--end of moved-->
  
-    <!--SJ: moved
-    <component surround="Map_surround" show_help="always" collapse="no">
+    <!--SJ: moved -->
+    <component type="Field::Multi" show_help="always" collapse="yes">
       <title>Geographic location</title>
-      <help>Enter if applicable the Longitude and Latitude values of a theoretical geographic bounding rectangle that would cover the region in which your data were collected. You can use</help>
+      <help>Enter if applicable the Longitude and Latitude values of a theoretical geographic bounding rectangle that would cover the region in which your data were collected.</help>
       <field ref="bounding_box"/>
     </component>
-    end of moved-->
+    <!--end of moved-->
              
     <!--SJ: moved-->
     <epc:if test="!$item{bounding_box_east_edge}">

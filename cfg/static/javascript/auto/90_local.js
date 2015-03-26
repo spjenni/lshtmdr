@@ -165,23 +165,24 @@ jQuery(document).ready(function(){
    
     //SJ: Simple logged in check to show request document link if user is not logged in//
     //future versions will need to relate login status to document security level      //
-    if(jQuery("#file_security").length && eprints_logged_in == false){
+   
+   // if(jQuery("#file_security").length && eprints_logged_in == false){
 
-      jQuery("div#hide_request").css("display","inline"); 
+      //jQuery("div#hide_request").css("display","inline"); 
       
        /*get user credentials for future versions */
-       // jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
+       //jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
              //alert("in JSON:" + data["usertype"]);
        //});
-
-     }
-
+    // }
+	
+	
 	/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
 	//call the function to bind tooltips to help button
     load_tooltips();
    
     //config for bxslider
-   jQuery('.bxslider').bxSlider({
+    jQuery('.bxslider').bxSlider({
         mode:'fade',
         infiniteLoop: true, 
         speed: 700,
@@ -193,7 +194,7 @@ jQuery(document).ready(function(){
 	//SJ: Call to load jquery function for qr_codes
     jQuery(function()
     {
-        //jQuery('#ep_qrcode').qrcode({width: 75, height: 75, text: window.location.href});
+        jQuery('#ep_qrcode').qrcode({width: 75, height: 75, text: window.location.href});
     });
     
     //update the latest_tool iframe to include styling
@@ -307,8 +308,8 @@ function reinstate_tooltip(container){
 	jQuery('div[id^='+container+']div[id$=_show]').each(function() {
 		
 		if(jQuery(this).attr("class") == "ep_update_doc_options"){
-		console.log("ck 1");
-	}
+			console.log("ck 1");
+		}
 
 		element_id = this.id;
 		
