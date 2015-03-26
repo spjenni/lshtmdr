@@ -755,4 +755,6 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="eprint_fieldname_date_embargo">Embargo date</epp:phrase>
 
+    <epp:phrase id="eprint_fieldhelp_bounding_box"><!-- help for this field is in the component --></epp:phrase>
+
 </epp:phrases>
