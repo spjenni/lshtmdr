@@ -50,7 +50,7 @@
 
     <epp:phrase id="eprint_fieldhelp_study_abstract">A brief description of the project or study.</epp:phrase>
 
-    <epp:phrase id="Plugin/Screen/NewEPrint:action:create:title">New Data Collection</epp:phrase>
+    <epp:phrase id="Plugin/Screen/NewEPrint:action:create:title">New Item</epp:phrase>
 
     <epp:phrase id="Plugin/Screen/NewCollection:action:create:title">New Study</epp:phrase>
 
@@ -754,5 +754,9 @@ terms.</p></epp:phrase>
     <epp:phrase id="eprint_fieldhelp_date_embargo">Embargo date</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_date_embargo">Embargo date</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/NewDeposit:action:create:title">New Data Collection</epp:phrase>
+
+    <epp:phrase id="Plugin/Screen/EPrint/CollectionDetails:title">Details</epp:phrase>
 
 </epp:phrases>
