@@ -10,6 +10,3 @@ cc_by_sa
 cc_public_domain
 cc_gnu_gpl
 cc_gnu_lgpl
-odc_by required_by="recollect"
-odc_odbl required_by="recollect"
-odc_dbcl required_by="recollect"

@@ -372,6 +372,9 @@ var Component_Documents = Class.create(Lightbox, {
 					this.initialize_sortable ();
 					//RM added trigger of options click on initial upload...
 					jQuery(div).find(".ep_upload_doc_expansion_bar > a").click();
+					
+					//SJ: call to add tooltips to documents
+					reinstate_tooltip(this.prefix);
 				}
 				else
 				{
