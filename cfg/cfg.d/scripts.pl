@@ -74,4 +74,43 @@ sub run_documents_recollect
 	return [ [@$sorteddocs],  "ARRAY" ];
 
 }
+#this is really the size fot he doc's main file
+sub run_human_doc_size
+{
+	my( $self, $state, $doc ) = @_;
+
+	if( !defined $doc->[0] || ref($doc->[0]) ne "EPrints::DataObj::Document" )
+	{
+		$self->runtime_error( "Can only call doc_zie() on document objects not ".
+			ref($doc->[0]) );
+	}
+
+	if( !$doc->[0]->is_set( "main" ) )
+	{
+		return 0;
+	}
+
+	my %files = $doc->[0]->files;
+
+	return [ EPrints::Utils::human_filesize($files{$doc->[0]->get_main}) || 0, "INTEGER" ];
+}
+
+sub run_doc_mime
+{
+	my( $self, $state, $doc ) = @_;
+
+	if( !defined $doc->[0] || ref($doc->[0]) ne "EPrints::DataObj::Document" )
+	{
+		$self->runtime_error( "Can only call doc_zie() on document objects not ".
+			ref($doc->[0]) );
+	}
+
+	if( !$doc->[0]->is_set( "main" ) )
+	{
+		return 0;
+	}
+	my $fileobj = $doc->[0]->stored_file( $doc->[0]->get_main );
+
+	return [ $fileobj->value("mime_type"), "STRING" ];
+}
 

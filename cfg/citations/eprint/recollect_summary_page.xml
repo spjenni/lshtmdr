@@ -45,9 +45,8 @@
       </epc:if>
       <epc:if test="abstract">
         <h2><epc:phrase ref="eprint_fieldname_abstract"/></h2>
+      <p class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em 0.5em; line-height:1.5em"><epc:print expr="abstract" /></p>
 
-         <p class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em 0.5em; line-height:1.5em"><epc:print expr="abstract" /></p>
-<a href="{$item.uri()}" id="ep_qrcode"></a>
       </epc:if>
       
   	<table class="main_meta_table" style="margin-bottom: 1em; margin-top: 1em; width:100%" cellpadding="3">
@@ -177,7 +176,10 @@
 								<li><epc:phrase ref="document_fieldname_security" />: <epc:print expr="$doc.property('security')" /></li>
 								<li><epc:phrase ref="document_fieldname_license" />: <epc:print expr="$doc.property('license')" /></li>
 								<li><epc:phrase ref="document_fieldname_format" />: <epc:print expr="$doc.property('format')" /></li>
-		<!--						<li><epc:phrase ref="document_fieldname_mimetype" />: <epc:print expr="$doc.property('security')" /></li> -->
+								<li><epc:phrase ref="file_fieldname_mime_type" />: <epc:print expr="$doc.doc_mime()" /></li>
+								<li><epc:phrase ref="file_fieldname_filesize" />: <epc:print expr="$doc.human_doc_size()" /></li>
+
+
 							</ul>
 							</div>
 						</div>
@@ -210,6 +212,8 @@
       <h2>Statistics</h2>
       <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none;"/></a>
       <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}"></div>    
+	<a href="{$item.uri()}" id="ep_qrcode"></a>
+
       <!--<div class="irstats2_summary_page_container" id="irstats2_summary_page_container">
 
 		<p>Downloads per month</p>
