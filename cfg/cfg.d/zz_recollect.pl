@@ -77,7 +77,9 @@ $c->{eprint_render} = sub {
 		$links->appendChild( $repository->plugin( "Export::Simple" )->dataobj_to_html_header( $eprint ) );
 		$links->appendChild( $repository->plugin( "Export::DC" )->dataobj_to_html_header( $eprint ) );
 	}
+	#print STDERR $repository->dataset( "document" )->field( "format" )->get_values()." ##\n";
 
+	$flags->{rc_filetypes} = $repository->dataset( "document" )->field( "format" )->get_values();
 ###### Is there because... #####
 	my $page = $eprint->render_citation( "recollect_summary_page", %fragments, flags=>$flags );
 
@@ -119,13 +121,43 @@ push (@{$c->{summary_page_metadata_hidden}},
 
 #To entirely control the summary_page_metadata from this file redefine the whole thing like this:
 
-#push $c->{summary_page_metadata} = qw/
-#	
-#	/);
+$c->{summary_page_metadata} = [qw/
+    alt_title
+    date
+    collection_mode
+    creators_name
+    contributors_name
+    divisions
+    research_centre
+    corp_creators
+    subjects
+    relation
+    official_url/];
 
-#push $c->{summary_page_metadata_full} = qw/
-#	
-#	/);
+$c->{summary_page_metadata_hidden} = [qw/
+	repo_link
+        projects
+	project_date
+	funders
+	grant
+	collection_method
+	collection_date
+	geographic_cover
+	bounding_box
+	keywords
+	legal_ethical
+	provenance
+	language
+	ispublished
+	publisher
+	restrictions
+	copyright_holders
+	commentary
+	note
+	sword_depositor
+	userid
+	datestamp
+	lastmod/];
 
 
 #Apply the recollect metadata profile
@@ -142,8 +174,8 @@ for my $recollect_field (@{$c->{recollect_metadata_profile}}){
 	#This will automatically *add* *recollect* fields to the summary_page_metadata depending on flag in recollect MD profile object
 	#To reorder just reorder the recollect_metadata_profile
 	#If you need to mix the order of recollect and trad fields then comment out below and redefine as above
-	push @{$c->{summary_page_metadata}}, $recollect_field->{field_definition}->{name} if($recollect_field->{summary_page_metadata});
-	push @{$c->{summary_page_metadata_full}}, $recollect_field->{field_definition}->{name} if($recollect_field->{summary_page_metadata_hidden});
+#	push @{$c->{summary_page_metadata}}, $recollect_field->{field_definition}->{name} if($recollect_field->{summary_page_metadata});
+#	push @{$c->{summary_page_metadata_hidden}}, $recollect_field->{field_definition}->{name} if($recollect_field->{summary_page_metadata_hidden});
 
 	#apply search flag to sub fields of compounds if set
 	if($recollect_field->{field_definition}->{type} eq "compound" &&
@@ -164,119 +196,6 @@ for my $recollect_field (@{$c->{recollect_metadata_profile}}){
 	}	
 }
 
-#RM not here... we are not assuming that *everything* will be a data_collection so type only set in NewCollection.pm
-#####  add  data_collection as default type
-#
-#$c->{recollect_set_eprint_defaults} = $c->{set_eprint_defaults};
-#$c->{set_eprint_defaults} = sub
-#{
-#	my( $data, $repository ) = @_;
-#	$repository->call("recollect_set_eprint_defaults");
-#	if(!EPrints::Utils::is_set( $data->{type} ))
-#	{
-#		$data->{type} = "data_collection";	
-#	}
-#};
-
-#### add automatic values for publisher and date
-
-$c->{recollect_set_eprint_automatic_fields} = $c->{set_eprint_automatic_fields};
-$c->{set_eprint_automatic_fields} = sub
-{
-	my( $eprint ) = @_;
-	#$repo->call("recollect_set_eprint_automatic_fields", $eprint);
-	if(!$eprint->is_set( "publisher" ) ) 
-                {
-                         $eprint->set_value( "publisher", "UK Data Archive" );
-                }
-	my $lastmod = $eprint->get_value( "lastmod" );
-	if(!$eprint->is_set( "date" ) ) 
-                {
-                         $eprint->set_value( "date", $lastmod );
-                }
-};
-
-#####  add embargo date cap at 2 years
-
-
-$c->{recollect_validate_document} = $c->{validate_document};
-$c->{validate_document} = sub {
-    my ($document, $repository, $for_archive) = @_;
-    my $eprint = $document->get_eprint();
-
-	if($eprint->value("type") ne "data_collection"){
-            return $repository->call("recollect_validate_document");
-         }
-
-    my @problems = ();
-
-    my $xml = $repository->xml();
-
-    # CHECKS IN HERE
-
-    # "other" documents must have a description set
-    if ($document->value("format") eq "other"
-        && !EPrints::Utils::is_set($document->value("formatdesc")))
-    {
-        my $fieldname =
-          $xml->create_element("span", class => "ep_problem_field:documents");
-        push @problems,
-          $repository->html_phrase(
-                                   "validate:need_description",
-                                   type => $document->render_citation("brief"),
-                                   fieldname => $fieldname
-                                  );
-    } ## end if ($document->value("format"...))
-
-    # security can't be "public" if date embargo set
-    if ($document->value("security") eq "public"
-        && EPrints::Utils::is_set($document->value("date_embargo")))
-    {
-        my $fieldname =
-          $xml->create_element("span", class => "ep_problem_field:documents");
-        push @problems,
-          $repository->html_phrase("validate:embargo_check_security",
-                                   fieldname => $fieldname);
-    } ## end if ($document->value("security"...))
-
-    #
-##### embargo expiry date currently capped at 2 years
-##### to change update my $embargo_cap
-    #
-    if (EPrints::Utils::is_set($document->value("date_embargo")))
-    {
-        my $value = $document->value("date_embargo");
-        my ($thisyear, $thismonth, $thisday) = EPrints::Time::get_date_array();
-        my ($year, $month, $day) = split('-', $value);
-        if (   $year < $thisyear
-            || ($year == $thisyear && $month < $thismonth)
-            || ($year == $thisyear && $month == $thismonth && $day <= $thisday))
-        {
-            my $fieldname = $xml->create_element("span",
-                                         class => "ep_problem_field:documents");
-            push @problems,
-              $repository->html_phrase("validate:embargo_invalid_date",
-                                       fieldname => $fieldname);
-        } ## end if ($year < $thisyear ...)
-
-        my $embargo_cap = $thisyear + 1;
-        if (   $year > $embargo_cap
-            || ($year == $embargo_cap && $month > $thismonth)
-            || (   $year == $embargo_cap
-                && $month == $thismonth
-                && $day >= $thisday))
-        {
-            my $fieldname = $xml->create_element("span",
-                                         class => "ep_problem_field:documents");
-            push @problems,
-              $repository->html_phrase("validate:embargo_too_far_in_future",
-                                       fieldname => $fieldname);
-
-        } ## end if ($year > $embargo_cap...)
-
-    } ## end if (EPrints::Utils::is_set...)
-    return (@problems);
-};
 
 =head1 NAME
 
@@ -309,5 +228,52 @@ sub workflow_id
 	return "default";
 }
 
+#switch for details page too....
+
+package EPrints::Plugin::Screen::EPrint::Details;
+
+use EPrints::Plugin::Screen;
+
+#@ISA = ( 'EPrints::Plugin::Screen::EPrint' );
+
+sub workflow_id
+{
+	my ($plugin) = @_;
+	my $repo = $plugin->get_repository;
+	my $eprint = $plugin->{processor}->{eprint};
+	$repo->log("In *recollect cfg.d:workflow_id => ".$eprint->value("type"));
+	
+	if($eprint->value("type") eq "data_collection"){
+		return "recollect";
+	}
+	if($eprint->value("type") eq "collection"){
+		return "collection";
+	}
+	return "default";
+}
+
+
+#Getting daft now
+package EPrints::Plugin::Screen::EPrint::Deposit;
+
+use EPrints::Plugin::Screen;
+
+#@ISA = ( 'EPrints::Plugin::Screen::EPrint' );
+
+sub workflow_id
+{
+	my ($plugin) = @_;
+	my $repo = $plugin->get_repository;
+	my $eprint = $plugin->{processor}->{eprint};
+	$repo->log("In **recollect cfg.d:workflow_id => ".$eprint->value("type"));
+	
+	if($eprint->value("type") eq "data_collection"){
+		return "recollect";
+	}
+	if($eprint->value("type") eq "collection"){
+		return "collection";
+	}
+	return "default";
+}
 #remove the default item colection...
 $c->{plugins}->{"Screen::NewEPrint"}->{appears}->{item_tools} = undef;
