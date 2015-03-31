@@ -154,7 +154,7 @@
 	        <epc:foreach expr="$filetypes" iterator="filetype">
 			<epc:set name='docs' expr='$item.documents_recollect($filetype)'>
 			 	<epc:if test="length($docs) gt 0">
-					<h2 class="file_title"><epc:phrase ref="document_fieldopt_format_{$filetype}" /></h2>
+					<h2 class="file_title"><epc:phrase ref="recollect_content_typename_{$filetype}" /></h2>
 					<epc:foreach expr="$docs" iterator="doc">
 						<div class="ep_summary_box_title" id="{$doc.property('docid')}_file_meta">
 							<div class="ep_only_js" id="{$doc.property('docid')}_colbar" style="display: none">

@@ -57,18 +57,18 @@ sub run_export_bar
 
 sub run_documents_recollect
 {
-	my( $self, $state, $eprint, $format ) = @_;
+	my( $self, $state, $eprint, $content ) = @_;
 
 	if( ! $eprint->[0]->isa( "EPrints::DataObj::EPrint") )
 	{
 		$self->runtime_error( "documents() must be called on an eprint object." );
 	}
-	$format = $format->[0];
+	$content = $content->[0];
 	$eprint = $eprint->[0];
 
 	my $sorteddocs = [];
 	for my $doc($eprint->get_all_documents()){
-		next if($format ne $doc->value("format"));
+		next if($content ne $doc->value("content"));
 		push @$sorteddocs, $doc;
 	}
 	return [ [@$sorteddocs],  "ARRAY" ];

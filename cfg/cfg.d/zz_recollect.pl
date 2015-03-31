@@ -77,9 +77,9 @@ $c->{eprint_render} = sub {
 		$links->appendChild( $repository->plugin( "Export::Simple" )->dataobj_to_html_header( $eprint ) );
 		$links->appendChild( $repository->plugin( "Export::DC" )->dataobj_to_html_header( $eprint ) );
 	}
-	#print STDERR $repository->dataset( "document" )->field( "format" )->get_values()." ##\n";
+	my @content = $repository->get_types("recollect_content");
+	$flags->{rc_filetypes} = \@content;
 
-	$flags->{rc_filetypes} = $repository->dataset( "document" )->field( "format" )->get_values();
 ###### Is there because... #####
 	my $page = $eprint->render_citation( "recollect_summary_page", %fragments, flags=>$flags );
 
