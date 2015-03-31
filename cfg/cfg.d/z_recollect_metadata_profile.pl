@@ -108,14 +108,18 @@ $c->{recollect_metadata_profile} = [
 	advanced_search => 0, #field appears in advanced search form
 	simple_search => 1, #field included in simple_search fieldset 
 	},
-
+	#because we want a m lot of once choice inputs, rather than one multiple choice input... we need a compound for this field2
 	{ field_definition =>	
-		    {
-		     name => 'language',
-		     type => 'text',
-
-		    },
-
+		 {
+                     name => 'language',
+             	     type => 'compound',
+                     fields => [ {
+                        	sub_name => 'l',
+                        	type => 'namedset',
+                                set_name => "languages",
+                		} ],
+             	     multiple => 1,
+                  },
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
 	advanced_search => 1,
