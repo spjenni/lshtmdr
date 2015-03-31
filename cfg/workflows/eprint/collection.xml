@@ -10,10 +10,53 @@
     <component type="Field::CollectionSelect"><field ref="relation" /></component>
 
     <component type="Field::Multi">
-	<title>Collection Information</title>
-	<field ref="title" required="yes" />
-	<field ref="abstract"/>
+		<title>Project collection information</title>
+		<!--<field ref="title" required="yes"/> -->
+        <field ref="title" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/title_duplicates" input_lookup_params="id={eprintid}&amp;dataset=eprint&amp;field=title"/>
+    	<field ref="funders" input_lookup_url="{$config{perl_url}}/users/lookup/simple_file" input_lookup_params="file=funders"/>
+    	<field ref="grant"/>
+		<field ref="study_abstract" required="yes"/>
+         <field ref="project_date"/>
+        
     </component>
+    <component type="Field::Multi">
+      <title>Contacts</title>
+      <field ref="primary_contact" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/name_and_lshtmid"/>  
+      <field ref="contributors" input_lookup_url="{$config{rel_cgipath}}/users/lookup/name_and_lshtmid"/>
+    </component>
+    
+    
+      <component>
+      <field ref="divisions"/>
+    </component> 
+    <component>
+      <field ref="research_centre"/>
+    </component>  
+    <component>
+      <field ref="research_groups"/>
+    </component> 
+    
+    <component  collapse="yes">
+      <field ref="geographic_cover"/>
+    </component>
+      <component>
+      <field ref="related_resources"/>
+    </component>
+      <component>
+      <field ref="note"/>
+    </component>
+      <component collapse="yes">
+      <field ref="language"/>
+    </component>
+    
+    <component collapse="yes">
+      <field ref="publisher"/>
+    </component>  
+    <!--<component>
+      <field ref="copyright_holders"/>
+    </component>  -->
+    
+      
 
   </stage>
 
