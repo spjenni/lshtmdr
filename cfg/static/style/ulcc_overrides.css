@@ -701,6 +701,9 @@ h1.ep_tm_pagetitle {
   background-image: none;
   
 }
+#content .rd_citation_right .ep_summary_box_title {  
+	padding-bottom: 0;
+}
 #content .rd_citation_right table {
  width: 100%; 
 }
@@ -832,8 +835,8 @@ div.rd_citation_bottom {
 	padding: 0.3em 0;
 }
 #content .rd_citation_right .ep_summary_box_title a{
-	top: 0.3em;
-	position: relative;
+/*	top: 0.3em;
+	position: relative;*/
 }
 
 #content .rd_citation_left .ep_summary_box_title {
@@ -879,7 +882,7 @@ div.rd_citation_bottom {
   margin-bottom: 0.2em;
   margin-top: 0.2em;
 }
-#content .rd_citation_right h2.file_title {background-color: #fff; margin: 0; padding: 0.2em 0; font-size: 1.2em; }
+#content .rd_citation_right h2.file_title {background-color: #fff; margin: 0; padding: 0.3em 0; margin-bottom: 0.3em; font-size: 1.2em; }
 
 #content .rd_citation_right div.file_group:nth-child(odd) { background: #eee; }
 
