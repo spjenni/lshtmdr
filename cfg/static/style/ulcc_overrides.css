@@ -836,18 +836,21 @@ div.rd_citation_bottom {
   	border: none;
 }
 #content .ep_summary_box_body li {
-	font-size: 0.8em;
+	font-size: 0.85em;
 }
 #content .ep_summary_box_body li span.filemeta_h {
 	width: 25%;
 	font-weight: bold;
 	text-align: right;
 	display: inline-block;
+	vertical-align: middle;
 }
 #content .ep_summary_box_body li span.filemeta {
 	margin-left: 1em;
 	width: 70%;
 	display: inline-block;
+	vertical-align: middle;
+
 }
 
 #content tr.main_meta_table_row:nth-child(odd) {
