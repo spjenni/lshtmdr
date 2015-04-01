@@ -210,9 +210,10 @@
   
    <div class="rd_citation_right">
       <h2>Statistics</h2>
-      <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none;"/></a>
-      <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}"></div>    
-	<a href="{$item.uri()}" id="ep_qrcode"></a>
+      <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none; margin-right: 0.5em;"/></a>
+	
+      <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" style="margin-right: 0.5em;"></div>    
+	<a href="{$item.uri()}" id="ep_qrcode" style="margin-right: 0.5em;"></a>
 
       <!--<div class="irstats2_summary_page_container" id="irstats2_summary_page_container">
 
