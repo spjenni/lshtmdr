@@ -51,8 +51,6 @@ function auto_check_lshtmid_flag(){
   jQuery("table.ep_form_input_grid").on("change", 'input', function() {
 
     if(jQuery(this).attr("id").match(/c[0-9]+_.+(|_[0-9]+)_lshtmid/)){
-        console.log("regex match...");   
-        console.log("auto checking...");
    
             var id = jQuery(this).attr("id");
             var flag_id = id.replace("lshtmid", "lshtm_flag");
@@ -228,8 +226,11 @@ function load_tooltips(){
     jQuery("[id$=_show]").each(function() {
 		
         var element_id = this.id;
-       
-		if(element_id.contains("opt") != true){
+		//RM contains coming up undefined
+//		if(element_id.contains("opt") != true){
+		//This will not throw error (may even be the intended use?)
+		if(jQuery.contains(this, "opt") != true){
+
 			
 			var link = jQuery( this ).children();
 		   
