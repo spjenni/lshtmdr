@@ -173,14 +173,12 @@
 							<div id="{$doc.property('docid')}_content_inner">         
 
 							<ul>
-								<li><epc:phrase ref="document_fieldname_formatdesc" />: <epc:print expr="$doc.property('formatdesc')" /></li>
-								<li><epc:phrase ref="document_fieldname_security" />: <epc:print expr="$doc.property('security')" /></li>
-								<li><epc:phrase ref="document_fieldname_license" />: <epc:print expr="$doc.property('license')" /></li>
-								<li><epc:phrase ref="document_fieldname_format" />: <epc:print expr="$doc.property('format')" /></li>
-								<li><epc:phrase ref="file_fieldname_mime_type" />: <epc:print expr="$doc.doc_mime()" /></li>
-								<li><epc:phrase ref="file_fieldname_filesize" />: <epc:print expr="$doc.human_doc_size()" /></li>
-
-
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_formatdesc" />:</span><span class="filemeta"><epc:print expr="$doc.property('formatdesc')" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_security" />:</span><span class="filemeta"><epc:print expr="$doc.property('security')" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_license" />:</span><span class="filemeta"><epc:phrase ref="licenses_typename_{$doc.raw_set_value('license')}_img" /> <!--<epc:print expr="$doc.property('license')" />--></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_format" />:</span><span class="filemeta"><epc:print expr="$doc.property('format')" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="file_fieldname_mime_type" />:</span><span class="filemeta"><epc:print expr="$doc.doc_mime()" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="file_fieldname_filesize" />:</span><span class="filemeta"><epc:print expr="$doc.human_doc_size()" /></span></li>
 							</ul>
 							</div>
 						</div>

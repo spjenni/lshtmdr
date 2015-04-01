@@ -835,8 +835,22 @@ div.rd_citation_bottom {
 #content .rd_citation_left .ep_summary_box_title {
   	border: none;
 }
+#content .ep_summary_box_body li {
+	font-size: 0.9em;
+}
+#content .ep_summary_box_body li span.filemeta_h {
+	width: 35%;
+	font-weight: bold;
+	text-align: right;
+	display: inline-block;
+}
+#content .ep_summary_box_body li span.filemeta {
+	margin-left: 1em;
+	width: 60%;
+	display: inline-block;
+}
 
- #content tr.main_meta_table_row:nth-child(odd) {
+#content tr.main_meta_table_row:nth-child(odd) {
  	background-color: #eee; 
 }
  #content .rd_citation_right > table > tbody > tr:nth-child(odd) {

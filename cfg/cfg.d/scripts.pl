@@ -135,3 +135,34 @@ sub run_truncate_url
 
 	return [ $url_trunc, "STRING" ];
 }
+#I hope there turns out ot be a better way to do this...
+sub run_raw_set_value
+{
+	my( $self, $state, $objvar, $value ) = @_;
+
+	if( !defined $objvar->[0] )
+	{
+		$self->runtime_error( "can't get a property {".$value->[0]."} from undefined value" );
+	}
+	my $ref = ref($objvar->[0]);
+	if( $ref eq "HASH" || $ref eq "EPrints::RepositoryConfig" )
+	{
+		my $v = $objvar->[0]->{ $value->[0] };
+		my $type = ref( $v ) =~ /^XML::/ ? "XHTML" : "STRING";
+		return [ $v, $type ];
+	}
+	if( $ref !~ m/::/ )
+	{
+		$self->runtime_error( "can't get a property from anything except a hash or object: ".$value->[0]." (it was '$ref')." );
+	}
+	if( !$objvar->[0]->isa( "EPrints::DataObj" ) )
+	{
+		$self->runtime_error( "can't get a property from non-dataobj: ".$value->[0] );
+	}
+	if( !$objvar->[0]->get_dataset->has_field( $value->[0] ) )
+	{
+		$self->runtime_error( $objvar->[0]->get_dataset->confid . " object does not have a '".$value->[0]."' field" );
+	}
+	return [ $objvar->[0]->get_value( $value->[0] ), "STRING"];
+}
+
