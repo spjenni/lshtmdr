@@ -20,7 +20,7 @@
       </div>
       <div class="lshtmdr_export">
      	 <h4>Export</h4> 	
-        <epc:print expr="$export_bar" />
+	<epc:print expr="$item.export_bar()"/>
         <h4>Sharing</h4>
         <!-- AddThis Button BEGIN -->
         <div class="addthis_toolbox addthis_default_style">
