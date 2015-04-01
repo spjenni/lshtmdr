@@ -13,6 +13,50 @@ $c->{plugins}->{"InputForm::Component::Field::AddToCollection"}->{params}->{disa
 #$c->{plugin_alias_map}->{"Screen::EPrint::Edit"} = "Screen::EPrint::CollectionEdit";
 #$c->{plugin_alias_map}->{"Screen::EPrint::CollectionEdit"} = undef;
 
+#fields to go in landing page for collection items
+
+$c->{collection_summary_page_metadata} = [qw/
+    project_date
+    funders
+    alt_title
+    date
+    collection_mode
+    creators_name
+    contributors_name
+    divisions
+    research_centre
+    corp_creators
+    subjects
+    relation
+    official_url
+/];
+
+
+#### extra metadata that extends  the summary page record - hidden by js - accessed by additional details link
+
+$c->{collection_summary_page_metadata_hidden} = [qw/
+    projects
+    grant
+    collection_method
+    collection_date
+    geographic_cover
+    bounding_box
+    keywords
+    legal_ethical
+    provenance
+    language
+    ispublished
+    publisher
+    restrictions
+    copyright_holders
+    commentary
+    note
+    sword_depositor
+    userid
+    datestamp
+    lastmod
+    /];
+
 
 $c->{z_collection_validate_eprint} = $c->{validate_eprint};
 

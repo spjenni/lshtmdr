@@ -95,7 +95,7 @@
                                 <div id="{eprintid}_content_inner">         
   <table class="main_meta_table" style="margin-bottom: 1em; margin-top: 1em; width:100%" cellpadding="3">
                     
-      <epc:foreach expr="$config{collection_summary_page_metadata_full}" iterator="fieldname">
+      <epc:foreach expr="$config{collection_summary_page_metadata_hidden}" iterator="fieldname">
         <epc:if test="is_set($item.property($fieldname))">
           <tr class="main_meta_table_row">
               <th align="right" class="rd_meta_table_th"><epc:phrase ref="eprint_fieldname_{$fieldname}" />:</th>
