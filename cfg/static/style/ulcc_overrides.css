@@ -836,17 +836,17 @@ div.rd_citation_bottom {
   	border: none;
 }
 #content .ep_summary_box_body li {
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 #content .ep_summary_box_body li span.filemeta_h {
-	width: 35%;
+	width: 25%;
 	font-weight: bold;
 	text-align: right;
 	display: inline-block;
 }
 #content .ep_summary_box_body li span.filemeta {
 	margin-left: 1em;
-	width: 60%;
+	width: 70%;
 	display: inline-block;
 }
 
