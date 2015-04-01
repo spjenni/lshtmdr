@@ -798,7 +798,7 @@ div.rd_citation_bottom {
 .ep_view_menu ul{
   margin-left: 2em;
 }
-.rd_citation_right .file_title {
+#content .rd_citation_right .file_title {
  	border-bottom: none; 
 }
 
@@ -821,8 +821,17 @@ div.rd_citation_bottom {
 }
 #content .rd_citation_right .ep_summary_box_title {
 	border: none;
+	font-size: 90%;
   
 }
+#content .rd_citation_right .file_group{
+	padding: 0.3em 0;
+}
+#content .rd_citation_right .ep_summary_box_title a{
+	top: 0.3em;
+	position: relative;
+}
+
 #content .rd_citation_left .ep_summary_box_title {
   	border: none;
 }
@@ -849,10 +858,9 @@ div.rd_citation_bottom {
   margin-bottom: 0.2em;
   margin-top: 0.2em;
 }
-.rd_citation_right h2.file_title{
- 	margin-top: 0.2em; 
-    margin-bottom: 0.2em; 
-}
+#content .rd_citation_right h2.file_title {background-color: #fff; margin: 0; padding: 0.2em 0; font-size: 1.2em; }
+
+#content .rd_citation_right div.file_group:nth-child(odd) { background: #eee; }
 
 #content .lshtmdr_ces h2 {
   	margin-top: 0.4em; 

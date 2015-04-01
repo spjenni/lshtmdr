@@ -97,7 +97,7 @@
 	The next foreach loop generates the extended metadata from eprint_render.pl
     </epc:comment>
     <tr>
-	<td colspan="2" style="padding:0">
+	<td colspan="2" style="padding:0" class="files_box">
     	<div class="ep_summary_box" id="{eprintid}">
         	<div class="ep_summary_box_title">
 			<div class="ep_only_js" id="{eprintid}_colbar" style="display: none">
@@ -156,6 +156,7 @@
 			 	<epc:if test="length($docs) gt 0">
 					<h2 class="file_title"><epc:phrase ref="recollect_content_typename_{$filetype}" /></h2>
 					<epc:foreach expr="$docs" iterator="doc">
+						<div class="file_group">
 						<div class="ep_summary_box_title" id="{$doc.property('docid')}_file_meta">
 							<div class="ep_only_js" id="{$doc.property('docid')}_colbar" style="display: none">
 								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',true,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',true);EPJS_toggle('{$doc.property('docid')}_bar',false);return false;" href="#"><img src="{$config{base_url}}/style/images/minus.png" border="0" />
@@ -182,6 +183,7 @@
 
 							</ul>
 							</div>
+						</div>
 						</div>
 					</epc:foreach>
 				</epc:if>
