@@ -762,11 +762,15 @@ div.lshtmdr_export .addthis_toolbox{
 	float: left;
 	margin-top: 5px;
 }
+div.rd_right_container {
+	width: 33%;  
+	float: right;
+}
 
 div.rd_citation_right {
  	-moz-border-radius: 15px;
 	border-radius: 15px;
-  
+	width: 100%;  
 }
 
 div.rd_citation_bottom {
