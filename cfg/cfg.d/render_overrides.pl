@@ -1,39 +1,43 @@
-#This bit doesn't work because the relation field is not in $c->{fields} :(
-
-for(@{$c->{fields}->{eprint}})
+# Here we override the core definition of relation so that we can use our own render sub (just below)
+push @{ $c->{fields}->{eprint} },
 {
-	if( $_->{name} eq 'relation' )
-	{
-    
-    print STDERR "HERE ==> ".$_->{name}."\n";
-
-                $_->{render_single_value} = 'render_relation';
-                last;
-    }
-}
-
-#This bit works, but needed a render_value line in the core... DataObj/EPrint.pm
-
+        name => "relation",
+        type=>"compound", multiple=>1,
+        fields => [
+                {
+                        sub_name => "type",
+                        type => "text",
+                        replace_core => 1,
+                },
+                {
+                        sub_name => "uri",
+                        type => "text",
+                        replace_core => 1,
+                },
+        ],
+        render_value => "render_relation",
+        replace_core => 1,
+};
+#TODO see what this does to other relation types...
 $c->{render_relation} = sub
 {
-	my( $session, $field, $value, $alllangs, $nolink, $object) = @_;
+        my( $session, $field, $value, $alllangs, $nolink, $object) = @_;
 
-	my $repo = $session->get_repository();
-my $frag = $session->make_doc_fragment();
-    $frag->appendChild(my $ul = $repo->make_element("ul", class=>"relations_list"));
-    if($object->is_collection){
-    	for my $part($object->get_related_objects("http://purl.org/dc/terms/hasPart")){
-    		$ul->appendChild(my $li = $repo->make_element("li"));
-            $li->appendChild($part->render_citation_link("brief"));
-        }    	
-    }else{
-    	for my $part($object->get_related_objects("http://purl.org/dc/terms/isPartOf")){
-    		$ul->appendChild(my $li = $repo->make_element("li"));
-            $li->appendChild($part->render_citation_link("brief"));
-        }    	
-    }
-
-	return $frag;
+        my $repo = $session->get_repository();
+        my $frag = $session->make_doc_fragment();
+	$frag->appendChild(my $ul = $repo->make_element("ul", class=>"relations_list"));
+	if($object->is_collection){
+		for my $part($object->get_related_objects("http://purl.org/dc/terms/hasPart")){
+			$ul->appendChild(my $li = $repo->make_element("li"));
+			$li->appendChild($part->render_citation_link("brief"));
+		}
+	}else{
+		for my $part($object->get_related_objects("http://purl.org/dc/terms/isPartOf")){
+			$ul->appendChild(my $li = $repo->make_element("li"));
+	    		$li->appendChild($part->render_citation_link("brief"));
+		}
+    	}
+        return $frag;
 };
 
 
