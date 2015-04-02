@@ -162,7 +162,7 @@
 								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',true,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',true);EPJS_toggle('{$doc.property('docid')}_bar',false);return false;" href="#"><img src="{$config{base_url}}/style/images/minus.png" border="0" />
 								</a> 
 								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url($doc.property('main'))" /></a>
-								<epc:if test="!$doc.is_public()">
+								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
 									<input id="file_security" type="hidden" value="{$doc.property('security')}"/>
 									<div id="hide_request" style="display: inline;"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
 								</epc:if>
@@ -171,7 +171,7 @@
 								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',false,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',false);EPJS_toggle('{$doc.property('docid')}_bar',true);return false;" href="#"><img src="{$config{base_url}}/style/images/plus.png" border="0" />
 								</a> 
 								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url($doc.property('main'))" /></a>
-								<epc:if test="!$doc.is_public()">
+								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
 									<input id="file_security" type="hidden" value="{$doc.property('security')}"/>
 									<div id="hide_request" style="display: inline;"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
 								</epc:if>
