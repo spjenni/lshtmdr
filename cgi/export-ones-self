@@ -1,0 +1,85 @@
+######################################################################
+#
+#  EPrints Object Exporter
+#
+######################################################################
+#
+#  __COPYRIGHT__
+#
+# Copyright 2000-2008 University of Southampton. All Rights Reserved.
+# 
+#  __LICENSE__
+#
+######################################################################
+
+use EPrints;
+use EPrints::Const qw( :http );
+
+use strict;
+
+my $repo = EPrints->new->current_repository;
+exit( 0 ) unless( defined $repo );
+
+my $user = $repo->current_user();
+
+exit if(!defined $user);
+
+my $plugin = $repo->plugin( "Export::JSON" );
+
+export_dataobj( $repo, $plugin, undef, "user", $user->get_id);
+
+sub export_dataobj
+{
+	my( $repository, $plugin, $args, $datasetid, $id ) = @_;
+
+	my $r = $repository->get_request;
+
+	my $dataset = $repository->dataset( $datasetid );
+	$repository->not_found( "No such dataset" ), exit if !defined $dataset;
+
+	if( !$plugin->can_accept( "dataobj/".$dataset->base_id ) )
+	{
+		$repository->not_found;
+		exit;
+	}
+
+	my $dataobj = $dataset->dataobj( $id );
+	$repository->not_found( "No such dataobj" ), exit if !defined $dataobj;
+
+	if( $dataobj->isa( "EPrints::DataObj::EPrint" ) )
+	{
+		$dataset = $dataobj->get_dataset;
+	}
+
+	my $rc;
+
+	my $crud = EPrints::Apache::CRUD->new(
+			repository => $repository,
+			request => $r,
+			dataset => $dataset,
+			dataobj => $dataobj,
+			plugin => $plugin,
+			scope => EPrints::Apache::CRUD::CRUD_SCOPE_DATAOBJ,
+		);
+
+	$rc = $crud->authen;
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+
+	$rc = $crud->authz;
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+
+	$rc = $crud->handler;
+	if( $rc != OK )
+	{
+		$r->status( $rc );
+		return;
+	}
+}
