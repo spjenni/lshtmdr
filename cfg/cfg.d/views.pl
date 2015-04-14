@@ -124,21 +124,21 @@ $c->{browse_views} = [
 			hideempty => 1,
 			menus => [
 			{
-            	fields => [ "creators_lshtmid" ],
+            		fields => [ "creators_lshtmid" ],
 		    	new_column_at => [1, 1],
       			mode => "sections",
       			open_first_section => 1,
       			group_range_function => "EPrints::Update::Views::cluster_ranges_30",
-                grouping_function => "group_by_author",                
+                	grouping_function => "group_by_author",                
 			},
 		],
 			order => "-date/title",
 			variations => [
-            	"date;res=year",
+            		"date;res=year",
 				"type",
 				"DEFAULT",
 			],
-            render_menu => "ulcc_render_view_menu_id_author",
+            	render_menu => "ulcc_render_view_menu_id_author",
         },
         {
 			id => "funders",
