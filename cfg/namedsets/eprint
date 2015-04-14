@@ -1,0 +1,23 @@
+# types for eprint 
+
+article
+book_section
+monograph
+conference_item
+book
+thesis
+patent
+artefact
+exhibition
+composition
+performance
+image
+video
+audio
+dataset
+experiment
+teaching_resource
+other
+#Added these here as this config is used to get lists of things
+collection
+data_collection
