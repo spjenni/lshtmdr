@@ -230,33 +230,41 @@ $c->{recollect_metadata_profile} = [
 
 
 	{ field_definition =>	
-		    {
-		     name         => 'related_resources',
-		     type         => 'compound',
-		     multiple     => 1,
-		     render_value => 'EPrints::Extras::render_url_truncate_end',
-		     fields       => [
-			 {
-			  sub_name   => 'url',
-			  type       => 'url',
-			  input_cols => 40,
-			 },
-			 {
-			  sub_name     => 'type',
-			  type         => 'set',
-			  render_quiet => 1,
-			  options      => [
-			      qw(
-				pub
-				author
-				org
-				)
-			  ],
-			 } ],
-		     input_boxes   => 1,
-		     input_ordered => 0,
-		    },
-	
+		  {
+                     name         => 'related_resources',
+                     type         => 'compound',
+                     multiple     => 1,
+                             fields       => [
+                 		{
+                                  sub_name   => 'title',
+                                  type       => 'text',
+                                 },
+                                 {
+                                  sub_name   => 'url',
+                                  type       => 'url',
+                                  input_cols => 40,
+		                  render_value => 'EPrints::Extras::render_url_truncate_end',
+                                 },
+                                 {
+                                  sub_name     => 'type',
+                                  type         => 'set',
+                                  render_quiet => 1,
+                                  options      => [
+                                      qw(
+					dataresource
+                    			pub
+                    			project
+                                        author
+                                        collab
+                    			academic
+                    			other
+                                        )
+                                  ],
+                         	},
+                     	],
+                     input_boxes   => 1,
+                     input_ordered => 0,
+                   },	
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
 	advanced_search => 0,
