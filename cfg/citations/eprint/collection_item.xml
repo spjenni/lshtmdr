@@ -113,7 +113,7 @@
 <tr>
     <epc:if test="!$flags{preview}">
       <td colspan="2">
-          <epc:if test="$current_user{usertype} = 'admin'">
+<!--          <epc:if test="$current_user and $current_user{usertype} = 'admin'"> -->
           <h3>Actions (login required)</h3>
                 <table class="ep_summary_page_actions">
                 <epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
@@ -123,7 +123,7 @@
                 </tr>
                 </epc:foreach>
         </table>
-    </epc:if>
+ <!--   </epc:if> -->
     </td>
   </epc:if>
 
