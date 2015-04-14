@@ -50,9 +50,9 @@
 			  </epc:when>
 			  </epc:choose>
 			  </epc:if>
-              <epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive' and $current_user{usertype} = 'user'">
+<!--              <epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive' and $current_user{usertype} = 'user'"> -->
                 | <a href="{$config{http_cgiurl}}/request_doc?docid={$doc{docid}"><epc:phrase ref="request:button" /></a>
-              </epc:if>
+           <!--   </epc:if> -->
   
               <ul>
               <epc:foreach expr="$doc.related_objects('http://eprints.org/relation/hasVersion')" iterator="rel">
