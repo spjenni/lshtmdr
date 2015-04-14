@@ -18,7 +18,6 @@
     </component>
  
 
- <component type="Field::AddToCollection"><field ref="relation" /></component>
 
     <component>
       <field ref="title" required="yes" input_lookup_url="{$config{rel_cgipath}}/users/lookup/title_duplicates" input_lookup_params="id={eprintid}&amp;dataset=eprint&amp;field=title"/>
@@ -138,9 +137,9 @@
     <h2>Tell us about your project and faculty</h2>
     </component>
      
-    <!--SJ: moved
-    <component type="Field::SelectCollection"><field ref="relation" /></component>
-    end of moved-->
+    <!--SJ: moved -->
+	 <component type="Field::AddToCollection"><field ref="relation" /></component>
+    <!--end of moved-->
      
     <component type="Field::Multi">
       <title>Project details</title>
