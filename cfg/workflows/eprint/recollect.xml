@@ -110,7 +110,7 @@
     <!--end of moved-->
      
     <!--SJ: moved-->
-    <component collapse="yes">
+    <component>
       <field ref="contributors" input_lookup_url="{$config{rel_cgipath}}/users/lookup/name_and_lshtmid"/>
     </component>
     <!--end of moved-->  
