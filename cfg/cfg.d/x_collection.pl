@@ -166,7 +166,8 @@ $c->{collection_render} = sub {
 		$links->appendChild( $repository->plugin( "Export::DC" )->dataobj_to_html_header( $eprint ) );
 	}
 
-    	$fragments{parts} = $eprint->get_related_objects("http://purl.org/dc/terms/hasPart");
+#       Using epc script related_objects()
+#    	$fragments{parts} = $eprint->get_related_objects("http://purl.org/dc/terms/hasPart");
 
 ###### Is there because... #####
 	my $page = $eprint->render_citation( "collection_item", %fragments, flags=>$flags );
