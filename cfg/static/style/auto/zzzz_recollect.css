@@ -210,3 +210,6 @@ span.document_format{
 	width: 100%;
 }
 
+#hide_request {
+	display: inline;
+}
