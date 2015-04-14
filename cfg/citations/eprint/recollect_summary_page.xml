@@ -146,11 +146,38 @@
 
   <div class="rd_right_container">
 	<div class="rd_citation_right">
+		<h3>Files</h3>
+
+  <epc:set name='docs' expr='$item.documents()'>
+
+    <epc:if test="length($docs) = 0">
+      <epc:phrase ref="page:nofulltext" />
+	
+              <epc:set name='rrs' expr='$item.property("related_resources")'>
+		    <epc:if test="length($rrs) gt 0">
+
+      			<epc:foreach expr="$rrs" iterator="rr" limit='1'>        			
+			<epc:if test="is_set($rr{type}) eq 'dataresource'"> 
+			<p>Dataset may be available from <a href="{$rr{url}}"><epc:print expr="$rr{url}" /></a></p>
+			</epc:if>
+      			</epc:foreach>
+		    </epc:if>
+		    <epc:if test="length($rrs) = 0">
+			<p><a href="{$config{http_cgiurl}}/request_doc?eprintid={$item.property('eprintid')}"><epc:phrase ref="request:button"/></a></p>
+		    </epc:if>
+
+     		  </epc:set>
+
+   <!--   <epc:if test="$item.contact_email().is_set() and eprint_status = 'archive'">
+        (<a href="{$config{http_cgiurl}}/request_doc?eprintid={eprintid}"><epc:phrase ref="request:button" /></a>)
+      </epc:if>
+-->
+    </epc:if>
+  </epc:set>
 
 	<epc:comment>render our file box pulled from eprint_render</epc:comment>
 <!--	<epc:print expr="$rd_sorteddocs" /> -->
 	<epc:set name='filetypes' expr="$flags{rc_filetypes}">
-		<h3>Files</h3>
 	        <epc:foreach expr="$filetypes" iterator="filetype">
 			<epc:set name='docs' expr='$item.documents_recollect($filetype)'>
 			 	<epc:if test="length($docs) gt 0">
@@ -163,8 +190,8 @@
 								</a> 
 								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url($doc.property('main'))" /></a>
 								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
-									<input id="file_security" type="hidden" value="{$doc.property('security')}"/>
-									<div id="hide_request" style="display: inline;"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
+									<input id="file_security" type="hidden" value="{$doc.raw_set_value('security')}"/>
+									<div id="hide_request"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
 								</epc:if>
 							</div>
 							<div class="ep_only_js" id="{$doc.property('docid')}_bar">
@@ -173,7 +200,7 @@
 								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url($doc.property('main'))" /></a>
 								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
 									<input id="file_security" type="hidden" value="{$doc.property('security')}"/>
-									<div id="hide_request" style="display: inline;"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
+									<div id="hide_request"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
 								</epc:if>
 							</div>
 						</div>
