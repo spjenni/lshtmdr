@@ -82,12 +82,13 @@ $c->{browse_views} = [
                 menus => [
 					{
 						fields => [ "research_centre" ],
+                               allow_null => 0,
                 		hideempty => 1,
 					},
 					{
-						fields => [ "date;res=year" ],
+						fields => [ "date;res=year", "project_date_date_to;res=year" ],
 						reverse_order => 1,
-                		allow_null => 1,
+                		allow_null => 0,
                 		hideempty => 1,
 					},
 				],
@@ -133,9 +134,9 @@ $c->{browse_views} = [
 			},
 		],
 			order => "-date/title",
-			variations => [
-            		"date;res=year",
+			variations => [        		
 				"type",
+                               "date;res=year",
 				"DEFAULT",
 			],
             	render_menu => "ulcc_render_view_menu_id_author",

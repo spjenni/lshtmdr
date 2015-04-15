@@ -21,14 +21,14 @@
 
 <cite:linkhere><xhtml:em><print expr="title" opts="magicstop"/></xhtml:em></cite:linkhere>
 
-[<print expr="type"/>] 
+[Internet] 
 
 <!--<print expr="$config{archive_name}"/>-->
 <phrase ref="archive_name"/>.
   
 <if test="publisher"><if test="place_of_pub"><print expr="place_of_pub"/>: </if><print expr="publisher"/>; </if>
 <!-- <if test="date"><print expr="date" opts="res=year"/> [updated <print expr="lastmod" opts="res=month"/>] </if> -->
-  <if test="date"><print expr="date" opts="res=year"/> </if>
+  <if test="date"><print expr="date" opts="res=year"/></if>.
   
    Available from: <choose>
   					<when test="id_number"><print expr="id_number"/></when>

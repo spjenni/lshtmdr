@@ -22,7 +22,7 @@
 
 <cite:linkhere><print expr="title" opts="magicstop"/></cite:linkhere>
 
-  [<print expr="type"/>]. 
+  [Online]. 
   
   <if test="publisher"><xhtml:em><print expr="publisher"/></xhtml:em><if test="place_of_pub">, <print expr="place_of_pub"/></if>. </if>
 

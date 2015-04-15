@@ -151,16 +151,18 @@
   <epc:set name='docs' expr='$item.documents()'>
 
     <epc:if test="length($docs) = 0">
-      <epc:phrase ref="page:nofulltext" />
+      <p><epc:phrase ref="page:nofulltext" /></p>
 	
               <epc:set name='rrs' expr='$item.property("related_resources")'>
 		    <epc:if test="length($rrs) gt 0">
-
-      			<epc:foreach expr="$rrs" iterator="rr" limit='1'>        			
-			<epc:if test="is_set($rr{type}) eq 'dataresource'"> 
-			<p>Dataset may be available from <a href="{$rr{url}}"><epc:print expr="$rr{url}" /></a></p>
+			Dataset may be available externally from:
+			<ul>
+      			<epc:foreach expr="$rrs" iterator="rr">        			
+			<epc:if test="is_set($rr{type}) and $rr{type} = 'dataresource'"> 
+			<li><a href="{$rr{url}}"><epc:print expr="$rr{title}" /></a></li>
 			</epc:if>
       			</epc:foreach>
+			</ul>
 		    </epc:if>
 		    <epc:if test="length($rrs) = 0">
 			<p><a href="{$config{http_cgiurl}}/request_doc?eprintid={$item.property('eprintid')}"><epc:phrase ref="request:button"/></a></p>
