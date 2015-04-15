@@ -105,6 +105,7 @@ ul.ep_tm_menu, ul.ep_tm_key_tools {
 
 	display: inline;
 }
+#content input, #content textarea {font-size : 1.2em}
 #content table.ep_search_fields > tbody > tr > th, #content table.ep_search_fields > tbody > tr > td{
 	border-bottom: 1px dashed #25688F;
 	border-bottom: 1px dashed #7339A4;
