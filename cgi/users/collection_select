@@ -48,7 +48,7 @@ unless( $repo->current_user->allow( "eprint/edit" ) )
 
 if( $collection->get_type ne 'collection' )
 {
-	print STDOUT "'collection' isn't really a collection";
+	print STDOUT "'collection' (".$collection->get_id.") isn't really a collection";
 	return;
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <cite:citation xmlns="http://www.w3.org/1999/xhtml" xmlns:cite="http://eprints.org/ep3/citation" xmlns:epc="http://eprints.org/ep3/control">
-	<a href="{$config{http_url}}/{eprintid}" target="_blank">
+	<a href="{$item.uri()}" target="_blank">
 		<h4 style="margin: 0.2em;">
 			<epc:choose>
 				<epc:when test="title"><epc:print expr="title"/></epc:when>

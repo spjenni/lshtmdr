@@ -54,7 +54,7 @@ function checkbox_atc_Click(e){
 			method: 'get',
 			onSuccess: function(transport) {
 				$("selected_eprints").replace(transport.responseText);
-				$$("input.ep_cs_checkbox").each(function(el){el.observe("click", checkboxClick );});
+				$$("input.ep_atc_checkbox").each(function(el){el.observe("click", checkbox_atc_Click );});
 			}
 		});
 
@@ -64,12 +64,12 @@ function checkbox_atc_Click(e){
 		var current_time = new Date().getTime();
 		var targeteprint = this.name.replace(/_add_/,"");
 		var url = eprints_http_cgiroot + "/users/add_to_collection?action=remove&target_eprintid="+$("collection_eprintid").value + "&collection_eprintid=" + targeteprint + "&fieldname=" + $("fieldname").value + "&time=" + current_time;
-
+		
 		new Ajax.Request(url, {
 			method: 'get',
 			onSuccess: function(transport) {
 				$("selected_eprints").replace(transport.responseText);
-				$$("input.ep_cs_checkbox").each(function(el){el.observe("click", checkboxClick );});
+				$$("input.ep_atc_checkbox").each(function(el){el.observe("click", checkbox_atc_Click );});
 			}
 		});
 	}

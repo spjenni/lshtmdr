@@ -48,7 +48,7 @@ unless( $repo->current_user->allow( "eprint/edit" ) )
 
 if( $collection->get_type ne 'collection' )
 {
-	print STDOUT "'collection' isn't really a collection";
+	print STDOUT "'collection' [".$collection->get_id."] isn't really a collection";
 	return;
 }
 
@@ -62,8 +62,8 @@ if( $action eq "remove" )
 	$collection->remove_from_collection( $eprint );
 }
 
-my $blacklist = $collection->get_blacklist( $fieldname );
-my $div = EPrints::Plugin::InputForm::Component::Field::CollectionSelect::_render_selected_eprints( $repo, $collection, $fieldname, $blacklist );
+my $blacklist = $eprint->get_blacklist( $fieldname );
+my $div = EPrints::Plugin::InputForm::Component::Field::AddToCollection::_render_selected_eprints( $repo, $eprint, $fieldname, $blacklist );
 print STDOUT $div->toString if( defined $div );
 
 return;

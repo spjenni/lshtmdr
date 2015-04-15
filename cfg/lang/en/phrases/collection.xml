@@ -57,7 +57,7 @@
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:add">Add</epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:remove">Remove</epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:title">Collection content</epp:phrase>
-	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:search_heading"><h3>Search For Items</h3></epp:phrase>
+	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:search_heading"><h3>Search For Collections</h3></epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:search_results_heading"><h3>Search Results</h3></epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:folder_heading"><h3>Choose From Your Working Folder</h3></epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:bookmarks_heading"><h3>Choose From Your Bookmarks</h3></epp:phrase>
@@ -73,5 +73,16 @@
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:tab_userdeposits">My Deposits</epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:tab_search">Search</epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:add_all_resources">Add All Resources</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:search_heading"><h3>Search for projects to associate with this data collection</h3></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:title">Associated Projects</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:current_selected"><p class="ep_cs_current_header">Projects currently associated with this data collection:</p></epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:nothing_selected">No projects currently selected.</epp:phrase>
+
+    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:your_deposits_heading"><h3>Your Deposited Projects</h3></epp:phrase>
+
 
 </epp:phrases>
