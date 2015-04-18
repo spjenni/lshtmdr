@@ -74,7 +74,7 @@
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:tab_search">Search</epp:phrase>
 	<epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:add_all_resources">Add All Resources</epp:phrase>
 
-    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:search_heading"><h3>Search for projects to associate with this data collection</h3></epp:phrase>
+    <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:search_heading"><h3>Search for Projects to associate with this Data Collection</h3></epp:phrase>
 
     <epp:phrase id="Plugin/InputForm/Component/Field/AddToCollection:title">Associated Projects</epp:phrase>
 

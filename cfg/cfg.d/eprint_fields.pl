@@ -557,7 +557,7 @@ push @{$c->{fields}->{eprint}},
 	name => 'copyright_holders',
 	type => 'text',
 	multiple => 1,
-	input_boxes => 1,
+	input_boxes => 2,
 },
 
 {

@@ -251,13 +251,15 @@ $c->{recollect_metadata_profile} = [
                                   render_quiet => 1,
                                   options      => [
                                       qw(
-					dataresource
-                    			pub
-                    			project
+										paper
+										presentation
+										dataresource
+										pub
+										project
                                         author
                                         collab
-                    			academic
-                    			other
+										academic
+										other
                                         )
                                   ],
                          	},
