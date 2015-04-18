@@ -55,7 +55,7 @@ while( my @row = $sth->fetchrow_array )
 
 	$item->{xhtml} = $frag;
 	$item->{values} = [
-		"for:value:multi:_projects" => $title,
+		"for:value:relative" => $title,
 	];
 }
 
