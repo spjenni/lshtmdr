@@ -54,7 +54,7 @@ $c->{repo_link} = {
 
 $c->{repo_link}->{remote_repos} = [	
 	{
-		repo_uri => 'lshtmtest.da.ulcc.ac.uk',
+		repo_uri => 'researchonline.lshtm.ac.uk',
 		#repo_port => 8080,
 		search_script => "/cgi/lookup/title_search"
 	},
