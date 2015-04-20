@@ -12,7 +12,7 @@ $c->{datacitedoi}{eprintstatus} = {inbox=>0,buffer=>1,archive=>1,deletion=>0};
 # doi = {prefix}/{repoid}/{eprintid}
 $c->{datacitedoi}{prefix} = "10.17037";
 $c->{datacitedoi}{repoid} = "DATA";
-$c->{datacitedoi}{apiurl} = "https://mds.datacite.org/doi";
+$c->{datacitedoi}{apiurl} = "https://mds.datacite.org/";
 $c->{datacitedoi}{user} = "BL.LSHTM";
 my $password_file =$c->{"base_path"}."/archives/lshtmdr/cfg/datacite.passwd";
 $c->{datacitedoi}{pass} = `cat $password_file`;
