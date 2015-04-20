@@ -38,7 +38,7 @@ $c->{check_user_password} = sub {
 		}
 		return 0;
 	}
-	print STDERR "Have an LDAP connection\n";
+#	print STDERR "Have an LDAP connection\n";
 
  	# Get password for the search-bind-account
 # 	my $id = $repo->get_id;
@@ -53,7 +53,7 @@ $c->{check_user_password} = sub {
 		print STDERR "LDAP Bind error: " . $mesg->error() . "\n";
  		return 0;
 	}
-	print STDERR "LDAP bound using $dn\n";
+#	print STDERR "LDAP bound using $dn\n";
 
 	# Distinguished name (and attributes needed later on) for this user
 	my $result = $ldap->search (
@@ -66,13 +66,13 @@ $c->{check_user_password} = sub {
 
 	my $entr = $result->pop_entry;
 
-	print STDERR "LDAP entry: $entr\n";
+#	print STDERR "LDAP entry: $entr\n";
 
 	if(!defined $entr ){
 		print STDERR "No entry found for $username going native (admin and exceptions only)...\n";
 	  my $user = $repo->user_by_username( $username );
 		if(defined $user && ($user->get_type eq "admin" || $username eq "bmc" || $username eq "ulcceditor" || $username eq "ulcctest2")){
-        print STDERR "Exceptions met\n";
+#        print STDERR "Exceptions met\n";
 			return $repo->database->valid_login( $username, $password );
 		}
 		return 0;
