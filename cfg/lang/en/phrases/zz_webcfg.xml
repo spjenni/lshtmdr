@@ -754,7 +754,7 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="document_fieldname_embargo_reasons">Reason for embargo</epp:phrase>
 
-    <epp:phrase id="document_fieldname_embargo_reasons_other">Other</epp:phrase>
+    <epp:phrase id="document_fieldname_embargo_reasons_other">Reason for embargo</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_date_embargo">State any embargo period required before this metadata can be published</epp:phrase>
 
