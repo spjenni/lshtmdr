@@ -240,12 +240,14 @@ function load_tooltips(){
     jQuery("[id$=_show]").each(function() {
 		
         var element_id = this.id;
+		
+		//SJ recorrected. Should have searched for string in ID. Allows tooltips on file
+		//upload form to work even if hide/show used
+		if(element_id.search("opt") == -1){
 		//RM contains coming up undefined
-//		if(element_id.contains("opt") != true){
 		//This will not throw error (may even be the intended use?)
-		if(jQuery.contains(this, "opt") != true){
+		//if(jQuery.contains(this, "opt") != true){
 
-			
 			var link = jQuery( this ).children();
 		   
 			//bind to help link and switch off
