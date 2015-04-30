@@ -137,7 +137,7 @@
   <epc:set name='parts' expr="$item.related_objects('http://purl.org/dc/terms/hasPart')">
 
 	<div class="rd_citation_right">
-    	<h2 class="file_list_heading">Dataset(s) in this study</h2>
+    	<h2 class="file_list_heading">Datasets</h2>
     	<!--<h2 class="file_title">Data</h2>-->
     		<table border="0" cellpadding="2" width="100%">
               	<tbody>
