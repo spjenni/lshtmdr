@@ -14,6 +14,7 @@ push @{$c->{fields}->{eprint}},
   name => 'research_groups',
   type => 'text',
   multiple => 1,
+  input_boxes =>2,
 },
 
 {
