@@ -797,6 +797,10 @@ terms.</p></epp:phrase>
     <epp:phrase id="eprint_fieldname_creators">Data Creators</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_related_resources_type_collab">Collaborator</epp:phrase>
+    
+     <epp:phrase id="eprint_fieldopt_related_resources_type_paper">Paper</epp:phrase>
+     
+      <epp:phrase id="eprint_fieldopt_related_resources_type_presentation">Presentation</epp:phrase>
 
 	
 	<!-- phrases that overwrite core lib/epm phrases -->
