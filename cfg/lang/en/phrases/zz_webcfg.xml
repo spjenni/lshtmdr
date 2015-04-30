@@ -32,7 +32,7 @@
 
     <epp:phrase id="user_fieldname_orcid">ORCID</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_collection_method">Method of Data Collection</epp:phrase>
+    <epp:phrase id="eprint_fieldname_collection_method">Method of Data Capture</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_language">Language(s) of written materials</epp:phrase>
 
@@ -83,13 +83,13 @@
 
     <epp:phrase id="viewname_eprint_funders">Research funders/sponsors</epp:phrase>
 
-    <epp:phrase id="viewname_eprint_types">Study Collection</epp:phrase>
+    <epp:phrase id="viewname_eprint_types">Projects</epp:phrase>
 
     <epp:phrase id="viewname_eprint_geographic_cover">Location</epp:phrase>
 
     <epp:phrase id="request_fieldname_requester_name">Full name</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_research_centre">The Research centre(s) with which this data collection is associated</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_research_centre">The Research Centre with which this Data Collection should be associated. Multiple centres may be selected by holding the CTRL key.</epp:phrase>
 
     <epp:phrase id="eprint_typename_data_collection">Data Collection</epp:phrase>
 
@@ -97,7 +97,7 @@
 
     <epp:phrase id="request_fieldhelp_requester_name">The name of the person who will be using the data or leading the analysis process</epp:phrase>
 
-    <epp:phrase id="request_fieldname_organisation">Institution or Organisation affiliation</epp:phrase>
+    <epp:phrase id="request_fieldname_organisation">Institution or organisation affiliation</epp:phrase>
 
     <epp:phrase id="request_fieldname_time_period">Expected time period of use</epp:phrase>
 
@@ -126,6 +126,8 @@
     <epp:phrase id="licenses_typename_materialtransferagreement_img">Material Transfer Agreement</epp:phrase>
 
     <epp:phrase id="licenses_typename_datasharingagreement_img">Data Sharing Agreement</epp:phrase>
+    
+    <epp:phrase id="licenses_typename_other_licence">Other</epp:phrase>
 
 
     <epp:phrase id="licenses_typename_cc_by_img"><a href="http://creativecommons.org/licenses/by/3.0/"><img src="/images/by.png" style="width: 100px;" title="Creative Commons: Attribution 3.0"/></a></epp:phrase>
@@ -147,6 +149,28 @@
     <epp:phrase id="licenses_typename_attached">Other data licence</epp:phrase>
 
     <epp:phrase id="licenses_typename_attached_img"><a href="#" onclick="jQuery('#files_box_rdlicence &gt; div &gt; div').find('[id$=_meta_bar]').find('a').trigger('click'); return false;">Licence document attached to this item</a></epp:phrase>
+
+	<epp:phrase id="licenses_description_materialtransferagreement">Material Transfer Agreement</epp:phrase>
+
+	<epp:phrase id="licenses_description_datasharingagreement">Data Sharing Agreement</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_by_nd">Creative Commons: Attribution-No Derivative Works</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_by">Creative Commons: Attribution</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_by_nc">Creative Commons: Attribution-Noncommercial</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_by_nc_nd">Creative Commons: Attribution-Noncommercial-No Derivative Works</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_by_nc_sa">Creative Commons: Attribution-Noncommercial-Share Alike</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_by_sa">Creative Commons: Attribution-Share Alike</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_public_domain">Creative Commons: Public Domain Dedication</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_gnu_gpl">Software: Creative Commons: GNU GPL</epp:phrase>
+	
+	<epp:phrase id="licenses_description_cc_gnu_lgpl">Software: Creative Commons: GNU LGPL</epp:phrase>
 
     <epp:phrase id="archive:workflow:stage:files:title">Upload your files</epp:phrase>
 
@@ -178,13 +202,13 @@
 
     <epp:phrase id="document_fieldhelp_date_embargo">You may set an embargo period for this file, indicating the date that it will be made public. Leave this field blank if it can be made available immediately </epp:phrase>
 
-    <epp:phrase id="document_fieldhelp_license"><p>Specify a licence that specifies how the file may be used by a user. This does not affect the access rights you grant to the repository at the end of this deposit process.</p>
+    <epp:phrase id="document_fieldhelp_license"><p>Specify a licence that outlines how the file may be used by a user. This does not affect the access rights you grant to the repository at the end of this deposit process.</p>
 
 <p>You are encouraged to upload any Material Transfer Agreement, Data Sharing Agreement, or other licence form as an associated file</p>
 
 <p>If you require an explanation of <a href="http://creativecommons.org/about/licenses/" target="_blank">Creative Commons</a> and <a href="http://opendatacommons.org/licenses/">Open Data Commons</a>, please contact the <a href="http://www.lshtm.ac.uk/research/researchdataman/rdm_service.html">RDM Support Service</a></p></epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_title">The title of the data colleciton/study. The title should not end with a full stop, but may end with a question mark. If there is a subtitle, it should be preceded with a colon [:]. Use capitals only for the first word and for proper nouns. 
+    <epp:phrase id="eprint_fieldhelp_title">The title of the data collection/project. The title should not end with a full stop, but may end with a question mark. If there is a subtitle, it should be preceded with a colon [:]. Use capitals only for the first word and for proper nouns. 
 <br/><span class="ep_form_example">Example: Perceptions of smoking among teenagers in Wales survey</span>
 </epp:phrase>
 
@@ -198,7 +222,7 @@
 <br/>Example: [<span class="ep_form_example">Smith</span>] [<span class="ep_form_example">Richard.</span>] [<span class="ep_form_example">richard.smith@lshtm.ac.uk</span>]
 <br/>Example: [<span class="ep_form_example">Archer</span>] [<span class="ep_form_example">Jonathan</span>] [<span class="ep_form_example">jonathan.archer@udsm.ac.tz</span>]</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_corp_creators">Institutions that were involved in the creation of this dataset, e.g. a collaborating university, an external laboratory</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_corp_creators">Institutions that were involved in the creation of this dataset, e.g. a collaborating university, an external laboratory.</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_contributors"><p>Indicate any other individuals who had a part in the data’s creation and their role. Names will be displayed on the public data collection page, but will not be used for browsing purposes.</p>
 <p>To suggest other contribution types, email researchdatamanagement@lshtm.ac.uk</p>
@@ -206,7 +230,7 @@
 
     <epp:phrase id="eprint_fieldhelp_contact_email">If there are access restrictions on any of the files in this dataset, requests to view and access these items will be sent to this email address. The email address will not be made public.</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_divisions">The faculty and department with which this item is associated</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_divisions">The faculty and department with which this Data Collection should be associated. Multiple departments may be selected by holding the CTRL key.</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_copyright_holders">State the institutions or individuals that are involved in the work. E.g. LSHTM, a funding body, etc.</epp:phrase>
 
@@ -214,7 +238,7 @@
 
     <epp:phrase id="eprint_fieldhelp_date">The date this dataset was completed, submitted for publication, or published. If you do not know the day or month, these can be left blank.</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_ispublished">If the dataset is to be published alongside a paper in a third party system, please indicate if it has been submitted, in press, or published. If your dataset is only held in this repository, select ‘unpublished’.</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_ispublished">State the name of the project in which the data was created or captured. Otherwise, leave blank.</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_publisher">If the data collection has been published prior to deposit here, please state by whom. Do not use abbreviations, enter in full.
 <br/>Example: <span class="ep_form_example">Oxford University Press</span>
@@ -245,7 +269,7 @@
 
     <epp:phrase id="eprint_fieldopt_related_resources_type_other">Other</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_research_groups">Research groups with which the data collection is associated</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_research_groups">Research groups with which the data collection is associated.</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_research_groups">Research Group</epp:phrase>
 
@@ -309,7 +333,7 @@
 
     <epp:phrase id="eprint_fieldname_collection_date">Data Collection Period</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_collection_date">The start and end date of the data collection period</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_collection_date">The time period during which data was created, captured, or generated</epp:phrase>
 
     <epp:phrase id="collection_mode_typename_unknown">Unknown</epp:phrase>
 
@@ -363,9 +387,9 @@
 
     <epp:phrase id="eprint_fieldhelp_collection_mode">Indicate the method (or methods) that were used to capture data. E.g. interview, questionnaire.</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_collection_mode">Mode of Collection</epp:phrase>
+    <epp:phrase id="eprint_fieldname_collection_mode">Mode of data capture</epp:phrase>
 
-    <epp:phrase id="viewname_eprint_collection_mode">Mode of Collection</epp:phrase>
+    <epp:phrase id="viewname_eprint_collection_mode">Mode of data capture</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_project_date">The start and end date of the study/project</epp:phrase>
 
@@ -598,7 +622,7 @@
 <li>Submission: Date the dataset was submitted for publication elsewhere</li>
 <li>Publication: Date the dataset was published elsewhere</li>
 </ol>
-It is advisable to indicate the completion date for most purposes</epp:phrase>
+You should specify the completion date</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_date_type_submitted">Submitted for publication (e.g. in a journal)</epp:phrase>
 
@@ -624,11 +648,11 @@ associated metadata that I am archiving at <epc:phrase ref="archive_name"/>) is 
 <p>Clicking on the deposit button indicates your agreement to these 
 terms.</p></epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_relation">This field describes relationships this item has to other entities.</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_relation">This search/browse menu allows you to associate your Data Collection with a Project record in this repository (if one exists for your project). If a Project record doesn't exist, you can ignore this field.</epp:phrase>
 
     <epp:phrase id="lib/searchfield:help_counter">Counter</epp:phrase>
 
-    <epp:phrase id="request_fieldhelp_reason">Describe the purpose for which you intend to use the dataset</epp:phrase>
+    <epp:phrase id="request_fieldhelp_reason">Describe the purpose of the analysis that you wish to perform and methods that will be applied.</epp:phrase>
 
     <epp:phrase id="Plugin/Screen/Public/RequestCopy:title">Data Request</epp:phrase>
 
@@ -681,17 +705,19 @@ terms.</p></epp:phrase>
     <epp:phrase id="document_fieldopt_retention_period_19">19 years</epp:phrase>
 
     <epp:phrase id="document_fieldopt_retention_period_20">20 years</epp:phrase>
+    
+    <epp:phrase id="document_fieldopt_retention_period_other">Other</epp:phrase>
 
 
     <epp:phrase id="validate:embargo_too_far_in_future">A file embargo date cannot be more than <epc:pin name="embargo_cap"/> in the future.</epp:phrase>
 
-    <epp:phrase id="request_fieldhelp_variables_required">Variables required</epp:phrase>
-
-    <epp:phrase id="request_fieldname_variables_required">Variables required</epp:phrase>
-
-    <epp:phrase id="request_fieldhelp_supporting_information">Additional information to support request</epp:phrase>
+    <epp:phrase id="request_fieldname_variables_required">Variables requested</epp:phrase>
+    
+    <epp:phrase id="request_fieldhelp_variables_required">If the data creator has stated they will make available only a limited number of data values in a tabular dataset, you should use this field to specify the values that you are requesting. Otherwise leave this field blank.</epp:phrase>
 
     <epp:phrase id="request_fieldname_supporting_information">Additional information to support request</epp:phrase>
+    
+     <epp:phrase id="request_fieldhelp_supporting_information">Provide any additional information that may support your access request, e.g. academic profile</epp:phrase>
 
     <epp:phrase id="metapage_title_recollect_files">Upload Files</epp:phrase>
 
@@ -707,7 +733,7 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="eprint_fieldname_repo_link_link">Link to the publication (URI)</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_repo_link"><p>If your data collection is analysed in a publication held in LSHTM ResearchOnline, you can link the two resources. This data collection's record will contain a web link to the publication and the publication will be updated to link to this data collection.</p><p>Simply type the first 5 letters of the title and select the correct publication from the search list.</p></epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_repo_link"><p>If your data collection is analysed in a publication held in LSHTM ResearchOnline, you can link the two resources. This data collection's record will contain a web link to the publication and the publication will be updated to link to this data collection.</p><p>Type the first 5 letters of the title and select the correct publication from the search list.</p></epp:phrase>
 
     <epp:phrase id="eprint_fieldname_repo_link_title">Title</epp:phrase>
 
@@ -750,13 +776,13 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="document_fieldhelp_embargo_reasons">Select a reason from the drop down list. If you wish you may enter you own reason in the box below and leave this field "unspecified".</epp:phrase>
 
-    <epp:phrase id="document_fieldhelp_embargo_reasons_other">Add your own reason for the file embargo here. Please make sure to leave the embargo reasons drop down box as "unspecified"</epp:phrase>
+    <epp:phrase id="document_fieldhelp_embargo_reasons_other">Enter reason embargo is needed.</epp:phrase>
 
     <epp:phrase id="document_fieldname_embargo_reasons">Reason for embargo</epp:phrase>
 
     <epp:phrase id="document_fieldname_embargo_reasons_other">Reason for embargo</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_date_embargo">State any embargo period required before this metadata can be published</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_date_embargo">State any embargo period required before this metadata can be published.</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_date_embargo">Embargo date for metadata record (optional)</epp:phrase>
 
@@ -764,7 +790,7 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="Plugin/Screen/EPrint/CollectionDetails:title">Details</epp:phrase>
     
-    <epp:phrase id="eprint_fieldhelp_bounding_box"><!-- help for this field is in the component --></epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_bounding_box">Draw a rectangle that shows a geographical location relevant to the data. E.g. a broad area where the data was captured. Note that the hand icon allows navigation and clicking on the map, while the square icon allows a new bounding box to be drawn. You may also stretch any rectangle to change its size.</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_keywords">Keywords</epp:phrase>
 
@@ -772,4 +798,15 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_related_resources_type_collab">Collaborator</epp:phrase>
 
+	
+	<!-- phrases that overwrite core lib/epm phrases -->
+	<epp:phrase id="eprint_fieldname_bounding_box">Geographical area covered</epp:phrase>
+	
+	<epp:phrase id="eprint_fieldhelp_projects">State the name of the project in which the data was created or captured. Otherwise, leave blank</epp:phrase>
+	
+	<epp:phrase id="eprint_fieldhelp_grant">Provide the funder grant number of your project, if applicable</epp:phrase>
+	
+	<epp:phrase id="eprint_fieldhelp_funders">The full name of the funder or sponsor that supported the research. Do not enter the funder acronym.</epp:phrase>
+	
 </epp:phrases>
+
