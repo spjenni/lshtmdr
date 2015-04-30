@@ -144,7 +144,6 @@ img.ep_required{
 .ep_form_action_button {
 	background-color: #6788ae !important;
 	border: 0px none white !important;
-
 }
 
 .ep_form_internal_button {
@@ -247,11 +246,12 @@ div#lshtmdr_home_map {
 div#lshtmdr_home_latest {
  	width: 60%; 
   	float: left;
+  	height: 455px;
   
 }
 div#lshtmdr_home_latest iframe .citation{
   	width: 100%;
-  	height: 300px;
+  	height: 400px;
   	overflow: auto;
   	color: red;
 }
