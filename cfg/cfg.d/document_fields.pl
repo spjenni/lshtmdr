@@ -19,18 +19,20 @@ push @{$c->{fields}->{document}},
 			'18',
             '19',
             '20',
+            'other',
 		],
 	},
 	{
 		name => "embargo_reasons",
 		type => "namedset",
-        	input_rows => 1,
+        input_rows => 1,
 		set_name => "embargo_reasons",
 	},
 	{
 		name => "embargo_reasons_other",
-		type => "longtext",
-		input_rows => 2
+		type => "text",
+		input_cols => 40,
+		#input_rows => 1
 	}
 
 ;
