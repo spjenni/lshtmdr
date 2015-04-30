@@ -52,7 +52,7 @@
  
     <!--SJ: moved-->
       <component>
-      <field ref="collection_mode"/>
+      <field required="yes" ref="collection_mode"/>
     </component>
     <!--end of moved-->
  
@@ -63,16 +63,16 @@
     <!--end of moved-->
  
     <!--SJ: moved -->
-    <component surround="Map_surround" show_help="always" collapse="no">
+    <component surround="Map_surround" collapse="no">
       <title>Geographic location</title>
-      <help>Enter if applicable the Longitude and Latitude values of a theoretical geographic bounding rectangle that would cover the region in which your data were collected. You can use</help>
+      <!--<help>Enter if applicable the Longitude and Latitude values of a theoretical geographic bounding rectangle that would cover the region in which your data were collected.</help>-->
       <field ref="bounding_box"/>
     </component>
 <!--    end of moved-->
              
     <!--SJ: moved-->
     <epc:if test="!$item{bounding_box_east_edge}">
-    <component>
+    <component collapse="yes">
       <field ref="geographic_cover"/>
     </component>
     </epc:if>
@@ -137,9 +137,7 @@
     <h2>Tell us about your project and faculty</h2>
     </component>
      
-    <!--SJ: moved -->
-	 <component type="Field::AddToCollection"><field ref="relation" /></component>
-    <!--end of moved-->
+   
      
     <component type="Field::Multi">
       <title>Project details</title>
@@ -148,10 +146,14 @@
       <field ref="funders" input_lookup_url="{$config{perl_url}}/users/lookup/simple_file" input_lookup_params="file=funders"/>
       <!--<field ref="grant"/>-->
     </component>
+    
+     <!--SJ: moved -->
+	 <component type="Field::AddToCollection"><field ref="relation" /></component>
+    <!--end of moved-->
  
     <!--SJ: moved-->
     <component>
-      <field ref="corp_creators" required="yes"/>
+      <field ref="corp_creators" required="yes" />
     </component>
     <!--end of moved-->
  
@@ -174,7 +176,7 @@
     <!--end of moved-->
      
     <!--SJ: moved--> 
-    <component type="Field::Multi">
+    <component collapse="yes" type="Field::Multi">
        <title>Publication details</title>
       <field ref="publisher"/>
       <field ref="place_of_pub"/>
@@ -182,7 +184,7 @@
     </component>
     <!--end of moved-->
  
-    <component>
+    <component collapse="yes">
       <field ref="date_embargo"/>
     </component> 
  
@@ -221,7 +223,7 @@
      <!-- <field ref="embargo_reasons"/> -->
       <field ref="embargo_reasons_other"/> 
       <field ref="license" required="yes"/>
-      <field ref="format"/>
+      <field ref="format" required="no"/>
       <field ref="retention_period"/>
 <!--  <field ref="relation" /> -->
 <!--  <field ref="language" /> -->
