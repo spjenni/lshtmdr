@@ -319,17 +319,15 @@ function reinstate_tooltip(container){
        
     var container_id = container + "_content";
     
+    console.log("c id is: " + container);
+    	
     jQuery("#" + container_id).find('img[src$="multi_down.png"]').attr("src","/display_images/lshtm_down_arrow.gif");
     jQuery("#" + container_id).find('img[src$="multi_up.png"]').attr("src","/display_images/lshtm_up_arrow.gif");
 
 	jQuery('div[id^='+container+']div[id$=_show]').each(function() {
-		
-		if(jQuery(this).attr("class") == "ep_update_doc_options"){
-			console.log("ck 1");
-		}
 
 		element_id = this.id;
-		
+		console.log("element id is: "+element_id);
 		var link = jQuery( this ).children();
        
         //bind to help link and switch off
@@ -344,7 +342,17 @@ function reinstate_tooltip(container){
 		
 		var final = element_id.replace("show", "inner");
 		
-		var value = help_text[final];   
+		//check to see if this a deposit form help or a document form help
+		//if document use a direct extraction of the html
+		//otherwise index the preloaded help_text array
+		if(final.indexOf("doc") > -1){
+			var value = jQuery("#" + final).html();
+			console.log("in direct call");
+		}
+		else{	
+			var value = help_text[final];   
+			console.log("in object call");
+		}
 		
 		jQuery("#" + this.id).tooltip({
 			items: "[id]",
