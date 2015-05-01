@@ -147,9 +147,9 @@
       <!--<field ref="grant"/>-->
     </component>
     
-     <!--SJ: moved -->
+     <!--SJ: moved and commented out until fixed
 	 <component type="Field::AddToCollection"><field ref="relation" /></component>
-    <!--end of moved-->
+	 end of moved-->
  
     <!--SJ: moved-->
     <component>
