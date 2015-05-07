@@ -197,10 +197,11 @@ jQuery(document).ready(function(){
     jQuery('.bxslider').bxSlider({
         mode:'fade',
         infiniteLoop: true, 
-        speed: 700,
+        speed: 2000,
         auto: true,
-       
-        hyperlinks: true,    
+        hyperlinks: true, 
+        tickerHover: true, 
+        pause: 9000,  
     });
 
 	//SJ: Call to load jquery function for qr_codes
