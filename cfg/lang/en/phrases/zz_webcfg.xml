@@ -812,5 +812,10 @@ terms.</p></epp:phrase>
 	
 	<epp:phrase id="eprint_fieldhelp_funders">The full name of the funder or sponsor that supported the research. Do not enter the funder acronym.</epp:phrase>
 	
+	<epp:phrase id="Plugin/Screen/EPrint/NewVersion:action:new_version:title">New Version (admin only)</epp:phrase>
+	
+	<epp:phrase id="Plugin/Screen/EPrint/NewVersion:action:new_version:description">Use this to submit a new version of this item. It will create an exact copy which you can then make changes to. This item and the new version will be linked. If you are unsure whether a new version is required please contact the <a href="mailto:researchdatamanagement@lshtm.ac.uk">Research Data Managment Support Service</a>.</epp:phrase>
+    
+	
 </epp:phrases>
 

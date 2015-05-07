@@ -1,1 +1,1 @@
-$c->{adminemail} = 'template@template';
+$c->{adminemail} = 'researchdatamanagement@lshtm.ac.uk';
