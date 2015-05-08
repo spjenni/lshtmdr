@@ -36,7 +36,7 @@
 	
 		<h4>How to deposit</h4>
 
-<p>If you are a LSHTM member or a registered user, please login. If not, please take a moment to read our guide to <a href="http://www.lshtm.ac.uk/research/researchdataman/share/index.html">data sharing</a>.</p>
+<p>Please take a look to our guide to <a href="http://www.lshtm.ac.uk/research/researchdataman/share/index.html">data sharing</a> for information on depositing data.</p>
 <div>
     <form method="get" accept-charset="utf-8" action="{$config{http_cgiurl}}/users/home">
      <input value="Submit your data to  Data Compass" type="submit" class="ep_form_action_button"/></form>

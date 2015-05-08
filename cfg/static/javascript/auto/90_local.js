@@ -319,8 +319,6 @@ function load_tooltips(){
 function reinstate_tooltip(container){
        
     var container_id = container + "_content";
-    
-    console.log("c id is: " + container);
     	
     jQuery("#" + container_id).find('img[src$="multi_down.png"]').attr("src","/display_images/lshtm_down_arrow.gif");
     jQuery("#" + container_id).find('img[src$="multi_up.png"]').attr("src","/display_images/lshtm_up_arrow.gif");
@@ -328,37 +326,37 @@ function reinstate_tooltip(container){
 	jQuery('div[id^='+container+']div[id$=_show]').each(function() {
 
 		element_id = this.id;
-		console.log("element id is: "+element_id);
-		var link = jQuery( this ).children();
-       
-        //bind to help link and switch off
-        link.bind("click", function (e) {
-            e.preventDefault();
-        });
-        //stop click blur event for help show
-        link.prop("onclick", null);
-        link.css('cursor','default');
-        //add new help icon
-        link.children().attr("src","/display_images/help_lshtm.png");
 		
-		var final = element_id.replace("show", "inner");
-		
-		//check to see if this a deposit form help or a document form help
-		//if document use a direct extraction of the html
-		//otherwise index the preloaded help_text array
-		if(final.indexOf("doc") > -1){
-			var value = jQuery("#" + final).html();
-			console.log("in direct call");
+		if((this.id).search("opt") == -1){
+			var link = jQuery( this ).children();
+		   
+			//bind to help link and switch off
+			link.bind("click", function (e) {
+				e.preventDefault();
+			});
+			//stop click blur event for help show
+			link.prop("onclick", null);
+			link.css('cursor','default');
+			//add new help icon
+			link.children().attr("src","/display_images/help_lshtm.png");
+			
+			var final = element_id.replace("show", "inner");
+			
+			//check to see if this a deposit form help or a document form help
+			//if document use a direct extraction of the html
+			//otherwise index the preloaded help_text array
+			if(final.indexOf("doc") > -1){
+				var value = jQuery("#" + final).html();
+			}
+			else{	
+				var value = help_text[final];   
+			}
+			
+			jQuery("#" + this.id).tooltip({
+				items: "[id]",
+				content: value,
+			});
 		}
-		else{	
-			var value = help_text[final];   
-			console.log("in object call");
-		}
-		
-		jQuery("#" + this.id).tooltip({
-			items: "[id]",
-            content: value,
-		});
 	}); 
 }
 

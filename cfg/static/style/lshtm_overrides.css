@@ -109,8 +109,8 @@ select {
 
 
 /* extras for input box borders */
-textarea {
-	
+#content input {
+    font-size: 1.0em;
 }
 
 img.ep_required{
