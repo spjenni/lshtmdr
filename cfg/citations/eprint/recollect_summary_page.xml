@@ -44,7 +44,7 @@
          </div>
       </epc:if>
       <epc:if test="abstract">
-        <h2><epc:phrase ref="eprint_fieldname_abstract"/></h2>
+        <h3><epc:phrase ref="eprint_fieldname_abstract"/></h3>
       <p class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em 0.5em; line-height:1.5em"><epc:print expr="abstract" /></p>
 
       </epc:if>
@@ -246,7 +246,7 @@
   </epc:if>
   
    <div class="rd_citation_right">
-      <h2>Statistics</h2>
+      <h3>Statistics</h3>
       <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none; margin-right: 0.5em;"/></a>
 	
       <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" style="margin-right: 0.5em;"></div>    
