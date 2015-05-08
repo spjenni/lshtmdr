@@ -10,9 +10,9 @@ $c->{datacitedoi}{eprintstatus} = {inbox=>0,buffer=>1,archive=>1,deletion=>0};
 
 #set these (you will get the from data site)
 # doi = {prefix}/{repoid}/{eprintid}
-$c->{datacitedoi}{prefix} = "10.4124";
-$c->{datacitedoi}{repoid} = "LS";
-$c->{datacitedoi}{apiurl} = "https://test.datacite.org/mds/";
+$c->{datacitedoi}{prefix} = "10.17037";
+$c->{datacitedoi}{repoid} = "DATA";
+$c->{datacitedoi}{apiurl} = "https://mds.datacite.org/doi";
 $c->{datacitedoi}{user} = "BL.LSHTM";
 my $password_file =$c->{"base_path"}."/archives/lshtmdr/cfg/datacite.passwd";
 $c->{datacitedoi}{pass} = `cat $password_file`;
@@ -67,7 +67,7 @@ $c->{datacitedoi}{delimiters} = ["/","."];
 $c->{datacitedoi}{allow_custom_doi} = 0;
 
 #Datacite recommend digits of length 8-10 set this param to pad the id to required length
-$c->{datacitedoi}{zero_padding} = 8;
+$c->{datacitedoi}{zero_padding} = 0;
 
 ##########################################
 ### Override which URL gets registered ###
