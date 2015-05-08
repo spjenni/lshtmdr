@@ -29,7 +29,7 @@ push @{$c->{fields}->{eprint}},
             browse_link => "collection_mode",
         },
     ],
-    #input_boxes => 2,
+    input_boxes => 2,
     
 },
 {

@@ -113,10 +113,11 @@ $c->{recollect_metadata_profile} = [
 		 {
                      name => 'language',
              	     type => 'compound',
+             	     input_boxes => 2,
                      fields => [ {
                         	sub_name => 'l',
                         	type => 'namedset',
-                                set_name => "languages",
+                            set_name => "languages",
                 		} ],
              	     multiple => 1,
                   },
