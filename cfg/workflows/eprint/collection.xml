@@ -36,6 +36,12 @@
       <field ref="research_groups"/>
     </component> 
     
+    <!--SJ: moved-->
+    <component>
+      <field ref="corp_creators" required="yes" />
+    </component>
+    <!--end of moved-->
+    
     <component  collapse="yes">
       <field ref="geographic_cover"/>
     </component>
