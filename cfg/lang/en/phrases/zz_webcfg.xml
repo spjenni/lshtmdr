@@ -44,11 +44,11 @@
 
     <epp:phrase id="eprint_fieldname_primary_contact">Primary contact</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_primary_contact">The person to contact for further information on this study</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_primary_contact">The person to contact for further information on this project.</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_study_abstract">Project Description</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_study_abstract">A brief description of the project or study.</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_study_abstract">A brief description of the project.</epp:phrase>
 
     <epp:phrase id="Plugin/Screen/NewEPrint:action:create:title">New Item</epp:phrase>
 
@@ -391,7 +391,7 @@
 
     <epp:phrase id="viewname_eprint_collection_mode">Mode of data capture</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_project_date">The start and end date of the study/project</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_project_date">The start and end date of the project</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_project_date">Project start and completion date</epp:phrase>
 
@@ -564,11 +564,11 @@
 
     <epp:phrase id="eprint_fieldname_collection_mode_cm">Mode(s) used</epp:phrase>
 
-    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:search_heading"><h3>Search For data collections to associate with this the study</h3></epp:phrase>
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:search_heading"><h3>Search for data collections to associate with this the project</h3></epp:phrase>
 
     <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:title">Associated Data Collections</epp:phrase>
 
-    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:current_selected"><p class="ep_cs_current_header">Data collections currently associated with this study:</p></epp:phrase>
+    <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:current_selected"><p class="ep_cs_current_header">Data collections currently associated with this project:</p></epp:phrase>
 
     <epp:phrase id="Plugin/InputForm/Component/Field/CollectionSelect:nothing_selected">No data collections currently selected.</epp:phrase>
 
@@ -630,9 +630,9 @@ You should specify the completion date</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_date_type_completed">Completed</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_note">Use this field for any useful information about your study/data that can't be entered anywhere else. This information will appear on the public summary page for this deposit.</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_note">Use this field for any useful information about your project/data that can't be entered anywhere else. This information will appear on the public summary page for this deposit.</epp:phrase>
 
-    <epp:phrase id="eprint_fieldhelp_projects">If the dataset was created for a project, indicate its title here. This will enable the relational linking of multiple data collections.</epp:phrase>
+    <epp:phrase id="eprint_fieldhelp_projects">State the name of the project in which the data was created or captured. Otherwise, leave blank.</epp:phrase>
 
     <epp:phrase id="deposit_agreement_text">
 <p xmlns:epc="http://eprints.org/ep3/control"><strong>For work being deposited by its own author:</strong> 
@@ -804,9 +804,8 @@ terms.</p></epp:phrase>
 
 	
 	<!-- phrases that overwrite core lib/epm phrases -->
+
 	<epp:phrase id="eprint_fieldname_bounding_box">Geographical area covered</epp:phrase>
-	
-	<epp:phrase id="eprint_fieldhelp_projects">State the name of the project in which the data was created or captured. Otherwise, leave blank</epp:phrase>
 	
 	<epp:phrase id="eprint_fieldhelp_grant">Provide the funder grant number of your project, if applicable</epp:phrase>
 	

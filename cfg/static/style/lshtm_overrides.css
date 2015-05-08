@@ -249,11 +249,11 @@ div#lshtmdr_home_latest {
   	height: 455px;
   
 }
-div#lshtmdr_home_latest iframe .citation{
+
+div#lshtmdr_home_latest iframe{
   	width: 100%;
   	height: 400px;
   	overflow: auto;
-  	color: red;
 }
 
 div#lshtmdr_home_latest{
