@@ -3,6 +3,22 @@
 # Multiple fields may be specified for one view, but avoid
 # subject or allowing null in this case.
 $c->{browse_views} = [
+		{
+                id => "title",
+                menus => [
+					{
+                        fields => [ "title" ],
+                		allow_null => 1,
+						new_column_at => [10,10],
+						mode => "sections",
+					}
+				],
+                order => "title",
+				variations => [
+					"title;first_letter",
+					"type",
+					"DEFAULT" ],
+        },
         {
                 id => "year",
                 menus => [
