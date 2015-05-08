@@ -32,7 +32,7 @@
 
     <epp:phrase id="user_fieldname_orcid">ORCID</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_collection_method">Method of Data Capture</epp:phrase>
+    <epp:phrase id="eprint_fieldname_collection_method">Description of data capture</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_language">Language(s) of written materials</epp:phrase>
 
@@ -73,8 +73,10 @@
     <epp:phrase id="viewtitle_eprint_divisions_menu_2">Browse by year where faculty/department is "<epc:pin name="value1"/>"</epp:phrase>
 
     <epp:phrase id="viewtitle_eprint_subjects_menu_2">Browse by Year where Subject is "<epc:pin name="value1"/>"</epp:phrase>
+    
+     <epp:phrase id="viewname_eprint_research_centre">Research Centre by year</epp:phrase>
 
-    <epp:phrase id="viewname_eprint_research_centre">Research centre by year</epp:phrase>
+    <epp:phrase id="viewname_eprint_research_centre">Research Centre by year</epp:phrase>
 
     <epp:phrase id="viewtitle_eprint_research_centre_list">Items where research centre is "<epc:pin name="value1"/>" and year is <epc:pin name="value2"/></epp:phrase>
 
@@ -622,7 +624,7 @@
 <li>Submission: Date the dataset was submitted for publication elsewhere</li>
 <li>Publication: Date the dataset was published elsewhere</li>
 </ol>
-You should specify the completion date</epp:phrase>
+You should specify the completion date in most cases.</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_date_type_submitted">Submitted for publication (e.g. in a journal)</epp:phrase>
 
@@ -804,6 +806,7 @@ terms.</p></epp:phrase>
 
 	
 	<!-- phrases that overwrite core lib/epm phrases -->
+	<epp:phrase id="summary_page:actions"><h3>Actions (admin only)</h3></epp:phrase>
 
 	<epp:phrase id="eprint_fieldname_bounding_box">Geographical area covered</epp:phrase>
 	
@@ -815,6 +818,9 @@ terms.</p></epp:phrase>
 	
 	<epp:phrase id="Plugin/Screen/EPrint/NewVersion:action:new_version:description">Use this to submit a new version of this item. It will create an exact copy which you can then make changes to. This item and the new version will be linked. If you are unsure whether a new version is required please contact the <a href="mailto:researchdatamanagement@lshtm.ac.uk">Research Data Managment Support Service</a>.</epp:phrase>
     
+    <!-- extras -->
+    
+    <epp:phrase id="viewname_eprint_title">Title</epp:phrase>
 	
 </epp:phrases>
 

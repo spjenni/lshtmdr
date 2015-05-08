@@ -19,7 +19,7 @@
   		</p>
       </div>
       <div class="lshtmdr_export">
-     	 <h4>Export</h4> 
+     	 <h4>Export Citation</h4>
 	<epc:print expr="$item.export_bar()"/>
         <h4>Sharing</h4>
         <!-- AddThis Button BEGIN -->
@@ -283,7 +283,7 @@
       
   </div>
   <div class="rd_citation_right">
-  <h3>Actions (login required)</h3>
+  <h3>Actions (admin only)</h3>
         		<!--<table class="ep_summary_page_actions">
         			<epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 		<tr>
