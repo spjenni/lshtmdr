@@ -38,6 +38,7 @@ my $session = new EPrints::Session;
 		my $div_inner = $repo->xml->create_element( "div", id=>"map-canvas");
 		
 		$div_outer->appendChild( $div_inner );
+		$frag->appendChild( $warning_div );
 		$frag->appendChild( $div_outer );
 		
 		$frag->appendChild( $session->make_javascript( 'map_show(' . $ep_data . ')' ));	
