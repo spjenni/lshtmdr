@@ -50,7 +50,7 @@ $c->{recollect_metadata_profile} = [
 
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
-	advanced_search => 1,
+	advanced_search => 0,
 	simple_search => 1,
 	},
 
@@ -151,7 +151,7 @@ $c->{recollect_metadata_profile} = [
 
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
-	advanced_search => 1,
+	advanced_search => 0,
 	simple_search => 1,
 	},
 
@@ -225,7 +225,7 @@ $c->{recollect_metadata_profile} = [
                       }, 
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
-	advanced_search => 1,
+	advanced_search => 0,
 	simple_search => 1,
 	},
 
@@ -236,7 +236,7 @@ $c->{recollect_metadata_profile} = [
                      type         => 'compound',
                      multiple     => 1,
                              fields       => [
-                 		{
+							 {
                                   sub_name   => 'title',
                                   type       => 'text',
                                  },
