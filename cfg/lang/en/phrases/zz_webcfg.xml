@@ -821,6 +821,8 @@ terms.</p></epp:phrase>
     <!-- extras -->
     
     <epp:phrase id="viewname_eprint_title">Title</epp:phrase>
+    
+    <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
 	
 </epp:phrases>
 
