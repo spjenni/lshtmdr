@@ -135,6 +135,53 @@ sub run_truncate_url
 
 	return [ $url_trunc, "STRING" ];
 }
+
+#SJ: returns an XHTML file name that breaks every 36 chars
+sub run_truncate_url_xhtml
+{
+	my( $self, $state, $obj, $url ) = @_;
+
+	my $repository = $state->{session}->get_repository();
+	my $frag = $repository->make_doc_fragment();
+	
+	$url = $url->[0];
+	
+	# check for file extension
+	my $ext = index( $url, '.' );
+	
+	# remove the extension
+	if( $ext != -1 )
+	{
+			$url = substr( $url,0, $ext);
+	} 
+
+	# if a more than 1 line make the first line 36 chars
+	# then make the the following lines 39 chars for (reasonable)
+	# alignment
+	if(length($url) > 36)
+	{
+		my $first_str = substr($url, 0, 35);		
+		my $last_str = substr($url, 35, length($url));
+		
+		$repository->log($first_str);
+		$repository->log($last_str);
+		my @filename_parts = $last_str =~ /(.{1,38})/g;
+		unshift(@filename_parts, $first_str);
+	
+		foreach (@filename_parts) 
+		{
+			$frag->appendChild($repository->make_text($_));
+			$frag->appendChild($repository->make_element( "br" ));
+		} 
+	}
+	# otherwise just add the file name
+	else
+	{
+		$frag->appendChild($repository->make_text($url));
+	}
+	return [ $frag, "XHTML" ];
+}
+
 #I hope there turns out ot be a better way to do this...
 sub run_raw_set_value
 {
