@@ -163,8 +163,6 @@ sub run_truncate_url_xhtml
 		my $first_str = substr($url, 0, 35);		
 		my $last_str = substr($url, 35, length($url));
 		
-		$repository->log($first_str);
-		$repository->log($last_str);
 		my @filename_parts = $last_str =~ /(.{1,38})/g;
 		unshift(@filename_parts, $first_str);
 	
