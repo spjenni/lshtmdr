@@ -81,13 +81,11 @@ $c->{contributers_render} = sub
         my $firstbit = "";
 	    if( defined $name->{name}->{honourific} && $name->{name}->{honourific} ne "" ){
 	    	$firstbit = $name->{name}->{honourific}." ";
-	    	$repo->log( $firstbit );
 	    }
 	    if( defined $name->{name}->{given} ){
 	        my $initials = $name->{name}->{given};
 	        $initials =~ s/^(\w)[^\s]*(|\s+(\w)[^\s]*(|\s+(\w)[^\s]*))$/$1$3$5/; #no more than 3 initials...
 	        $firstbit.= $initials;
-	        $repo->log( $firstbit );
 	    }
 
 		my $secondbit = "";
