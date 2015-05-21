@@ -42,7 +42,7 @@
 
     <epp:phrase id="eprint_fieldname_primary_contact_email">email</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_primary_contact">Primary contact</epp:phrase>
+    <epp:phrase id="eprint_fieldname_primary_contact">Project contact</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_primary_contact">The person to contact for further information on this project.</epp:phrase>
 
@@ -54,7 +54,7 @@
 
     <epp:phrase id="Plugin/Screen/NewCollection:action:create:title">New Project</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_primary_contact_name">Name</epp:phrase>
+    <epp:phrase id="eprint_fieldname_primary_contact_name">Project contact</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_research_centre">Research Centre</epp:phrase>
 
@@ -331,7 +331,7 @@
 
     <epp:phrase id="eprint_fieldname_contributors_lshtm_flag">LSHTM Staff?</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_contributors_name">Contributors</epp:phrase>
+    <epp:phrase id="eprint_fieldname_contributors_name">Associated roles</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_collection_date">Data Collection Period</epp:phrase>
 
@@ -825,4 +825,3 @@ terms.</p></epp:phrase>
     <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
 	
 </epp:phrases>
-
