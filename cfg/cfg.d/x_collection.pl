@@ -21,7 +21,7 @@ $c->{collection_summary_page_metadata} = [qw/
     alt_title
     date
     collection_mode
-    creators_name
+    primary_contact_name
     contributors_name
     divisions
     research_centre
