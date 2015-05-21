@@ -43,19 +43,19 @@ push @{$c->{fields}->{eprint}},
 	name => 'contributors',
 	type => 'compound',
 	multiple => 1,
+	render_value => 'contributers_render',
 	fields => [
 		{
 			sub_name => 'type',
 			type => 'namedset',
-			set_name => "contributor_type",
+			set_name => "contributor_type",		
 		},
 		{
 			sub_name => 'name',
 			type => 'name',
 			hide_honourific => 1,
 			hide_lineage => 1,
-			family_first => 1,
-            render_value => 'render_name_with_initials',
+			family_first => 1,   
 		},
 		{
 			sub_name => 'id',

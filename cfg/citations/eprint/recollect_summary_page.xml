@@ -76,13 +76,14 @@
           	</epc:otherwise>
           </epc:choose>
           <td valign="top" class="rd_metatable_td">
-            <epc:choose>
-             <epc:otherwise>
-            <epc:print expr="$item.property($fieldname)" />
-              <epc:if test="$fieldname = 'contributors_name' and is_set(contributors_type)">
-                  (<epc:print expr="contributors_type" />)
-                </epc:if>
-              </epc:otherwise>
+			<!-- SJ: allows contributors_type to show directly after contributers name -->  
+			<epc:choose>
+          	<epc:when test="$fieldname = 'contributors_name'">
+				<epc:print expr="contributors" /> 
+          	</epc:when>            
+          	<epc:otherwise>
+               <epc:print expr="$item.property($fieldname)" />
+          	</epc:otherwise>
           </epc:choose>
           </td>
         </tr>

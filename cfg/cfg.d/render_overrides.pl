@@ -1,4 +1,5 @@
 # Here we override the core definition of relation so that we can use our own render sub (just below)
+
 push @{ $c->{fields}->{eprint} },
 {
         name => "relation",
@@ -60,6 +61,70 @@ $c->{render_possible_test_doi} = sub
         return $link;
 };
 
+# SJ: Extra render for contributors compound field adds type directly after name
+$c->{contributers_render} = sub
+{
+	my( $session, $field, $value ) = @_;
+
+	my $repo = $session->get_repository();
+
+	my $familylast = defined $field->{render_order} && $field->{render_order} eq "gf";
+
+ 	my $frag = $repo->make_doc_fragment;
+ 
+    my $names = $value;
+   	$names = [$names] if(ref($names) eq "HASH");
+	my $count=0;
+	for my $name(@$names){
+    	$count++;
+    	my $span = $repo->make_element("span", class=>"person_name");
+        my $firstbit = "";
+	    if( defined $name->{name}->{honourific} && $name->{name}->{honourific} ne "" ){
+	    	$firstbit = $name->{name}->{honourific}." ";
+	    	$repo->log( $firstbit );
+	    }
+	    if( defined $name->{name}->{given} ){
+	        my $initials = $name->{name}->{given};
+	        $initials =~ s/^(\w)[^\s]*(|\s+(\w)[^\s]*(|\s+(\w)[^\s]*))$/$1$3$5/; #no more than 3 initials...
+	        $firstbit.= $initials;
+	        $repo->log( $firstbit );
+	    }
+
+		my $secondbit = "";
+	    if( defined $name->{name}->{family} ){
+	    	$secondbit = $name->{name}->{family};
+	    }
+	    if( defined $name->{name}->{lineage} && $name->{name}->{lineage} ne "" ){
+	        $secondbit .= " ".$name->{name}->{lineage};
+	    }
+		if( !length( $firstbit ) ){
+        	$span->appendChild($repo->make_text($secondbit));
+	        
+	    }elsif( defined $familylast && $familylast ){
+	    	$span->appendChild($repo->make_text($firstbit." ".$secondbit));
+	        
+        }else{
+	        $span->appendChild($repo->make_text($secondbit.", ".$firstbit));
+        }
+        
+        # SJ: contributer type added to render_name_with_initials
+        if( defined $name->{type} )
+		{
+			my $role = $name->{type};
+			$span->appendChild( $repo->make_text( " (" . $role . ")" ));
+		}
+        
+	    $frag->appendChild($span);
+        #$repo->log("count: ".$count." limit: ".scalar(@$names));
+        $frag->appendChild($repo->html_phrase("lib/metafield:join_name")) if($count<(scalar(@$names)-1));
+        $frag->appendChild($repo->make_text(" and ")) if($count==(scalar(@$names)-1));
+        
+	    #$repo->log("Sending: ".$secondbit.", ".$firstbit);
+	}	
+	
+    return $frag;
+};
+
 $c->{render_name_with_initials} = sub 
 {
     my( $session, $field, $value ) = @_;
@@ -72,7 +137,7 @@ $c->{render_name_with_initials} = sub
  
     my $names = $value;
    	$names = [$names] if(ref($names) eq "HASH");
-   my $count=0;
+	my $count=0;
 	for my $name(@$names){
     	$count++;
     	my $span = $repo->make_element("span", class=>"person_name");
