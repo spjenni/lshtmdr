@@ -50,14 +50,14 @@ $c->{render_possible_test_doi} = sub
         #$value =~ s/^http:\/\/dx\.doi\.org//;
 		$value =~ s/^http:\/\/test\.datacite\.org\/handle//;
         
-        if( $value !~ /^(doi:)?10\.\d\d\d\d\// ) { return $session->make_text( $value ); }
+        if( $value !~ /^(doi:)?10\.\d\d\d\d\d/ ) { return $session->make_text( $value ); }
 
         $value =~ s/^doi://;
-
-        my $url = "http://test.datacite.org/handle/$value";
+		
+        my $url = "http://dx.doi.org/$value";
         my $link = $session->render_link( $url, "_blank" );
         $link->appendChild( $session->make_text( $value ) );
-        #$session->get_repository->log("rendering possible doi...");
+        $session->get_repository->log("rendering possible doi...");
         return $link;
 };
 
