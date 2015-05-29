@@ -129,8 +129,9 @@
 
     <epp:phrase id="licenses_typename_datasharingagreement_img">Data Sharing Agreement</epp:phrase>
     
+    <epp:phrase id="licenses_typename_other_licence_img">Other licence</epp:phrase>
+    
     <epp:phrase id="licenses_typename_other_licence">Other</epp:phrase>
-
 
     <epp:phrase id="licenses_typename_cc_by_img"><a href="http://creativecommons.org/licenses/by/3.0/"><img src="/images/by.png" style="width: 100px;" title="Creative Commons: Attribution 3.0"/></a></epp:phrase>
 
