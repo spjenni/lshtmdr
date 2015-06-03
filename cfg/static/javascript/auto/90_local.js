@@ -164,9 +164,10 @@ jQuery(document).ready(function(){
    
     //SJ: Simple logged in check to show request document link if user is not logged in//
     //future versions will need to relate login status to document security level      //
+    /*
     if(jQuery("#file_security").length && eprints_logged_in == true){
       
-       /*get user credentials for future versions */
+       //get user credentials for future versions
        jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
 		var security = jQuery("#file_security").val();
 		if(security === "staffonly" && jQuery.inArray(data.usertype,["admin","editor"]))
@@ -185,10 +186,10 @@ jQuery(document).ready(function(){
 	    console.log( "error: "+ e );
 	  })
 	  .always(function() {
-//	    console.log( "complete" );
+		//console.log( "complete" );
 	  });
      }
-	
+	*/
 	
 	/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
 	//call the function to bind tooltips to help button
