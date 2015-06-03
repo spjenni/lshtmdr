@@ -31,8 +31,44 @@
 			<a class="addthis_button_compact"></a>
 			<a class="addthis_counter addthis_bubble_style"></a>
 		</div>
+		
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->		
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e78c6ba4b32f905"></script>
-        <!-- AddThis Button END -->
+
+		
+		<script type="text/javascript">
+		var share_link = "http://";
+		var title_text = "";
+		
+		if(jQuery("meta[name='eprints.id_number']").length)
+		{
+			share_link = share_link + "dx.doi.org/" + jQuery("meta[name='eprints.id_number']")[0].readAttribute( "content" );
+		}
+		else
+		{
+			share_link = jQuery(location).attr('href');
+		}
+		
+		if(jQuery("meta[name='DC.title']").length)
+		{
+			title_text = "Published today! " + jQuery("meta[name='DC.title']")[0].readAttribute( "content" ).truncate( 109, "[…]" );
+		}
+		else
+		{
+			title_text = "Published today! ";
+		}
+		
+		// 140 - short_url_length (= 22 for http, 23 for https)
+		addthis_share = {
+			passthrough : {
+				twitter: {
+					text: ( title_text ),
+					url: share_link,
+				}
+			}
+		};
+	</script>
+	<!-- AddThis Button END -->
       </div>
   	</div>
   </div>
