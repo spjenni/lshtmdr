@@ -564,6 +564,8 @@
     <epp:phrase id="eprint_fieldopt_related_resources_type_academic">Academic institution</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_related_resources_type_dataresource">Online Data Resource</epp:phrase>
+    
+    <epp:phrase id="eprint_fieldopt_related_resources_type_dataresource">Research Group</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_collection_mode_cm">Mode(s) used</epp:phrase>
 
@@ -819,10 +821,12 @@ terms.</p></epp:phrase>
 	
 	<epp:phrase id="Plugin/Screen/EPrint/NewVersion:action:new_version:description">Use this to submit a new version of this item. It will create an exact copy which you can then make changes to. This item and the new version will be linked. If you are unsure whether a new version is required please contact the <a href="mailto:researchdatamanagement@lshtm.ac.uk">Research Data Managment Support Service</a>.</epp:phrase>
     
+    <epp:phrase id="request:button">Request data</epp:phrase>
     <!-- extras -->
-    
     <epp:phrase id="viewname_eprint_title">Title</epp:phrase>
     
     <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
+    
+     <epp:phrase id="content_typename_data_visualisation">Graphical representation of data</epp:phrase>
 	
 </epp:phrases>
