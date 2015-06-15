@@ -143,7 +143,7 @@ jQuery(document).ready(function(){
    
   });
  
-  if(jQuery("form[action='http://w01.lshtmdrtest.da.ulcc.ac.uk/cgi/request_doc#t']").length > 0){
+  if(jQuery("form[action='http://datacompass.lshtm.ac.uk/cgi/request_doc#t']").length > 0){
     var form = jQuery(this);
     jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
           jQuery(form).find('input:regex(id,c[0-9]+_requester_name_family)').val(data["name"]["family"]);
@@ -160,12 +160,12 @@ jQuery(document).ready(function(){
 /*                         .js functions added by SJ                               */
 /***********************************************************************************/
 jQuery(document).ready(function(){
-   
+   /*
     //SJ: Simple logged in check to show request document link if user is not logged in//
     //future versions will need to relate login status to document security level      //
     if(jQuery("#file_security").length && eprints_logged_in == true){
       
-       /*get user credentials for future versions */
+       //get user credentials for future versions
        jQuery.getJSON( "/cgi/export-ones-self", function( data ) {
 		var security = jQuery("#file_security").val();
 		if(security === "staffonly" && jQuery.inArray(data.usertype,["admin","editor"]))
@@ -187,7 +187,7 @@ jQuery(document).ready(function(){
 //	    console.log( "complete" );
 	  });
      }
-	
+	*/
 	
 	/* SJ: extra jQuery functions for the implementation of tool tip for deposit workflow */
 	//call the function to bind tooltips to help button
