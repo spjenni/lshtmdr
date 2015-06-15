@@ -64,7 +64,7 @@ $c->{datacitedoi}{delimiters} = ["/","."];
 
 # If set, plugin will attempt to register what is found in the EP DOI field ($c->{datacitedoi}{eprintdoifield})
 # Will only work if what is found adheres to DOI syntax rules (obvioulsy)
-$c->{datacitedoi}{allow_custom_doi} = 0;
+$c->{datacitedoi}{allow_custom_doi} = 1;
 
 #Datacite recommend digits of length 8-10 set this param to pad the id to required length
 $c->{datacitedoi}{zero_padding} = 0;
