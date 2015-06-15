@@ -31,8 +31,44 @@
 			<a class="addthis_button_compact"></a>
 			<a class="addthis_counter addthis_bubble_style"></a>
 		</div>
+		
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->		
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e78c6ba4b32f905"></script>
-        <!-- AddThis Button END -->
+
+		
+		<script type="text/javascript">
+		var share_link = "http://";
+		var title_text = "";
+		
+		if(jQuery("meta[name='eprints.id_number']").length)
+		{
+			share_link = share_link + "dx.doi.org/" + jQuery("meta[name='eprints.id_number']")[0].readAttribute( "content" );
+		}
+		else
+		{
+			share_link = jQuery(location).attr('href');
+		}
+		
+		if(jQuery("meta[name='DC.title']").length)
+		{
+			title_text = "Published today! " + jQuery("meta[name='DC.title']")[0].readAttribute( "content" ).truncate( 109, "[…]" );
+		}
+		else
+		{
+			title_text = "Published today! ";
+		}
+		
+		// 140 - short_url_length (= 22 for http, 23 for https)
+		addthis_share = {
+			passthrough : {
+				twitter: {
+					text: ( title_text ),
+					url: share_link,
+				}
+			}
+		};
+	</script>
+	<!-- AddThis Button END -->
       </div>
   	</div>
   </div>
@@ -76,13 +112,14 @@
           	</epc:otherwise>
           </epc:choose>
           <td valign="top" class="rd_metatable_td">
-            <epc:choose>
-             <epc:otherwise>
-            <epc:print expr="$item.property($fieldname)" />
-              <epc:if test="$fieldname = 'contributors_name' and is_set(contributors_type)">
-                  (<epc:print expr="contributors_type" />)
-                </epc:if>
-              </epc:otherwise>
+			<!-- SJ: allows contributors_type to show directly after contributers name -->  
+			<epc:choose>
+          	<epc:when test="$fieldname = 'contributors_name'">
+				<epc:print expr="contributors" /> 
+          	</epc:when>            
+          	<epc:otherwise>
+               <epc:print expr="$item.property($fieldname)" />
+          	</epc:otherwise>
           </epc:choose>
           </td>
         </tr>
@@ -190,7 +227,7 @@
 							<div class="ep_only_js" id="{$doc.property('docid')}_colbar" style="display: none">
 								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',true,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',true);EPJS_toggle('{$doc.property('docid')}_bar',false);return false;" href="#"><img src="{$config{base_url}}/style/images/minus.png" border="0" />
 								</a> 
-								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url($doc.property('main'))" /></a>
+								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url_xhtml($doc.property('main'))" /></a>
 								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
 									<input id="file_security" type="hidden" value="{$doc.raw_set_value('security')}"/>
 									<div id="hide_request"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
@@ -199,7 +236,7 @@
 							<div class="ep_only_js" id="{$doc.property('docid')}_bar">
 								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',false,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',false);EPJS_toggle('{$doc.property('docid')}_bar',true);return false;" href="#"><img src="{$config{base_url}}/style/images/plus.png" border="0" />
 								</a> 
-								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url($doc.property('main'))" /></a>
+								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url_xhtml($doc.property('main'))" /></a>
 								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
 									<input id="file_security" type="hidden" value="{$doc.property('security')}"/>
 									<div id="hide_request"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
@@ -250,6 +287,7 @@
       <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none; margin-right: 0.5em;"/></a>
 	
       <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="1" style="margin-right: 0.5em;"></div>    
+
 	<a href="{$item.uri()}" id="ep_qrcode" style="margin-right: 0.5em;"></a>
 
       <!--<div class="irstats2_summary_page_container" id="irstats2_summary_page_container">

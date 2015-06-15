@@ -121,7 +121,7 @@ $c->{recollect_metadata_profile} = [
                 		} ],
              	     multiple => 1,
                   },
-       	summary_page_metadata => 1,
+    summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
 	advanced_search => 1,
 	simple_search => 1,
@@ -255,6 +255,7 @@ $c->{recollect_metadata_profile} = [
 						paper
 						presentation
 						dataresource
+						researchgroup
 						pub
 						project
 						author

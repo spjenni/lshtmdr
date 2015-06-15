@@ -42,7 +42,7 @@
 
     <epp:phrase id="eprint_fieldname_primary_contact_email">email</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_primary_contact">Primary contact</epp:phrase>
+    <epp:phrase id="eprint_fieldname_primary_contact">Project contact</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_primary_contact">The person to contact for further information on this project.</epp:phrase>
 
@@ -54,7 +54,7 @@
 
     <epp:phrase id="Plugin/Screen/NewCollection:action:create:title">New Project</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_primary_contact_name">Name</epp:phrase>
+    <epp:phrase id="eprint_fieldname_primary_contact_name">Project contact</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_research_centre">Research Centre</epp:phrase>
 
@@ -131,8 +131,9 @@
 
     <epp:phrase id="licenses_typename_other_licence_img">Other licence</epp:phrase>
     
+    <epp:phrase id="licenses_typename_other_licence_img">Other licence</epp:phrase>
+    
     <epp:phrase id="licenses_typename_other_licence">Other</epp:phrase>
-
 
     <epp:phrase id="licenses_typename_cc_by_img"><a href="http://creativecommons.org/licenses/by/3.0/"><img src="/images/by.png" style="width: 100px;" title="Creative Commons: Attribution 3.0"/></a></epp:phrase>
 
@@ -333,7 +334,7 @@
 
     <epp:phrase id="eprint_fieldname_contributors_lshtm_flag">LSHTM Staff?</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_contributors_name">Contributors</epp:phrase>
+    <epp:phrase id="eprint_fieldname_contributors_name">Associated roles</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_collection_date">Data Collection Period</epp:phrase>
 
@@ -565,6 +566,8 @@
     <epp:phrase id="eprint_fieldopt_related_resources_type_academic">Academic institution</epp:phrase>
 
     <epp:phrase id="eprint_fieldopt_related_resources_type_dataresource">Online Data Resource</epp:phrase>
+    
+    <epp:phrase id="eprint_fieldopt_related_resources_type_researchgroup">Research Group</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_collection_mode_cm">Mode(s) used</epp:phrase>
 
@@ -820,13 +823,14 @@ terms.</p></epp:phrase>
 	
 	<epp:phrase id="Plugin/Screen/EPrint/NewVersion:action:new_version:description">Use this to submit a new version of this item. It will create an exact copy which you can then make changes to. This item and the new version will be linked. If you are unsure whether a new version is required please contact the <a href="mailto:researchdatamanagement@lshtm.ac.uk">Research Data Managment Support Service</a>.</epp:phrase>
     
+    <epp:phrase id="request:button">Request data</epp:phrase>
     <!-- extras -->
-    
     <epp:phrase id="viewname_eprint_title">Title</epp:phrase>
     
     <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
 
  <epp:phrase id="cgi/MapView:map_warning">Please note that the pins shown are centred in a geographical bounding box and therefore represent an approximation of the location of the study.</epp:phrase>
+    
+     <epp:phrase id="content_typename_data_visualisation">Graphical representation of data</epp:phrase>
 	
 </epp:phrases>
-

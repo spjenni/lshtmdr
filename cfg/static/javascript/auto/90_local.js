@@ -49,16 +49,17 @@ function auto_check_lshtmid_flag(){
 //  jQuery('input:regex(id,c[0-9]+_.+(|_[0-9]+)_lshtmid)').on("change", function(){   
   //  jQuery("table.ep_form_input_grid").on("change", 'input:regex(id,c[0-9]+_.+(|_[0-9]+)_lshtmid)', function() {
   jQuery("table.ep_form_input_grid").on("change", 'input', function() {
-
-    if(jQuery(this).attr("id").match(/c[0-9]+_.+(|_[0-9]+)_lshtmid/)){
-   
+    
+    if(jQuery(this).attr("id").match(/c[0-9]+_.+(|_[0-9]+)_family/)){
+			
             var id = jQuery(this).attr("id");
-            var flag_id = id.replace("lshtmid", "lshtm_flag");
+            var flag_id = id.replace("name_family", "lshtm_flag");
+            
             if(jQuery(this).val().length == 0){
-              jQuery("#"+flag_id).prop('checked', false);
-        }else{
-              jQuery("#"+flag_id).prop('checked', true);
-        }
+				jQuery("#"+flag_id).prop('checked', false);
+			}else{
+				jQuery("#"+flag_id).prop('checked', true);
+      }
     }
   });
 }
@@ -163,6 +164,7 @@ jQuery(document).ready(function(){
    /*
     //SJ: Simple logged in check to show request document link if user is not logged in//
     //future versions will need to relate login status to document security level      //
+    /*
     if(jQuery("#file_security").length && eprints_logged_in == true){
       
        //get user credentials for future versions
@@ -184,7 +186,7 @@ jQuery(document).ready(function(){
 	    console.log( "error: "+ e );
 	  })
 	  .always(function() {
-//	    console.log( "complete" );
+		//console.log( "complete" );
 	  });
      }
 	*/
