@@ -90,6 +90,7 @@
     </component>
     <!--end of moved-->
  
+
     
   </stage>
    
@@ -187,6 +188,12 @@
     <component collapse="yes">
       <field ref="date_embargo"/>
     </component> 
+
+<!--SJ: new-->
+    <component collapse="yes">
+      <field ref="id_number"/>
+    </component>
+    <!--end of new-->
  
    <!--
  <component>
