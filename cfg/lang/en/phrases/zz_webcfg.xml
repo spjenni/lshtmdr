@@ -128,6 +128,8 @@
     <epp:phrase id="licenses_typename_materialtransferagreement_img">Material Transfer Agreement</epp:phrase>
 
     <epp:phrase id="licenses_typename_datasharingagreement_img">Data Sharing Agreement</epp:phrase>
+
+    <epp:phrase id="licenses_typename_other_licence_img">Other licence</epp:phrase>
     
     <epp:phrase id="licenses_typename_other_licence">Other</epp:phrase>
 
@@ -823,6 +825,8 @@ terms.</p></epp:phrase>
     <epp:phrase id="viewname_eprint_title">Title</epp:phrase>
     
     <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
+
+ <epp:phrase id="cgi/MapView:map_warning">Please note that the pins shown are centred in a geographical bounding box and therefore represent an approximation of the location of the study.</epp:phrase>
 	
 </epp:phrases>
 
