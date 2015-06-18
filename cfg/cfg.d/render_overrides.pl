@@ -109,7 +109,8 @@ $c->{contributers_render} = sub
         if( defined $name->{type} )
 		{
 			my $role = $name->{type};
-			$span->appendChild( $repo->make_text( " (" . $role . ")" ));
+			my $role_spaces = $repo->html_phrase("contributor_type_typename_".$role);
+			$span->appendChild( $repo->make_text( " (" . $role_spaces . ")" ));
 		}
         
 	    $frag->appendChild($span);
