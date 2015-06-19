@@ -13,7 +13,7 @@ package EPrints::Plugin::Export::DC_LSHTM;
 #use EPrints::Plugin::Export::TextFile;
 
 @ISA = ( "EPrints::Plugin::Export::DC" );
-
+use Data::Dumper;
 use strict;
 
 sub new
@@ -111,21 +111,27 @@ sub convert_dataobj
                         push @dcdata, [ "date", $date ];
                 }
         }
-	#RM I have used typ for type instrad of peerReviewed/nonPeerReviewed
-   	if( $eprint->exists_and_set( "type" ) )
+		#RM I have used typ for type instrad of peerReviewed/nonPeerReviewed
+		if( $eprint->exists_and_set( "type" ) )
         {
                 push @dcdata, [ "type", EPrints::Utils::tree_to_utf8( $eprint->render_value( "type" ) ) ];
         }
 
+		
         my @documents = $eprint->get_all_documents();
         my $mimetypes = $plugin->{session}->get_repository->get_conf( "oai", "mime_types" );
+        
         foreach( @documents )
         {
+				# SJ: set the correct language phrase
+				my $doc_lang = $plugin->{session}->get_repository->html_phrase ("languages_typename_".$_->value("language") );
+        
                 my $format = $mimetypes->{$_->get_value("format")};
-                $format = $_->get_value("format") unless defined $format;
-                #$format = "application/octet-stream" unless defined $format;
+                #SJ: mime_type pushed instead of format
+                $format = $_->get_value("mime_type") unless defined $format;
+                $format = "application/octet-stream" unless defined $format;
                 push @dcdata, [ "format", $format ];
-                push @dcdata, [ "language", $_->value("language") ] if $_->exists_and_set("language");
+                push @dcdata, [ "language", $doc_lang ] if $_->exists_and_set("language");
                 push @dcdata, [ "rights", EPrints::XML::to_string($_->render_value("license")) ] if $_->exists_and_set("language");
                 push @dcdata, [ "identifier", $_->get_url() ];
         }
@@ -141,8 +147,22 @@ sub convert_dataobj
         push @dcdata, $plugin->simple_value( $eprint, id_number => "relation" );
 
         # If no documents, may still have an eprint-level language
-        push @dcdata, $plugin->simple_value( $eprint, language => "language" );
-
+        # SJ: change to language_l to remove incorrect hash call
+        my @lang_ph = $plugin->simple_value( $eprint, language_l => "language" );
+		#SJ: get the correct language phrase for OAI output
+		foreach my $i (0..$#lang_ph) 
+		{
+			foreach my $j (0..$#{$lang_ph[$i]}) 
+			{  	
+				if($j)
+				{	
+					$lang_ph[$i][$j] = $plugin->{session}->get_repository->html_phrase("languages_typename_".$lang_ph[$i][$j]);
+					$plugin->{session}->get_repository->log($lang_ph[$i][$j]);
+				}
+			}
+		}
+        
+        push @dcdata, @lang_ph;
      	# dc.source not handled yet.
         # dc.coverage not handled yet.
 
