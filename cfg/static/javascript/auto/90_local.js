@@ -50,10 +50,10 @@ function auto_check_lshtmid_flag(){
   //  jQuery("table.ep_form_input_grid").on("change", 'input:regex(id,c[0-9]+_.+(|_[0-9]+)_lshtmid)', function() {
   jQuery("table.ep_form_input_grid").on("change", 'input', function() {
     
-    if(jQuery(this).attr("id").match(/c[0-9]+_.+(|_[0-9]+)_family/)){
+    if(jQuery(this).attr("id").match(/c[0-9]+_.+(|_[0-9]+)_lshtmid/)){
 			
             var id = jQuery(this).attr("id");
-            var flag_id = id.replace("name_family", "lshtm_flag");
+            var flag_id = id.replace("lshtmid", "lshtm_flag");
             
             if(jQuery(this).val().length == 0){
 				jQuery("#"+flag_id).prop('checked', false);
