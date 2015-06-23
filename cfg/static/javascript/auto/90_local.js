@@ -287,6 +287,8 @@ function load_tooltips(){
 	jQuery( this ).datepicker({
 		showOn: "button",
 		dateFormat: 'yy-mm-dd',
+		changeYear: true,
+		yearRange: "1970:2090",
 		buttonImage: "/display_images/calendar.png",
 		buttonImageOnly: true,
 		buttonText: "Select date",
