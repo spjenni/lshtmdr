@@ -1,17 +1,30 @@
 <?xml version="1.0" standalone="no" ?>
 <!DOCTYPE page SYSTEM "entities.dtd" >
 <xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
-<xpage:title>About the Repository</xpage:title>
+<xpage:title><h4>About the Repository</h4></xpage:title>
 <xpage:body>
 
 <p>LSHTM Data Compass is a curated digital repository of research datasets produced by the London School of Hygiene &amp; Tropical Medicine and its collaborators. It addresses the <a href="http://www.lshtm.ac.uk/aboutus/introducing/mission/">School's mission</a> to improve health and health equity in the UK and worldwide and maximise the benefit and impact of its research by ensuring the underlying data can be safeguarded, shared and cited.</p>
 
-<p>This site is powered by <a href="{$config{base_url}}/eprints/">EPrints 3</a>, free software developed by the University of Southampton.</p>
+<h4>How to deposit</h4>
 
-<h2>Contact Information</h2>
+<p>Please take a look to our guide to <a href="http://www.lshtm.ac.uk/research/researchdataman/share/index.html">data sharing</a> for information on depositing data.</p>
+
+<h4>Contact Information</h4>
 
 <p>Any correspondence concerning this specific repository should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
 
+<h4>Copyright Information</h4>
+
+Image credits:<br />
+<br />
+
+<a href="http://blog.spoongraphics.co.uk/wp-content/uploads/2008/07/36.jpg">Vector Safari Compass</a>, by Spoongraphics. Licence: CC BY 2.0 UK.
+<br />
+<a href="https://www.flickr.com/photos/bg_dn/10334546793/">Versatile Hard Drive</a>, by begemot_dn. Licence: CC BY-NC 2.0.
+<br />
+<br />
+<p>This site is powered by <a href="{$config{base_url}}/eprints/">EPrints 3</a>, free software developed by the University of Southampton.</p>
 
 </xpage:body>
 </xpage:page>
