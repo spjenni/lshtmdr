@@ -130,7 +130,7 @@ jQuery(document).ready(function(){
   hide_lshtmid();
   auto_check_lshtmid_flag();
   sync_lshtmid_and_flag();
-  init_clear_buttons(["creators","contributors"]);
+  init_clear_buttons(["creators","contributors","repo_link"]);
  
   jQuery( "input[value='Public::RequestCopy']" ).parent("form").submit(function(){
    
@@ -231,7 +231,7 @@ var help_text = {};
 //redefine the behaviour of the help button on the default surround
 //icon is also changed
 function load_tooltips(){
-    
+
     jQuery("img[src$='multi_down.png']").each(function() {
 		jQuery(this).attr("src","/display_images/lshtm_down_arrow.gif");
 	});
