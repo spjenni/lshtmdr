@@ -105,11 +105,12 @@ $c->{contributers_render} = sub
 	        $span->appendChild($repo->make_text($secondbit.", ".$firstbit));
         }
         
+        my $xml = $repo->xml;
         # SJ: contributer type added to render_name_with_initials
         if( defined $name->{type} )
 		{
 			my $role = $name->{type};
-			my $role_spaces = $repo->html_phrase("contributor_type_typename_".$role);
+			my $role_spaces = $xml->to_string($repo->html_phrase("contributor_type_typename_".$role));
 			$span->appendChild( $repo->make_text( " (" . $role_spaces . ")" ));
 		}
         
