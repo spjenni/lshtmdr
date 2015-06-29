@@ -63,7 +63,7 @@ $c->{recollect_metadata_profile} = [
  
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
-	advanced_search => 1,
+	advanced_search => 0,
 	simple_search => 1,
 	},
 
@@ -76,7 +76,7 @@ $c->{recollect_metadata_profile} = [
 
        	summary_page_metadata => 0,
 	summary_page_metadata_hidden => 1,
-	advanced_search => 1,
+	advanced_search => 0,
 	simple_search => 1,
 	},
 
@@ -118,6 +118,7 @@ $c->{recollect_metadata_profile} = [
                         	sub_name => 'l',
                         	type => 'namedset',
                             set_name => "languages",
+                            search_input_style => 'default',
                 		} ],
              	     multiple => 1,
                   },
@@ -137,7 +138,7 @@ $c->{recollect_metadata_profile} = [
 
        	summary_page_metadata => 1,
 	summary_page_metadata_hidden => 0,
-	advanced_search => 1,
+	advanced_search => 0,
 	simple_search => 1,
 	},
 
