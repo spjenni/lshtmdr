@@ -150,14 +150,14 @@ sub convert_dataobj
         # SJ: change to language_l to remove incorrect hash call
         my @lang_ph = $plugin->simple_value( $eprint, language_l => "language" );
 		#SJ: get the correct language phrase for OAI output
+		my $xml = $plugin->{session}->get_repository->xml;
 		foreach my $i (0..$#lang_ph) 
 		{
 			foreach my $j (0..$#{$lang_ph[$i]}) 
 			{  	
 				if($j)
 				{	
-					$lang_ph[$i][$j] = $plugin->{session}->get_repository->html_phrase("languages_typename_".$lang_ph[$i][$j]);
-					$plugin->{session}->get_repository->log($lang_ph[$i][$j]);
+					$lang_ph[$i][$j] = $xml->to_string($plugin->{session}->get_repository->html_phrase("languages_typename_".$lang_ph[$i][$j]));
 				}
 			}
 		}
