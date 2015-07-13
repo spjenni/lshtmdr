@@ -10,7 +10,7 @@
   	<div class="lshtmdr_ces">
 <!--      <h3>Citation, export &amp; sharing</h3> -->
       <div class="lshtmdr_citations">
-        <h4><span onclick="jQuery('.lshtmdr_citations p').not('#harvard_citation').hide(); jQuery(this).css('color', '#666').siblings('span').css('color','#bbb'); jQuery('#harvard_citation').show(); ">Harvard</span> | <span onclick="jQuery('.lshtmdr_citations p').not('#vancouver_citation').hide(); jQuery(this).css('color', '#666').siblings('span').css('color','#bbb'); jQuery('#vancouver_citation').show();" style="color: #bbb;">Vancouver</span></h4>
+        <h4 class="citation"><span onclick="jQuery('.lshtmdr_citations p').not('#harvard_citation').hide(); jQuery(this).css('color', '#66a2d5').siblings('span').css('color','#bbb'); jQuery('#harvard_citation').show(); ">Harvard</span> | <span onclick="jQuery('.lshtmdr_citations p').not('#vancouver_citation').hide(); jQuery(this).css('color', '#66a2d5').siblings('span').css('color','#bbb'); jQuery('#vancouver_citation').show();" style="color: #bbb;">Vancouver</span></h4>
   		<p id="harvard_citation" class="rd_text_center" style="margin-bottom: 1em">
     		<epc:print expr="$item.citation('harvard')" />
   		</p>
@@ -19,9 +19,9 @@
   		</p>
       </div>
       <div class="lshtmdr_export">
-     	 <h4>Export Citation</h4>
+     	 <h4 class="citation">Export Citation</h4>
 	<epc:print expr="$item.export_bar()"/>
-        <h4>Sharing</h4>
+        <h4 class="citation">Sharing</h4>
         <!-- AddThis Button BEGIN -->
         <div class="addthis_toolbox addthis_default_style">
 			<a class="addthis_button_preferred_1"></a>
@@ -37,37 +37,37 @@
 
 		
 		<script type="text/javascript">
-		var share_link = "http://";
-		var title_text = "";
-		
-		if(jQuery("meta[name='eprints.id_number']").length)
-		{
-			share_link = share_link + "dx.doi.org/" + jQuery("meta[name='eprints.id_number']")[0].readAttribute( "content" );
-		}
-		else
-		{
-			share_link = jQuery(location).attr('href');
-		}
-		
-		if(jQuery("meta[name='DC.title']").length)
-		{
-			title_text = "Published today! " + jQuery("meta[name='DC.title']")[0].readAttribute( "content" ).truncate( 109, "[…]" );
-		}
-		else
-		{
-			title_text = "Published today! ";
-		}
-		
-		// 140 - short_url_length (= 22 for http, 23 for https)
-		addthis_share = {
-			passthrough : {
-				twitter: {
-					text: ( title_text ),
-					url: share_link,
-				}
+			var share_link = "http://";
+			var title_text = "";
+			
+			if(jQuery("meta[name='eprints.id_number']").length)
+			{
+				share_link = share_link + "dx.doi.org/" + jQuery("meta[name='eprints.id_number']")[0].readAttribute( "content" );
 			}
-		};
-	</script>
+			else
+			{
+				share_link = jQuery(location).attr('href');
+			}
+			
+			if(jQuery("meta[name='DC.title']").length)
+			{
+				title_text = "Published today! " + jQuery("meta[name='DC.title']")[0].readAttribute( "content" ).truncate( 109, "[…]" );
+			}
+			else
+			{
+				title_text = "Published today! ";
+			}
+			
+			// 140 - short_url_length (= 22 for http, 23 for https)
+			addthis_share = {
+				passthrough : {
+					twitter: {
+						text: ( title_text ),
+						url: share_link,
+					}
+				}
+			};
+		</script>
 	<!-- AddThis Button END -->
       </div>
   	</div>
@@ -80,22 +80,22 @@
          </div>
       </epc:if>
       <epc:if test="abstract">
-        <h3><epc:phrase ref="eprint_fieldname_abstract"/></h3>
+		   <div class="title_lshtm"><epc:phrase ref="eprint_fieldname_abstract"/></div>
+       <!-- <h3><epc:phrase ref="eprint_fieldname_abstract"/></h3> -->
       <p class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em 0.5em; line-height:1.5em"><epc:print expr="abstract" /></p>
 
       </epc:if>
       
   	<table class="main_meta_table" style="margin-bottom: 1em; margin-top: 1em; width:100%" cellpadding="3">
 
-	<epc:comment> 
+	<epc:comment>
        The block below loops over a list of field names taken from eprint_render.pl
        Edit the list of metadata to show in the summary page table in eprint_render.pl
     </epc:comment>
-<!-- summary_page_metadata (the list) is defined in x_recollect.pl -->
+	<!-- summary_page_metadata (the list) is defined in x_recollect.pl -->
 
 
-        <!--<epc:print expr="today()"/>-->
-
+    <!--<epc:print expr="today()"/>-->
     <epc:foreach expr="$config{summary_page_metadata}" iterator="fieldname">
       <epc:if test="is_set($item.property($fieldname))">
         <tr class="main_meta_table_row">
@@ -183,23 +183,23 @@
 
   <div class="rd_right_container">
 	<div class="rd_citation_right">
-		<h3>Files</h3>
+		<div class="title_lshtm">Files</div>
 
   <epc:set name='docs' expr='$item.documents()'>
 
     <epc:if test="length($docs) = 0">
       <p><epc:phrase ref="page:nofulltext" /></p>
 	
-              <epc:set name='rrs' expr='$item.property("related_resources")'>
+            <epc:set name='rrs' expr='$item.property("related_resources")'>
 		    <epc:if test="length($rrs) gt 0">
-			Dataset may be available externally from:
-			<ul>
-      			<epc:foreach expr="$rrs" iterator="rr">        			
-			<epc:if test="is_set($rr{type}) and $rr{type} = 'dataresource'"> 
-			<li><a href="{$rr{url}}"><epc:print expr="$rr{title}" /></a></li>
-			</epc:if>
-      			</epc:foreach>
-			</ul>
+				Dataset may be available externally from:
+				<ul>
+				<epc:foreach expr="$rrs" iterator="rr">        			
+				<epc:if test="is_set($rr{type}) and $rr{type} = 'dataresource'"> 
+				<li><a href="{$rr{url}}"><epc:print expr="$rr{title}" /></a></li>
+				</epc:if>
+					</epc:foreach>
+				</ul>
 		    </epc:if>
 		    <epc:if test="length($rrs) = 0">
 			<p><a href="{$config{http_cgiurl}}/request_doc?eprintid={$item.property('eprintid')}"><epc:phrase ref="request:button"/></a></p>
@@ -207,7 +207,8 @@
 
      		  </epc:set>
 
-   <!--   <epc:if test="$item.contact_email().is_set() and eprint_status = 'archive'">
+   <!--   
+	  <epc:if test="$item.contact_email().is_set() and eprint_status = 'archive'">
         (<a href="{$config{http_cgiurl}}/request_doc?eprintid={eprintid}"><epc:phrase ref="request:button" /></a>)
       </epc:if>
 -->
@@ -215,12 +216,12 @@
   </epc:set>
 
 	<epc:comment>render our file box pulled from eprint_render</epc:comment>
-<!--	<epc:print expr="$rd_sorteddocs" /> -->
+	<!-- <epc:print expr="$rd_sorteddocs" /> -->
 	<epc:set name='filetypes' expr="$flags{rc_filetypes}">
 	        <epc:foreach expr="$filetypes" iterator="filetype">
 			<epc:set name='docs' expr='$item.documents_recollect($filetype)'>
 			 	<epc:if test="length($docs) gt 0">
-					<h2 class="file_title"><epc:phrase ref="recollect_content_typename_{$filetype}" /></h2>
+					<h6 class="citation"><epc:phrase ref="recollect_content_typename_{$filetype}" /></h6>
 					<epc:foreach expr="$docs" iterator="doc">
 						<div class="file_group">
 						<div class="ep_summary_box_title" id="{$doc.property('docid')}_file_meta">
@@ -264,29 +265,37 @@
 	</epc:set>
 	</div>
 
-
-	<epc:if test="is_set(related_resources)">
+	<!-- SJ: LSHTM pubs moved from additonal items to right hand info box -->
+	<epc:if test="is_set(related_resources) or is_set(repo_link)">
    
   	<div class="rd_citation_right">
-  		<h3>Related resources</h3>
-      
-              
-              <set name='rrs' expr='$item.property("related_resources")'>
-                <ul>
-      			<foreach expr="$rrs" iterator="rr" limit='10'>        			
-                  <li><a href="{$rr{url}}"><epc:print expr="$rr{title}" /></a><epc:if test="is_set($rr{type})"> (<epc:phrase ref="eprint_fieldopt_related_resources_type_{$rr{type}}" />)</epc:if></li>
-      			</foreach>
-                </ul>
-     		  </set>
-           
-    </div>
-  </epc:if>
+  		<div class="title_lshtm">Related resources</div>
+
+		   <set name='rrs' expr='$item.property("related_resources")'>
+			 <ul>
+			 <foreach expr="$rrs" iterator="rr" limit='10'>        			
+				<li><a href="{$rr{url}}" title="{$rr{title}}"><epc:print expr="$rr.truncate_rr($rr{title})" /></a><epc:if test="is_set($rr{type})"> (<epc:phrase ref="eprint_fieldopt_related_resources_type_{$rr{type}}" />)</epc:if></li>
+			</foreach>
+			</ul>
+		  </set>  
+			<epc:if test="is_set(repo_link))">
+				<h6><img src="{$config{rel_path}}/display_images/oa.png" /> LSHTM Open Access publications:</h6>
+				<set name='rls' expr='$item.property("repo_link")'>
+					<ul>
+						<foreach expr="$rls" iterator="rl" limit='10'>        			
+							<li><a href="{$rl{link}}" title="{$rl{title}}"><epc:print expr="$rl.truncate_lshtm($rl{title})" /></a></li>
+						</foreach>
+					</ul>
+				</set> 
+			</epc:if>			  
+		</div>
+	</epc:if>
   
    <div class="rd_citation_right">
-      <h3>Resources</h3>
+      <div class="title_lshtm">Resources</div>
       <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none; margin-right: 0.5em;"/></a>
 	
-      <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="1" style="margin-right: 0.5em;"></div>    
+      <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="0" style="margin-right: 0.5em;"></div>    
 
 	<a href="{$item.uri()}" id="ep_qrcode" style="margin-right: 0.5em;"></a>
 
@@ -296,7 +305,7 @@
 		<div id="irstats2_summary_page_downloads" class="irstats2_graph"></div>
         <div id="irstats2_summary_page_downloads_again" class="irstats2_graph"></div>
 		</div>        </a>
-      <script type="text/javascript">
+		<script type="text/javascript">
 		document.observe("dom:loaded",function(){
 
 		var irstats2_summary_page_eprintid = '<epc:print expr="$item.property('eprintid')"/>';
@@ -311,9 +320,8 @@
 			'options': {
 			'container_id': 'irstats2_summary_page_downloads', 'date_resolution':'month','graph_type':'column'
 			} } );
-		});
-		
-</script>
+		});	
+		</script>
 -->
       
    
@@ -321,7 +329,7 @@
       
   </div>
   <div class="rd_citation_right">
-  <h3>Actions (admin only)</h3>
+ <div class="title_lshtm">Actions (admin only)</div>
         		<!--<table class="ep_summary_page_actions">
         			<epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 		<tr>
@@ -332,9 +340,9 @@
         		</table>-->
     
     <epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
-                		<epc:print expr="$action.action_icon()" /> <epc:print expr="$action.action_title()" />
-                		
-                	</epc:foreach>
+        <epc:print expr="$action.action_icon()" />
+			<epc:print expr="$action.action_title()" />
+		</epc:foreach>
     </div>
   </div>
 </cite:citation>

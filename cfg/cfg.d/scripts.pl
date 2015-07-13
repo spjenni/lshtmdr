@@ -211,3 +211,54 @@ sub run_raw_set_value
 	return [ $objvar->[0]->get_value( $value->[0] ), "STRING"];
 }
 
+#SJ: returns an XHTML file name that breaks every 39 chars
+sub run_truncate_lshtm
+{
+	my( $self, $state, $obj, $title ) = @_;
+
+	my $repository = $state->{session}->get_repository();
+	my $frag = $repository->make_doc_fragment();
+	
+	my $name = $title->[0];
+
+	if(length($name) > 40)
+	{
+		my $first_str = substr($name, 0, 39);
+		$first_str =~ s/\s+\w+$//;
+
+		$frag->appendChild($repository->make_text($first_str."... > view"));
+	}
+	# otherwise just add the file name
+	else
+	{
+		$frag->appendChild($repository->make_text($name." > view"));
+	}
+
+	return [ $frag, "XHTML" ];
+}
+
+sub run_truncate_rr
+{
+	my( $self, $state, $obj, $title ) = @_;
+
+	my $repository = $state->{session}->get_repository();
+	my $frag = $repository->make_doc_fragment();
+	
+	my $name = $title->[0];
+
+	if(length($name) > 40)
+	{
+		my $first_str = substr($name, 0, 38);
+		$first_str =~ s/\s+\w+$//;
+
+		$frag->appendChild($repository->make_text($first_str."... "));
+		$frag->appendChild($repository->make_element( "br" ));
+	}
+	# otherwise just add the file name
+	else
+	{
+		$frag->appendChild($repository->make_text($name));
+	}
+
+	return [ $frag, "XHTML" ];
+}

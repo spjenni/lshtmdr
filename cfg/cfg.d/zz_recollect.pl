@@ -135,8 +135,7 @@ $c->{summary_page_metadata} = [qw/
     official_url/];
 
 $c->{summary_page_metadata_hidden} = [qw/
-	repo_link
-        projects
+    projects
 	project_date
 	funders
 	grant
@@ -158,6 +157,10 @@ $c->{summary_page_metadata_hidden} = [qw/
 	userid
 	datestamp
 	lastmod/];
+	
+$c->{summary_page_metadata_repo} = [qw/	
+	repo_link
+	/];
 
 
 #Apply the recollect metadata profile

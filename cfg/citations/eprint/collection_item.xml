@@ -45,13 +45,13 @@
     <div class="rd_citation_left lshtmdr_ces">
       
       <epc:if test="study_abstract">
-    <h2><epc:phrase ref="eprint_fieldname_study_abstract"/></h2>
+   <div class="title_lshtm"><epc:phrase ref="eprint_fieldname_study_abstract"/></div>
     <p  class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em auto; line-height:1.5em"><epc:print expr="study_abstract" /></p>
   </epc:if>
       
   <table class="main_meta_table" style="margin-bottom: 1em; margin-top: 1em; width:100%" cellpadding="3">
 
-<epc:comment> 
+	<epc:comment> 
        The block below loops over a list of field names taken from eprint_render.pl
        Edit the list of metadata to show in the summary page table in eprint_render.pl
     </epc:comment>
@@ -114,7 +114,7 @@
     <epc:if test="!$flags{preview}">
       <td colspan="2">
 <!--          <epc:if test="$current_user and $current_user{usertype} = 'admin'"> -->
-          <h3>Actions (login required)</h3>
+          <div class="title_lshtm">Actions (login required)</div>
                 <table class="ep_summary_page_actions">
                 <epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 <tr>
@@ -131,13 +131,71 @@
 </epc:comment>
   </table>
 </div>	
+
+
   <div class="rd_right_container">
+
+	<!-- SJ: New files can be added and displayed at the project level -->
+	<div class="rd_citation_right">
+	 <div class="title_lshtm">Documentation</div>
+  
+	<epc:set name='filetypes' expr="$flags{rc_filetypes}">
+	        <epc:foreach expr="$filetypes" iterator="filetype">
+			<epc:set name='docs' expr='$item.documents_recollect($filetype)'>
+			 	<epc:if test="length($docs) gt 0">
+					<h6 class="citation"><epc:phrase ref="collection_content_typename_{$filetype}" /></h6>
+					<epc:foreach expr="$docs" iterator="doc">
+						<div class="file_group">
+						<div class="ep_summary_box_title" id="{$doc.property('docid')}_file_meta">
+							<div class="ep_only_js" id="{$doc.property('docid')}_colbar" style="display: none">
+								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',true,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',true);EPJS_toggle('{$doc.property('docid')}_bar',false);return false;" href="#"><img src="{$config{base_url}}/style/images/minus.png" border="0" />
+								</a> 
+								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url_xhtml($doc.property('main'))" /></a>
+								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
+									<input id="file_security" type="hidden" value="{$doc.raw_set_value('security')}"/>
+									<div id="hide_request"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
+								</epc:if>
+							</div>
+							<div class="ep_only_js" id="{$doc.property('docid')}_bar">
+								<a class="ep_box_collapse_link" onclick ="EPJS_blur(event); EPJS_toggleSlideScroll('{$doc.property('docid')}_content',false,'{$doc.property('docid')}_file_meta');EPJS_toggle('{$doc.property('docid')}_colbar',false);EPJS_toggle('{$doc.property('docid')}_bar',true);return false;" href="#"><img src="{$config{base_url}}/style/images/plus.png" border="0" />
+								</a> 
+								<a class="ep_box_collapse_text" href="{$doc.url()}"><epc:print expr="$doc.truncate_url_xhtml($doc.property('main'))" /></a>
+								<epc:if test="!$doc.is_public() and $item.contact_email().is_set() and eprint_status = 'archive'">
+									<input id="file_security" type="hidden" value="{$doc.property('security')}"/>
+									<div id="hide_request"> (<a href="{$config{http_cgiurl}}/request_doc?docid={$doc.property('docid')}"><epc:phrase ref="request:button"/></a>)</div>	
+								</epc:if>
+							</div>
+						</div>
+						<div class="ep_summary_box_body" id="{$doc.property('docid')}_content" style="display: none">
+							<div id="{$doc.property('docid')}_content_inner">         
+
+							<ul>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_formatdesc" />:</span><span class="filemeta"><epc:print expr="$doc.property('formatdesc')" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_security" />:</span><span class="filemeta"><epc:print expr="$doc.property('security')" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_license" />:</span><span class="filemeta"><epc:phrase ref="licenses_typename_{$doc.raw_set_value('license')}_img" /> <!--<epc:print expr="$doc.property('license')" />--></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="document_fieldname_format" />:</span><span class="filemeta"><epc:print expr="$doc.property('format')" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="file_fieldname_mime_type" />:</span><span class="filemeta"><epc:print expr="$doc.doc_mime()" /></span></li>
+								<li><span class="filemeta_h"><epc:phrase ref="file_fieldname_filesize" />:</span><span class="filemeta"><epc:print expr="$doc.human_doc_size()" /></span></li>
+							</ul>
+							</div>
+						</div>
+						</div>
+					</epc:foreach>	
+				</epc:if>
+			</epc:set>
+		</epc:foreach>
+		
+		<epc:if test="length($item{documents}) lt 1">
+			No documents are available for this project
+		</epc:if>	
+	</epc:set>
+  </div>
 
 <!--  <epc:set name='parts' expr="$parts">-->
   <epc:set name='parts' expr="$item.related_objects('http://purl.org/dc/terms/hasPart')">
 
 	<div class="rd_citation_right">
-    	<h2 class="file_list_heading">Data Collections</h2>
+    	 <div class="title_lshtm">Data Collections</div>
     	<!--<h2 class="file_title">Data</h2>-->
     		<table border="0" cellpadding="2" width="100%">
               	<tbody>
@@ -177,6 +235,9 @@
                                            </tr>
                                          </tbody>
                                        </table>
+                                       
+                                       
+                                       
                                      </div>
                                    </div>
                                  </div>
@@ -186,6 +247,9 @@
                       </epc:if>
 <!--						<epc:print expr="$part.property('eprintid')"/><br/> -->
 					</epc:foreach>
+					<epc:if test="$parts">
+			No data collections are currently associated with this project
+		</epc:if>
     
                         </tbody>
                      </table>
@@ -193,8 +257,23 @@
   </epc:set>
 <!--<epc:print expr="$rd_sorteddocs" /> -->
 
+<!-- SJ: The related resources are now being show on the landing page -->
+<epc:if test="is_set(related_resources)">
+  	<div class="rd_citation_right">
+  		<div class="title_lshtm">Related resources</div>
+              <set name='rrs' expr='$item.property("related_resources")'>
+                <ul>
+      			<foreach expr="$rrs" iterator="rr" limit='10'>        			
+                  <li><a href="{$rr{url}}" title="{$rr{title}}"><epc:print expr="$rr.truncate_rr($rr{title})" /></a><epc:if test="is_set($rr{type})"> (<epc:phrase ref="eprint_fieldopt_related_resources_type_{$rr{type}}" />)</epc:if></li>
+      			</foreach>
+                </ul>
+     		  </set> 
+     		  		  
+		</div>
+  </epc:if>
+
 <div class="rd_citation_right">
-  <h3>Actions (login required)</h3>
+   <div class="title_lshtm">Actions (login required)</div>
         		<!--<table class="ep_summary_page_actions">
         			<epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 		<tr>
@@ -208,6 +287,9 @@
                 		<epc:print expr="$action.action_icon()" /> <epc:print expr="$action.action_title()" />
                 		
                 	</epc:foreach>
-    </div>
-  </div>
+</div>
+    
+
+
+</div>
 </cite:citation>
