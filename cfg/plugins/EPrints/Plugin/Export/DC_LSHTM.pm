@@ -59,6 +59,21 @@ sub convert_dataobj
                         }
                 }
         }
+       
+       #SJ: Contributors swaped in for corp_creators as "contributor" 
+       if( $eprint->exists_and_set( "contributors_name" ) )
+        {
+                my $contributor = $eprint->get_value( "contributors_name" );
+                if( defined $contributor )
+                {
+                        foreach my $contributors ( @{$contributor} )
+                        {
+                                next if !defined $contributors;
+                                push @dcdata, [ "contributor", EPrints::Utils::make_name_string( $contributors ) ];
+                        }
+                }
+        }
+        
 
     if( $eprint->exists_and_set( "subjects" ) )
         {
@@ -71,7 +86,8 @@ sub convert_dataobj
                         push @dcdata, [ "subject", EPrints::Utils::tree_to_utf8( $subject->render_description() ) ];
                 }
         }
-
+	
+=pod
 	if( $eprint->exists_and_set( "corp_creators" ) )
         {
                 my $corp_creators = $eprint->get_value( "corp_creators" );
@@ -85,7 +101,7 @@ sub convert_dataobj
                 }
         }
 
-
+=cut
         push @dcdata, $plugin->simple_value( $eprint, abstract => "description" );
         push @dcdata, $plugin->simple_value( $eprint, publisher => "publisher" );
 
@@ -165,6 +181,17 @@ sub convert_dataobj
         push @dcdata, @lang_ph;
      	# dc.source not handled yet.
         # dc.coverage not handled yet.
+        #SJ: dc.coverage added
+        
+        if($eprint->exists_and_set("geographic_cover"))
+        {
+			my $cover = $eprint->get_value("geographic_cover");
+			
+			if(defined $cover)
+			{
+				push @dcdata, ["coverage", $cover];
+			}
+		}
 
         return \@dcdata;
 }
