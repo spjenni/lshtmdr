@@ -165,6 +165,10 @@ $c->{collection_render} = sub {
 		$links->appendChild( $repository->plugin( "Export::Simple" )->dataobj_to_html_header( $eprint ) );
 		$links->appendChild( $repository->plugin( "Export::DC" )->dataobj_to_html_header( $eprint ) );
 	}
+	
+	#SJ: Added to test files at collection level
+	my @content = $repository->get_types("collection_content");
+	$flags->{rc_filetypes} = \@content;
 
 #       Using epc script related_objects()
 #    	$fragments{parts} = $eprint->get_related_objects("http://purl.org/dc/terms/hasPart");
