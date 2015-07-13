@@ -838,10 +838,23 @@ terms.</p></epp:phrase>
     
     <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
 
- <epp:phrase id="cgi/MapView:map_warning">Please note that the pins shown are centred in a geographical bounding box and therefore represent an approximation of the location of the study.</epp:phrase>
+	<epp:phrase id="cgi/MapView:map_warning">Please note that the pins shown are centred in a geographical bounding box and therefore represent an approximation of the location of the study.</epp:phrase>
     
      <epp:phrase id="content_typename_data_visualisation">Graphical representation of data</epp:phrase>
 	
     <epp:phrase id="ordername_eprint_bynameror">Creators name</epp:phrase>
+    
+     <epp:phrase id="metapage_title_collection_files">Upload supporting documents</epp:phrase>
+     
+    <!-- phrases for collection document content --> 
+     <epp:phrase id="collection_content_typename_dmp">Data Management Plan</epp:phrase>
+     
+      <epp:phrase id="collection_content_typename_plan">Project Plan</epp:phrase>
+
+     <epp:phrase id="collection_content_typename_report">Project Report</epp:phrase>
+     
+     <epp:phrase id="collection_content_typename_resources">Project Resources</epp:phrase>
+     
+
 
 </epp:phrases>
