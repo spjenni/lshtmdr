@@ -39,7 +39,7 @@
 <p>Please take a look to our guides to <a href="http://www.lshtm.ac.uk/research/researchdataman/depositdata/index.html">depositing data</a> for help and further information.</p>
 <div>
     <form method="get" accept-charset="utf-8" action="{$config{http_cgiurl}}/users/home">
-     <input value="Submit your data to Data Compass" type="submit" class="ep_form_action_button_deposit"/></form>
+     <input value="Submit your data to  Data Compass" type="submit" class="ep_form_action_button"/></form>
   </div>
 </div>
 
@@ -55,6 +55,7 @@
 
 <a href="{$config{http_cgiurl}}/MapView">
 <div class="lshtmdr_home" id="lshtmdr_home_map">
+<h4>Collections map</h4>
 <p></p>
 
 </div>
