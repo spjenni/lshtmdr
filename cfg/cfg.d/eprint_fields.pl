@@ -4,6 +4,7 @@ push @{$c->{fields}->{eprint}},
 	name => 'creators',
 	type => 'compound',
 	multiple => 1,
+	render_value => 'render_name_with_initials_lshtm',
 	fields => [
 		{
 			sub_name => 'name',
@@ -11,7 +12,7 @@ push @{$c->{fields}->{eprint}},
 			hide_honourific => 1,
 			hide_lineage => 1,
 			family_first => 1,
-            render_value => 'render_name_with_initials',
+            
 		},
 		{
 			sub_name => 'id',
@@ -43,7 +44,7 @@ push @{$c->{fields}->{eprint}},
 	name => 'contributors',
 	type => 'compound',
 	multiple => 1,
-	render_value => 'contributers_render',
+	render_value => 'contributors_render',
 	fields => [
 		{
 			sub_name => 'type',
@@ -188,6 +189,7 @@ push @{$c->{fields}->{eprint}},
 {
 	name => 'abstract',
 	type => 'longtext',
+	render_single_value => 'citation_render_breaks',
 	input_rows => 10,
 },
 
@@ -614,6 +616,7 @@ push @{$c->{fields}->{eprint}},
 },
 {
 	name => 'study_abstract',
+	render_value => 'citation_render_breaks',
 	type => 'longtext',
 	input_rows => 3,
 },

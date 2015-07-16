@@ -22,6 +22,7 @@ div#lshtmdr_home_map {
  	height: 207px !important;
     float: right;
     border: none;
+    margin-right:25px;
 }
 	   
 /* overrides for lshtm surround component */     
@@ -107,6 +108,20 @@ select {
 
 }
 
+div.ep_form_report {
+	display: inline;
+	padding: 12px;
+	padding-bottom:10px;
+	padding-right:0px;
+}
+
+.ep_form_report a
+{
+	margin-left: 2px;
+	font-size: 1.0em;
+	font-family: "Helvetica", Arial,sans-serif !important;
+	color: #555;
+}
 
 /* extras for input box borders */
 #content input {
@@ -146,11 +161,25 @@ img.ep_required{
 	border: 0px none white !important;
 }
 
+.ep_form_action_button_deposit {
+	background-color: #6788ae !important;
+	border: 0px solid #B8B8B8  !important;
+	padding:5px;
+	font-size: 1.0em;
+	color: #fff;
+	cursor:pointer;
+	box-shadow: 4px 4px 4px #C8C8C8;
+	-webkit-box-shadow: 4px 4px 4px #C8C8C8;
+}
+
 .ep_form_internal_button {
 	border: 0px none white !important;
 	background-color: #6788ae !important;
 	font-family: "Arial", Georgia, Serif !important;
+}
 
+.ep_document_formatdesc{
+	width: 420px !important;
 }
 
 .ep_no.js{
@@ -224,7 +253,7 @@ div#lshtmdr_home_search_submit{
 }
 
 div#lshtmdr_home_map {
- 	width: 30%; 
+ 	width: 28%; 
     float: right;
     min-height:200px;
     background-image: url("/display_images/map.png");
@@ -246,20 +275,14 @@ div#lshtmdr_home_map {
 div#lshtmdr_home_latest {
  	width: 60%; 
   	float: left;
-  	height: 455px;
-  
+	background-color: #F0EDD8;
+  	font-family: "Arial, Georgia, Serif";
 }
 
 div#lshtmdr_home_latest iframe{
   	width: 100%;
-  	height: 400px;
-  	overflow: auto;
-}
-
-div#lshtmdr_home_latest{
-  	background-color: #eee;
-  	/*min-height: 450px;*/
-  	font-family: "Arial, Georgia, Serif";
+  	margin-bottom: -5px;
+	min-height: 460px;
 }
 
 
@@ -281,4 +304,12 @@ div#footer{
 .ui-datepicker-trigger{
 	margin-left:15px;
 
+}
+
+#citation_rr{
+	white-space:nowrap;
+}
+
+#citation_id{
+	
 }

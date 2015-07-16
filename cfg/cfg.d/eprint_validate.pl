@@ -26,14 +26,15 @@
 $c->{validate_eprint} = sub
 {
 	my( $eprint, $repository, $for_archive ) = @_;
-
+	
 	my $xml = $repository->xml();
-
+	
 	my @problems = ();
-
+	
 	# If we don't have creators (eg. for a book) then we 
 	# must have editor(s). To disable that rule, remove the 
 	# following block.	
+
 	if( !$eprint->is_set( "creators" ) && 
 		!$eprint->is_set( "editors" ) )
 	{
@@ -41,6 +42,23 @@ $c->{validate_eprint} = sub
 		push @problems, $repository->html_phrase( 
 				"validate:need_creators_or_editors",
 				fieldname=>$fieldname );
+	}
+
+	# SJ: Validation to check online data resource has a link otherwise will not show on citation
+	if($eprint->is_set( "related_resources" )){
+		
+		my $rr = $eprint->value( "related_resources" );
+		
+		foreach my $rr_check ( @$rr ) 
+		{
+			if($rr_check->{type} eq 'dataresource' && (!$rr_check->{title} || !$rr_check->{url}))
+			{
+				my $fieldname = $xml->create_element( "span", class=>"ep_problem_field:related_resources" );
+				push @problems, $repository->html_phrase( 
+					"validate:need_online_resource",
+					fieldname=>$fieldname );
+			}
+		}	
 	}
 
 	
@@ -62,7 +80,7 @@ $c->{validate_eprint} = sub
 			if(!EPrints::Utils::is_set( $document->value( "embargo_reasons" ) ) || 
 				(EPrints::Utils::is_set( $document->value( "embargo_reasons" ) ) && $document->value("embargo_reasons") eq "other" && !EPrints::Utils::is_set( $document->value( "embargo_reasons_other" ) ) ) ){
 
-			#	print STDERR "EMBARGO REASONS WARNING\n";
+				print STDERR "EMBARGO REASONS WARNING\n";
 
 				my $fieldname = $xml->create_element( "span", class=>"ep_problem_field:documents" );
 				push @problems,

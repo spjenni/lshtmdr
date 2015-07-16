@@ -143,7 +143,7 @@
 
     <epp:phrase id="licenses_typename_cc_by_nc_sa_img"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="/images/by-nc-sa.png" style="width: 100px;" title="Creative Commons: Attribution-Noncommercial-Share Alike 3.0"/></a></epp:phrase>
 
-    <epp:phrase id="licenses_typename_cc_zero">licenses_typename_cc_zero</epp:phrase>
+    <epp:phrase id="licenses_typename_cc_zero">Creative Commons 0</epp:phrase>
 
     <epp:phrase id="licenses_typename_cc_by_sa_img"><a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="/images/by-sa.png" style="width: 100px;" title="Creative Commons: Attribution-Share Alike 3.0"/></a></epp:phrase>
 
@@ -151,6 +151,22 @@
 
     <epp:phrase id="licenses_typename_cc_public_domain_img"><a href="http://creativecommons.org/licenses/publicdomain/"><img src="/images/publicdomain.png" style="width: 100px;" title="Creative Commons: Public Domain Dedication"/></a></epp:phrase>
 
+    
+	<epp:phrase id="licenses_typename_cc_gnu_gpl_img">Software: GNU GPL 2.0</epp:phrase>
+	
+	<epp:phrase id="licenses_typename_cc_gnu_lgpl_img">Software: GNU LGPL 2.1</epp:phrase>
+	
+	<epp:phrase id="licenses_typename_odc_by_img">Data: Open Data Commons Attribution License (Attribution)</epp:phrase>
+	
+	<epp:phrase id="licenses_typename_odc_odbl_img">Data: Open Database License (ODbL) (Attribution-Share Alike)</epp:phrase>
+	
+	<epp:phrase id="licenses_typename_odc_dbcl_img">Data: Open Database Contents License (DbCL)</epp:phrase>
+    
+    <epp:phrase id="licenses_typename_materialtransferagreement_img">Material Transfer Agreement</epp:phrase>
+
+    <epp:phrase id="licenses_typename_datasharingagreement_img">Data Sharing Agreement</epp:phrase>
+    
+    
     <epp:phrase id="licenses_typename_attached">Other data licence</epp:phrase>
 
     <epp:phrase id="licenses_typename_attached_img"><a href="#" onclick="jQuery('#files_box_rdlicence &gt; div &gt; div').find('[id$=_meta_bar]').find('a').trigger('click'); return false;">Licence document attached to this item</a></epp:phrase>
@@ -173,9 +189,13 @@
 	
 	<epp:phrase id="licenses_description_cc_public_domain">Creative Commons: Public Domain Dedication</epp:phrase>
 	
-	<epp:phrase id="licenses_description_cc_gnu_gpl">Software: Creative Commons: GNU GPL</epp:phrase>
+	<epp:phrase id="licenses_description_cc_gnu_gpl">Software: GNU GPL 2.0</epp:phrase>
 	
-	<epp:phrase id="licenses_description_cc_gnu_lgpl">Software: Creative Commons: GNU LGPL</epp:phrase>
+	<epp:phrase id="licenses_description_cc_gnu_lgpl">Software: GNU LGPL 2.1</epp:phrase>
+	
+	 <epp:phrase id="licenses_typename_cc_gnu_gpl">Software: GNU GPL 2.0</epp:phrase>
+	  
+  <epp:phrase id="licenses_typename_cc_gnu_lgpl">Software: GNU LGPL 2.1</epp:phrase>
 
     <epp:phrase id="archive:workflow:stage:files:title">Upload your files</epp:phrase>
 
@@ -392,9 +412,9 @@
 
     <epp:phrase id="eprint_fieldhelp_collection_mode">Indicate the method (or methods) that were used to capture data. E.g. interview, questionnaire.</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_collection_mode">Mode of data capture</epp:phrase>
+    <epp:phrase id="eprint_fieldname_collection_mode">Data capture method</epp:phrase>
 
-    <epp:phrase id="viewname_eprint_collection_mode">Mode of data capture</epp:phrase>
+    <epp:phrase id="viewname_eprint_collection_mode">Data capture method</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_project_date">The start and end date of the project</epp:phrase>
 
@@ -848,6 +868,8 @@ terms.</p></epp:phrase>
      
       <epp:phrase id="eprint_fieldname_creators_name">Data Creators(s)</epp:phrase>
       
+      <epp:phrase id="viewname_eprint_capture_method">Data Capture Method</epp:phrase>
+      
      <epp:phrase id="eprint_fieldname_userid">Depositor</epp:phrase>
     <!-- phrases for collection document content --> 
      <epp:phrase id="collection_content_typename_dmp">Data Management Plan</epp:phrase>
@@ -858,6 +880,7 @@ terms.</p></epp:phrase>
      
      <epp:phrase id="collection_content_typename_resources">Project Resources</epp:phrase>
      
+	<epp:phrase id="validate:need_online_resource">You must enter a link and title for any <epc:pin name="fieldname">Related resources</epc:pin> that are an Online Data Resource.</epp:phrase>
 
 
 </epp:phrases>

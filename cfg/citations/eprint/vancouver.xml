@@ -8,13 +8,11 @@
 
 <choose>
   <when test="creators">
-    <print expr="creators_name"/>.
+    <print expr="creators"/>.
   </when>
-  <when test="contirbutors">
-    <print expr="contributors_name"/>.
-  </when>
+  
   <otherwise>
-    No Author.
+    No Author
   </otherwise>
 </choose>
 
@@ -34,10 +32,11 @@
   					<when test="id_number"><print expr="id_number"/></when>
   					<otherwise><a href="{$item.url()}"><print expr="$item.url()"/></a></otherwise>
   				</choose>
+			
   				<if test="related_resources"> 
   					<set name='rrs' expr='$item.property("related_resources")'>
                 		<foreach expr="$rrs" iterator="rr" limit='10'>        			
-                  			<if test="is_set($rr{type}) and $rr{type} = 'dataresource'"> <a href="{$rr{url}}"><print expr="$rr{url}" /></a></if>
+                  			<if test="is_set($rr{type}) and $rr{type} = 'dataresource'"><span id="citation_rr"><a href="{$rr{url}}"><print expr="$rr{url}" /></a></span></if>
       					</foreach>
      		  		</set>
   				</if>

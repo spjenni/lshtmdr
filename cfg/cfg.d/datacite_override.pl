@@ -1,5 +1,9 @@
 package EPrints::Plugin::Event::DataCiteEvent;
 
+#our @ISA = qw/ EPrints::Plugin::Event /;
+
+#RM lets do the DOI coining somewhere (reasonably) accessible 
+
 sub coin_doi {
 
     my( $self, $repository, $dataobj) = @_;
@@ -8,7 +12,7 @@ sub coin_doi {
 
     # SJ: added to create sequential DOI ids according RM's allow_custom_doi format
     my $doi_id = $dataobj->id;
-	print STDERR "I AM HERE\n";    
+
     if( $repository->get_conf( "datacitedoi", "start_sequential_doi" ) )
     {
 		$doi_id = $self->sequential_doi( $session, $repository,$dataobj ); 	
@@ -84,5 +88,3 @@ sub sequential_doi {
 		return ( $list->count() + 1 );
 	}
 };
-
-
