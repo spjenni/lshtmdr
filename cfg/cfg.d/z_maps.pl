@@ -7,7 +7,7 @@ $c->{plugins}{"InputForm::Surround::Map_surround"}{params}{disable} = 0;
 # $c->{map_information_fields} = [qw/ title abstract uri eprintid /];
 
 # set the required number of eprint markers
-$c->{eprints_loc_limit} = 200;
+$c->{eprints_loc_limit} = 30;
 
 # Trigger to load the google maps apiv3 with drawing and location libraries enabled
 # and the jQuery 1.11.0 min library + jQueryUI

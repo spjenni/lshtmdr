@@ -49,8 +49,11 @@ my $session = new EPrints::Session;
 		$frag->appendChild( $warning_div );
 	}
 	
+	my $title_div = $repo->xml->create_element( "div", id=>"map-title");
     my $title = $repo->html_phrase( "cgi/MapView:title" );
-    $session->build_page( $title, $frag, "latest" );
+    $title_div->appendChild($title);
+    
+    $session->build_page( $title_div, $frag, "latest" );
     $session->send_page();
 
     $session->terminate;
@@ -72,7 +75,7 @@ sub action_get_json
 	# check if location metadata is present
 	my @filters = (
 		{ meta_fields => [qw( bounding_box_north_edge )], value => "",  match => "SET"},
-    	);
+    );
 
 	# return eprints recent eprint id and set limit
 	my $list = $ds->search(
