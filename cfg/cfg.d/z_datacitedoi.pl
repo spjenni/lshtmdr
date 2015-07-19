@@ -16,6 +16,8 @@ $c->{datacitedoi}{apiurl} = "https://mds.datacite.org/";
 $c->{datacitedoi}{user} = "BL.LSHTM";
 my $password_file =$c->{"base_path"}."/archives/lshtmdr/cfg/datacite.passwd";
 $c->{datacitedoi}{pass} = `cat $password_file`;
+#strip out whitespace
+$c->{datacitedoi}{pass} =~ s/\s*//g;
 
 # datacite requires a Publisher 
 # The name of the entity that holds, archives, publishes, 
