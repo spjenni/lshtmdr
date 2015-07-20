@@ -84,6 +84,9 @@ $c->{recollect_metadata_profile} = [
                       {
                        name   => 'bounding_box',
                        type   => 'compound',
+			multiple => 1,
+                       input_boxes=> 5, #add the number of location inputs you want
+                       input_add_boxes => 0, #this removes the add more rows button
                        fields => [
                                   {
                                    sub_name => 'north_edge',
