@@ -13,7 +13,6 @@
     
     <!-- SJ: jQuery UI added for ease. Will be removed once google mps trigger added -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;callback=initialize"></script>
  
 <script>
 $.noConflict();
