@@ -154,6 +154,12 @@ jQuery(document).ready(function(){
 
     });
   }
+
+	//unhide file drag interface if draggable available
+	if('draggable' in document.createElement('span')) {
+		jQuery(".UploadMethod_file_container > div").addClass("ep_dropbox").show().after("<p>OR</p>");	
+	}	
+
 });
 
 
