@@ -45,7 +45,7 @@
     <div class="rd_citation_left lshtmdr_ces">
       
       <epc:if test="study_abstract">
-   <div class="title_lshtm"><epc:phrase ref="eprint_fieldname_study_abstract"/></div>
+   <h3><epc:phrase ref="eprint_fieldname_study_abstract"/></h3>
     <p  class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em auto; line-height:1.5em"><epc:print expr="study_abstract" /></p>
   </epc:if>
       
@@ -74,7 +74,7 @@
 	<epc:comment>
 	The next foreach loop generates the extended metadata from eprint_render.pl
     </epc:comment>
-<tr>
+	<tr>
 	<td colspan="2" style="padding:0">
                 <div class="ep_summary_box" id="{eprintid}">
                         <div class="ep_summary_box_title">
@@ -114,7 +114,7 @@
     <epc:if test="!$flags{preview}">
       <td colspan="2">
 <!--          <epc:if test="$current_user and $current_user{usertype} = 'admin'"> -->
-          <div class="title_lshtm">Actions (login required)</div>
+          <h3>Actions (login required)</h3>
                 <table class="ep_summary_page_actions">
                 <epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 <tr>
@@ -137,7 +137,7 @@
 
 	<!-- SJ: New files can be added and displayed at the project level -->
 	<div class="rd_citation_right">
-	 <div class="title_lshtm">Documentation</div>
+	 <h3>Documentation</h3>
   
 	<epc:set name='filetypes' expr="$flags{rc_filetypes}">
 	        <epc:foreach expr="$filetypes" iterator="filetype">
@@ -195,7 +195,7 @@
   <epc:set name='parts' expr="$item.related_objects('http://purl.org/dc/terms/hasPart')">
 
 	<div class="rd_citation_right">
-    	 <div class="title_lshtm">Data Collections</div>
+    	 <h3>Data Collections</h3>
     	<!--<h2 class="file_title">Data</h2>-->
     		<table border="0" cellpadding="2" width="100%">
               	<tbody>
@@ -260,7 +260,7 @@
 <!-- SJ: The related resources are now being show on the landing page -->
 <epc:if test="is_set(related_resources)">
   	<div class="rd_citation_right">
-  		<div class="title_lshtm">Related resources</div>
+  		<h3>Related resources</h3>
               <set name='rrs' expr='$item.property("related_resources")'>
                 <ul>
       			<foreach expr="$rrs" iterator="rr" limit='10'>        			
@@ -273,7 +273,7 @@
   </epc:if>
 
 <div class="rd_citation_right">
-   <div class="title_lshtm">Actions (login required)</div>
+   <h3>Actions (login required)</h3>
         		<!--<table class="ep_summary_page_actions">
         			<epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 		<tr>

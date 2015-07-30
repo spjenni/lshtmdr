@@ -80,8 +80,8 @@
          </div>
       </epc:if>
       <epc:if test="abstract">
-		   <div class="title_lshtm"><epc:phrase ref="eprint_fieldname_abstract"/></div>
-       <!-- <h3><epc:phrase ref="eprint_fieldname_abstract"/></h3> -->
+	
+       <h3><epc:phrase ref="eprint_fieldname_abstract"/></h3>
       <p class="rd_text_center" style="text-align: left; margin: 1em auto 0.5em 0.5em; line-height:1.5em"><epc:print expr="abstract" /></p>
 
       </epc:if>
@@ -181,7 +181,7 @@
 
   <div class="rd_right_container">
 	<div class="rd_citation_right">
-		<div class="title_lshtm">Files</div>
+		<h3>Files</h3>
 
   <epc:set name='docs' expr='$item.documents()'>
 
@@ -267,7 +267,7 @@
 	<epc:if test="is_set(related_resources) or is_set(repo_link)">
    
   	<div class="rd_citation_right">
-  		<div class="title_lshtm">Related resources</div>
+  		<h3>Related resources</h3>
 
 		   <set name='rrs' expr='$item.property("related_resources")'>
 			 <ul>
@@ -290,7 +290,7 @@
 	</epc:if>
   
    <div class="rd_citation_right">
-      <div class="title_lshtm">Resources</div>
+      <h3>Resources</h3>
       <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none; margin-right: 0.5em;"/></a>
 	
       <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="0" style="margin-right: 0.5em;"></div>    
@@ -327,7 +327,7 @@
       
   </div>
   <div class="rd_citation_right">
- <div class="title_lshtm">Actions (admin only)</div>
+ <h3>Actions (admin only)</h3>
         		<!--<table class="ep_summary_page_actions">
         			<epc:foreach expr="action_list('eprint_summary_page_actions',$item)" iterator="action">
                 		<tr>
