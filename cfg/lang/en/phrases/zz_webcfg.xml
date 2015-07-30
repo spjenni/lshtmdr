@@ -38,7 +38,7 @@
 
     <epp:phrase id="eprint_fieldname_contact_email">Email of LSHTM Faculty/Dept contact responsible for the data collection</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_funders">Funder/sponsor</epp:phrase>
+    <epp:phrase id="eprint_fieldname_funders">Funder</epp:phrase>
 
     <epp:phrase id="eprint_fieldname_primary_contact_email">email</epp:phrase>
 
@@ -846,6 +846,9 @@ terms.</p></epp:phrase>
     
      <epp:phrase id="metapage_title_collection_files">Upload supporting documents</epp:phrase>
      
+      <epp:phrase id="eprint_fieldname_creators_name">Data Creators(s)</epp:phrase>
+      
+     <epp:phrase id="eprint_fieldname_userid">Depositor</epp:phrase>
     <!-- phrases for collection document content --> 
      <epp:phrase id="collection_content_typename_dmp">Data Management Plan</epp:phrase>
      
