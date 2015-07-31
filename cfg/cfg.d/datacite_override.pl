@@ -12,8 +12,6 @@ sub coin_doi {
     # SJ: added to create sequential DOI ids according RM's allow_custom_doi format
     my $doi_id = $dataobj->id;
     
-    $repository->log('ck: 1');
-    
     if( $repository->get_conf( "datacitedoi", "start_sequential_doi" ) )
     {
 		$doi_id = $self->sequential_doi( $session, $repository,$dataobj ); 	

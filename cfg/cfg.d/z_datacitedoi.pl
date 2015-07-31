@@ -69,7 +69,6 @@ $c->{datacitedoi}{allow_custom_doi} = 1;
 #SJ: switch for sequential DOIs
 $c->{datacitedoi}{start_sequential_doi} = 1;
 
-
 #Datacite recommend digits of length 8-10 set this param to pad the id to required length
 $c->{datacitedoi}{zero_padding} = 0;
 
