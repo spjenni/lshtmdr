@@ -109,12 +109,16 @@
                   <epc:phrase ref="eprint_fieldname_{$fieldname}" />:</th>
           	</epc:otherwise>
           </epc:choose>
+           
           <td valign="top" class="rd_metatable_td">
 			<!-- SJ: allows contributors_type to show directly after contributers name -->  
 			<epc:choose>
           	<epc:when test="$fieldname = 'contributors_name'">
-				<epc:print expr="contributors" /> 
-          	</epc:when>            
+				<epc:print expr="contributors" />
+          	</epc:when>
+          	<epc:when test="$fieldname = 'creators_name'">
+				<epc:print expr="creators" />
+          	</epc:when>                  
           	<epc:otherwise>
                <epc:print expr="$item.property($fieldname)" />
           	</epc:otherwise>

@@ -8,11 +8,9 @@
 
 <choose>
   <when test="creators">
-    <print expr="creators_name"/>.
+    <print expr="creators"/>.
   </when>
-  <when test="contributors">
-    <print expr="contributors"/>.
-  </when>
+  
   <otherwise>
     No Author
   </otherwise>
