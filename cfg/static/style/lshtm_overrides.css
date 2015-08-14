@@ -224,7 +224,7 @@ div#lshtmdr_home_search_submit{
 }
 
 div#lshtmdr_home_map {
- 	width: 30%; 
+ 	width: 28%; 
     float: right;
     min-height:200px;
     background-image: url("/display_images/map.png");
@@ -257,7 +257,7 @@ div#lshtmdr_home_latest iframe{
 }
 
 div#lshtmdr_home_latest{
-  	background-color: #eee;
+  	background-color: #F0EDD8;
   	/*min-height: 450px;*/
   	font-family: "Arial, Georgia, Serif";
 }
