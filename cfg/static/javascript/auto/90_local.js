@@ -221,10 +221,12 @@ jQuery(document).ready(function(){
     //update the latest_tool iframe to include styling
     //required to style the front page iframe
      jQuery('iframe').load(function() {
-        var frame = jQuery('iframe').contents().find("p");
+		var frame_html = jQuery('iframe').contents().find("html");
+        var frame_p = jQuery('iframe').contents().find("p");
         var link = jQuery('iframe').contents().find("a");
-        frame.css("font-family", "Arial");
-        frame.css("font-size", "0.8em");
+		frame_html.css('overflow', 'hidden');
+        frame_p.css("font-family", "Arial");
+        frame_p.css("font-size", "0.8em");
         link.css("color","#25688F");
     });
 
