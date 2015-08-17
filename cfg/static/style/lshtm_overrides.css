@@ -22,6 +22,7 @@ div#lshtmdr_home_map {
  	height: 207px !important;
     float: right;
     border: none;
+    margin-right:25px;
 }
 	   
 /* overrides for lshtm surround component */     
