@@ -218,15 +218,17 @@ $.noConflict();
                 <epc:phrase ref="viewname_eprint_creators"/>
               </a>
             </li>
+            
             <!--<li>
               <a href="{$config{http_url}}/view/funders/">
                 <epc:phrase ref="viewname_eprint_funders"/>
               </a>
             </li>-->
+            
             <li>
-              <a id="ep_studies" href="{$config{http_url}}/view/types/collection/">
-                <!--          <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
-                <epc:phrase ref="viewname_eprint_types"/>
+              <a id="ep_studies" href="{$config{http_url}}/view/collection_mode/">
+                <!-- <epc:phrase ref="bin/generate_views:indextitleprefix"/> -->
+                <epc:phrase ref="viewname_eprint_capture_method"/>
               </a>
             </li>
              
@@ -275,7 +277,7 @@ $.noConflict();
         </div>
         <div>
         <div style="font-size: 80%;">      
-			
+			<epc:pin ref='year()'/>
 			Copyright &copy; 2015 London School of Hygiene &amp; Tropical Medicine | 
             <!-- Remmoved, GK requested-->
             <!--<a href="http://www.lshtm.ac.uk/aboutus/policies/foi/dppolicy/">Privacy policy</a> | -->

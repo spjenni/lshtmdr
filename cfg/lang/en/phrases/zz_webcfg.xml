@@ -412,9 +412,9 @@
 
     <epp:phrase id="eprint_fieldhelp_collection_mode">Indicate the method (or methods) that were used to capture data. E.g. interview, questionnaire.</epp:phrase>
 
-    <epp:phrase id="eprint_fieldname_collection_mode">Mode of data capture</epp:phrase>
+    <epp:phrase id="eprint_fieldname_collection_mode">Data capture method</epp:phrase>
 
-    <epp:phrase id="viewname_eprint_collection_mode">Mode of data capture</epp:phrase>
+    <epp:phrase id="viewname_eprint_collection_mode">Data capture method</epp:phrase>
 
     <epp:phrase id="eprint_fieldhelp_project_date">The start and end date of the project</epp:phrase>
 
@@ -867,6 +867,8 @@ terms.</p></epp:phrase>
      <epp:phrase id="metapage_title_collection_files">Upload supporting documents</epp:phrase>
      
       <epp:phrase id="eprint_fieldname_creators_name">Data Creators(s)</epp:phrase>
+      
+      <epp:phrase id="viewname_eprint_capture_method">Data Capture Method</epp:phrase>
       
      <epp:phrase id="eprint_fieldname_userid">Depositor</epp:phrase>
     <!-- phrases for collection document content --> 
