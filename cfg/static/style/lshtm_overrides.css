@@ -161,11 +161,25 @@ img.ep_required{
 	border: 0px none white !important;
 }
 
+.ep_form_action_button_deposit {
+	background-color: #6788ae !important;
+	border: 0px solid #B8B8B8  !important;
+	padding:5px;
+	font-size: 1.0em;
+	color: #fff;
+	cursor:pointer;
+	box-shadow: 4px 4px 4px #C8C8C8;
+	-webkit-box-shadow: 4px 4px 4px #C8C8C8;
+}
+
 .ep_form_internal_button {
 	border: 0px none white !important;
 	background-color: #6788ae !important;
 	font-family: "Arial", Georgia, Serif !important;
+}
 
+.ep_document_formatdesc{
+	width: 420px !important;
 }
 
 .ep_no.js{
