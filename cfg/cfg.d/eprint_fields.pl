@@ -189,7 +189,7 @@ push @{$c->{fields}->{eprint}},
 {
 	name => 'abstract',
 	type => 'longtext',
-	render_value => 'citation_render_breaks',
+	render_single_value => 'citation_render_breaks',
 	input_rows => 10,
 },
 

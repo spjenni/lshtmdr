@@ -154,18 +154,9 @@ $c->{citation_render_breaks} = sub
 	my @string = split( '<br \/>', $value);
 
 	foreach my $ftString (@string){
-		
-		my @sndSplit = split( '<br\/>', $ftString );
-		
-		foreach my $txt (@sndSplit){
-	
-			my $break = $repo->make_element("br");
-
-			$frag->appendChild($repo->make_text($txt));
-			$frag->appendChild($break);
-		}
-		my $break2 = $repo->make_element("br");
-		$frag->appendChild($break2);
+		$frag->appendChild($repo->make_text($ftString));
+		my $break = $repo->make_element( 'br' );
+		$frag->appendChild($break);
 	}
  	
  	return $frag;
