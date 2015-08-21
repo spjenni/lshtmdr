@@ -283,7 +283,7 @@
 		   <set name='rrs' expr='$item.property("related_resources")'>
 			 <ul>
 			 <foreach expr="$rrs" iterator="rr" limit='10'>        			
-				<li><a href="{$rr{url}}" title="{$rr{title}}"><epc:print expr="$rr.truncate_rr($rr{title})" /></a><epc:if test="is_set($rr{type})"> (<epc:phrase ref="eprint_fieldopt_related_resources_type_{$rr{type}}" />)</epc:if></li>
+				<li><a id="rr_external_url" href="{$rr{url}}" title="{$rr{title}}"><epc:print expr="$rr.truncate_rr($rr{title})" /></a><epc:if test="is_set($rr{type})"> (<epc:phrase ref="eprint_fieldopt_related_resources_type_{$rr{type}}" />)</epc:if></li>
 			</foreach>
 			</ul>
 		  </set>  
@@ -306,8 +306,40 @@
 	
       <div class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="0" style="margin-right: 0.5em;"></div>    
 
-	<a href="{$item.uri()}" id="ep_qrcode" style="margin-right: 0.5em;"></a>
 
+			
+		<epc:choose>
+			<epc:when test='is_set(id_number))'> 
+				<a href="http://dx.doi.org/{$item.property('id_number').as_string()}" id="ep_qrcode" style="margin-right: 0.5em;"></a>
+			</epc:when>
+			<epc:otherwise>
+				<a href="{$item.uri()}" id="ep_qrcode" style="margin-right: 0.5em;"></a>
+			</epc:otherwise>
+		</epc:choose>
+		
+		<script type="text/javascript">
+		//<![CDATA[
+		//if the QRCode uses a eprints url check if external DOI 
+		//is present. If so switch the hr
+		var qrLink = jQuery('#ep_qrcode').attr('href');
+
+        if(typeof qrLink != 'undefined')
+        {
+			if(qrLink.indexOf('doi') == -1)
+			{
+				jQuery('#rr_external_url').each(function(i){
+					
+					if(jQuery(this).attr('href').indexOf('doi') > -1){
+						jQuery('#ep_qrcode').attr('href', jQuery(this).attr('href'));
+						console.log('doi: '+jQuery(this).attr('href'));
+						return false;
+					}
+				});
+			}
+		}
+		//]]>
+		</script>
+		
       <!--<div class="irstats2_summary_page_container" id="irstats2_summary_page_container">
 
 		<p>Downloads per month</p>
