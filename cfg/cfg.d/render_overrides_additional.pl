@@ -115,12 +115,12 @@ $c->{render_name_with_initials_lshtm} = sub
 	        #$span->appendChild($repo->make_text($secondbit.", ".$firstbit));
 	         $fullName.=$secondbit.", ".$firstbit;
         }
-        
+     
         ####################################################################
-		if( $name->{name}->{lshtmid} )
+		if( defined $name->{lshtmid} )
 		{
-			my $nlink = $repo->{rel_path}.'/view/creators/'.$name->{name}->{lshtmid};
-		
+			my $nlink = $repo->{rel_path}.'/view/creators/'.$name->{lshtmid};
+			
 			$nlink .= '.html';
 
 			$a = $repo->render_link( $nlink );
