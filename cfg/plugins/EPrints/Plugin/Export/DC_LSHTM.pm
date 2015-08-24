@@ -34,7 +34,7 @@ sub convert_dataobj
         my $dataset = $eprint->{dataset};
 
         my @dcdata = ();
-
+		
         # The URL of the abstract page
         if( $eprint->is_set( "eprintid" ) )
         {
@@ -135,16 +135,15 @@ sub convert_dataobj
 
 		
         my @documents = $eprint->get_all_documents();
-        my $mimetypes = $plugin->{session}->get_repository->get_conf( "oai", "mime_types" );
+        #my $mimetypes = $plugin->{session}->get_repository->get_conf( "oai", "mime_types" );
         
         foreach( @documents )
         {
 				# SJ: set the correct language phrase
-				my $doc_lang = $plugin->{session}->get_repository->html_phrase ("languages_typename_".$_->value("language") );
-        
-                my $format = $mimetypes->{$_->get_value("format")};
+				my $doc_lang = $plugin->{session}->get_repository->phrase ("languages_typename_".$_->value("language") );
+				
                 #SJ: mime_type pushed instead of format
-                $format = $_->get_value("mime_type") unless defined $format;
+                my $format = $_->get_value("mime_type");
                 $format = "application/octet-stream" unless defined $format;
                 push @dcdata, [ "format", $format ];
                 push @dcdata, [ "language", $doc_lang ] if $_->exists_and_set("language");
@@ -166,14 +165,13 @@ sub convert_dataobj
         # SJ: change to language_l to remove incorrect hash call
         my @lang_ph = $plugin->simple_value( $eprint, language_l => "language" );
 		#SJ: get the correct language phrase for OAI output
-		my $xml = $plugin->{session}->get_repository->xml;
 		foreach my $i (0..$#lang_ph) 
 		{
 			foreach my $j (0..$#{$lang_ph[$i]}) 
 			{  	
 				if($j)
 				{	
-					$lang_ph[$i][$j] = $xml->to_string($plugin->{session}->get_repository->html_phrase("languages_typename_".$lang_ph[$i][$j]));
+					$lang_ph[$i][$j] = $plugin->{session}->get_repository->phrase("languages_typename_".$lang_ph[$i][$j]);
 				}
 			}
 		}
