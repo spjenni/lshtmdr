@@ -23,6 +23,7 @@ $c->{contributors_render} = sub
 	    	$firstbit = $name->{name}->{honourific}." ";
 	    }
 	    if( defined $name->{name}->{given} ){
+			no warnings qw/uninitialized/;
 	        my $initials = $name->{name}->{given};
 	        $initials =~ s/^(\w)[^\s]*(|\s+(\w)[^\s]*(|\s+(\w)[^\s]*))$/$1$3$5/; #no more than 3 initials...
 	        $firstbit.= $initials;
@@ -89,6 +90,7 @@ $c->{render_name_with_initials_lshtm} = sub
 	    	$firstbit = $name->{name}->{honourific}." ";
 	    }
 	    if( defined $name->{name}->{given} ){
+			no warnings qw/uninitialized/;
 	        my $initials = $name->{name}->{given};
 	        $initials =~ s/^(\w)[^\s]*(|\s+(\w)[^\s]*(|\s+(\w)[^\s]*))$/$1$3$5/; #no more than 3 initials...
 	        $firstbit.= $initials;
@@ -115,9 +117,9 @@ $c->{render_name_with_initials_lshtm} = sub
         }
         
         ####################################################################
-		if( $name->{lshtmid} )
+		if( $name->{name}->{lshtmid} )
 		{
-			my $nlink = $repo->{rel_path}.'/view/creators/'.$name->{lshtmid};
+			my $nlink = $repo->{rel_path}.'/view/creators/'.$name->{name}->{lshtmid};
 		
 			$nlink .= '.html';
 
@@ -142,7 +144,7 @@ $c->{render_name_with_initials_lshtm} = sub
     return $frag;
 };
 
-# SJ: Render to allow use of <br /> (2 lines) <br/> (1 line) or  tag for line break
+# SJ: Render to allow use of <br />
 $c->{citation_render_breaks} = sub
 {
 	my( $session, $field, $value ) = @_;
@@ -160,5 +162,4 @@ $c->{citation_render_breaks} = sub
 	}
  	
  	return $frag;
- 
 };
