@@ -55,7 +55,6 @@
 
 <a href="{$config{http_cgiurl}}/MapView">
 <div class="lshtmdr_home" id="lshtmdr_home_map">
-<h4>Collections map</h4>
 <p></p>
 
 </div>
