@@ -868,9 +868,10 @@ terms.</p></epp:phrase>
      
       <epp:phrase id="eprint_fieldname_creators_name">Data Creators(s)</epp:phrase>
       
-      <epp:phrase id="viewname_eprint_capture_method">Data Capture Method</epp:phrase>
+      <epp:phrase id="viewname_eprint_capture_method">Capture Method</epp:phrase>
       
      <epp:phrase id="eprint_fieldname_userid">Depositor</epp:phrase>
+     
     <!-- phrases for collection document content --> 
      <epp:phrase id="collection_content_typename_dmp">Data Management Plan</epp:phrase>
      
@@ -881,6 +882,33 @@ terms.</p></epp:phrase>
      <epp:phrase id="collection_content_typename_resources">Project Resources</epp:phrase>
      
 	<epp:phrase id="validate:need_online_resource">You must enter a link and title for any <epc:pin name="fieldname">Related resources</epc:pin> that are an Online Data Resource.</epp:phrase>
+
+
+	<!-- workarea help phrase -->
+	<epp:phrase id="Plugin/Screen/Items:help">
+	<p>This page shows items which you have not yet been deposited, or which are still under review.</p>
+	<p>To start depositing a data collection item use the "New Data Collection" button, and follow the instructions. Use the "New Project" button to create a Project that links many Data Collections together under the same metadata record.</p>
+	<p>Please look to our guide to <a href="http://www.lshtm.ac.uk/research/researchdataman/share/index.html">data sharing</a> for more information on depositing data.</p>
+	<p>If you stop before completing the deposit, or a deposit is returned for corrections, it will appear in the list as in the "User Workarea".</p>
+
+	<p style='margin-bottom: 1px;'>Click on an icon to the right of an item to:</p>
+	<table class='ep_icontable'>
+	  <tr><th><img src="{$config{rel_path}}/style/images/action_view.png" border="0" align='absmiddle' alt=""/></th><td>View Item in Detail, including additional actions</td></tr>
+	  <tr><th><img src="{$config{rel_path}}/style/images/action_edit.png" border="0" align='absmiddle' alt=""/></th><td>Edit Item</td></tr>
+	  <tr><th><img src="{$config{rel_path}}/style/images/action_reject.png" border="0" align='absmiddle' alt=""/></th><td>Destroy Item</td></tr>
+	  <tr><th><img src="{$config{rel_path}}/style/images/action_approve.png" border="0" align='absmiddle' alt=""/></th><td>Deposit Item</td></tr>
+	</table>
+	<p>To reorder the list of items, click on the title of the column to sort by. Clicking a second time will reverse the order.</p>
+	<p>You may modify the columns displayed. Add a new column using the menu at the bottom of the page.</p>
+
+	<table class='ep_icontable'>
+	<tr><th style='padding: 4px;'><img title="Move Left" src="{$config{rel_path}}/style/images/left.png" alt="&lt;" align="absmiddle" /></th><td>Move column left</td></tr>
+	<tr><th style='padding: 4px;'><img title="Remove Column" src="{$config{rel_path}}/style/images/delete.png" alt="X" align='absmiddle' /></th><td>Remove column</td></tr>
+	<tr><th style='padding: 4px;'><img title="Move Right" src="{$config{rel_path}}/style/images/right.png" alt="&lt;" align="absmiddle" /></th><td>Move column right</td></tr>
+	</table>
+	</epp:phrase>
+
+
 
 
 </epp:phrases>
