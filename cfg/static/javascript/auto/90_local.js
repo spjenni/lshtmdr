@@ -222,10 +222,10 @@ jQuery(document).ready(function(){
     //required to style the front page iframe
     if(jQuery('iframe').length){
 		jQuery('iframe').load(function() {
+			jQuery('iframe').css('overflow','scroll');
 			var frame_html = jQuery('iframe').contents().find("html");
 			var frame_p = jQuery('iframe').contents().find("p");
 			var link = jQuery('iframe').contents().find("a");
-			frame_html.css('overflow', 'hidden');
 			frame_p.css("font-family", "Arial");
 			frame_p.css("font-size", "0.8em");
 			link.css("color","#25688F");
