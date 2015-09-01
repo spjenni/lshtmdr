@@ -121,11 +121,11 @@ sub run_truncate_url
      	 #check the length of the url first,  if more that 30 chars truncate the middle
             my $len = 30;
             my $url_trunc;
-		$url = $url->[0];
+		    $url = $url->[0];
             if (length($url) > $len)
             {
                 $url_trunc =
-                    substr($url, 0, $len / 2) . " ... "
+                    substr($url, 0, $len / 2) . " >"
                   . substr($url, -$len / 2);
             } ## end if (length($filetmp) >...)
             else
@@ -251,7 +251,7 @@ sub run_truncate_rr
 		my $first_str = substr($name, 0, 38);
 		$first_str =~ s/\s+\w+$//;
 
-		$frag->appendChild($repository->make_text($first_str."... "));
+		$frag->appendChild($repository->make_text($first_str."... > view "));
 		$frag->appendChild($repository->make_element( "br" ));
 	}
 	# otherwise just add the file name
