@@ -13,7 +13,7 @@ package EPrints::Plugin::Export::DC_LSHTM;
 #use EPrints::Plugin::Export::TextFile;
 
 @ISA = ( "EPrints::Plugin::Export::DC" );
-use Data::Dumper;
+
 use strict;
 
 sub new
@@ -140,13 +140,13 @@ sub convert_dataobj
         foreach( @documents )
         {
 				# SJ: set the correct language phrase
-				my $doc_lang = $plugin->{session}->get_repository->phrase ("languages_typename_".$_->value("language") );
-				
+				# my $doc_lang = $plugin->{session}->get_repository->phrase("languages_typename_".$_->value("language") );
+
                 #SJ: mime_type pushed instead of format
                 my $format = $_->get_value("mime_type");
                 $format = "application/octet-stream" unless defined $format;
                 push @dcdata, [ "format", $format ];
-                push @dcdata, [ "language", $doc_lang ] if $_->exists_and_set("language");
+                push @dcdata, [ "language", $_->get_value( 'language' )] if $_->exists_and_set("language");
                 push @dcdata, [ "rights", EPrints::XML::to_string($_->render_value("license")) ] if $_->exists_and_set("language");
                 push @dcdata, [ "identifier", $_->get_url() ];
         }
@@ -165,16 +165,16 @@ sub convert_dataobj
         # SJ: change to language_l to remove incorrect hash call
         my @lang_ph = $plugin->simple_value( $eprint, language_l => "language" );
 		#SJ: get the correct language phrase for OAI output
-		foreach my $i (0..$#lang_ph) 
-		{
-			foreach my $j (0..$#{$lang_ph[$i]}) 
-			{  	
-				if($j)
-				{	
-					$lang_ph[$i][$j] = $plugin->{session}->get_repository->phrase("languages_typename_".$lang_ph[$i][$j]);
-				}
-			}
-		}
+		#foreach my $i (0..$#lang_ph) 
+		#{
+		#	foreach my $j (0..$#{$lang_ph[$i]}) 
+		#	{  	
+		#		if($j)
+		#		{	
+		#			$lang_ph[$i][$j] = $plugin->{session}->get_repository->phrase("languages_typename_".$lang_ph[$i][$j]);
+		#		}
+		#	}
+		#}
         
         push @dcdata, @lang_ph;
      	# dc.source not handled yet.
