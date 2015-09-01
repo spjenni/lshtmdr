@@ -10,7 +10,7 @@
   	<div class="lshtmdr_ces">
 <!--      <h3>Citation, export &amp; sharing</h3> -->
       <div class="lshtmdr_citations">
-        <h4 class="citation"><span onclick="jQuery('.lshtmdr_citations p').not('#harvard_citation').hide(); jQuery(this).css('color', '#66a2d5').siblings('span').css('color','#bbb'); jQuery('#harvard_citation').show(); ">Harvard</span> | <span onclick="jQuery('.lshtmdr_citations p').not('#vancouver_citation').hide(); jQuery(this).css('color', '#66a2d5').siblings('span').css('color','#bbb'); jQuery('#vancouver_citation').show();" style="color: #bbb;">Vancouver</span></h4>
+        <h4 class="citation"><span onclick="jQuery('.lshtmdr_citations p').not('#harvard_citation').hide(); jQuery(this).css('color', '#444').siblings('span').css('color','#bbb'); jQuery('#harvard_citation').show(); ">Harvard</span> | <span onclick="jQuery('.lshtmdr_citations p').not('#vancouver_citation').hide(); jQuery(this).css('color', '#444').siblings('span').css('color','#bbb'); jQuery('#vancouver_citation').show();" style="color: #bbb;">Vancouver</span></h4>
   		<p id="harvard_citation" class="rd_text_center" style="margin-bottom: 1em">
     		<epc:print expr="$item.citation('harvard')" />
   		</p>
