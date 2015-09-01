@@ -167,8 +167,8 @@ img.ep_required{
 .ep_form_action_button_deposit {
 	background-color: #6788ae !important;
 	border: 0px solid #B8B8B8  !important;
-	padding:5px;
-	font-size: 1.0em;
+	padding:5px !important;
+	font-size: 1.0em !important;
 	color: #fff;
 	cursor:pointer;
 	box-shadow: 4px 4px 4px #C8C8C8;
@@ -311,10 +311,6 @@ div#footer{
 
 #citation_rr{
 	white-space:nowrap;
-}
-
-#citation_id{
-	
 }
 
 #ep_oa_img
