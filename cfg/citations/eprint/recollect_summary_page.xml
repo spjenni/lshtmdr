@@ -288,7 +288,7 @@
 			</ul>
 		  </set>  
 			<epc:if test="is_set(repo_link))">
-				<h6><img src="{$config{rel_path}}/display_images/oa.png" /> LSHTM Open Access publications:</h6>
+				<h6><img src="{$config{rel_path}}/display_images/oa.png" id="ep_oa_img" /> LSHTM Open Access publications:</h6>
 				<set name='rls' expr='$item.property("repo_link")'>
 					<ul>
 						<foreach expr="$rls" iterator="rl" limit='10'>        			
