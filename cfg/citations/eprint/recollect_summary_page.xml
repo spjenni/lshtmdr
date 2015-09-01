@@ -304,7 +304,7 @@
       <h3>Resources</h3>
       <a href="{$config{http_cgiurl}}/stats/report/eprint/{$item.property('eprintid')}"><img src="/images/epm/irstats2.png" style="width: 64px; border: none; margin-right: 0.5em;"/></a>
 	
-      <div id="alt_met" class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="0" style="margin-right: 0.5em;"></div>    
+      <div id="alt_met" class='altmetric-embed' data-badge-type='donut' data-doi="{$item.property('id_number').as_string()}" data-hide-less-than="1" style="margin-right: 0.5em;"></div>    
 
 
 			
