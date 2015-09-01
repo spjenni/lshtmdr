@@ -109,18 +109,21 @@ select {
 }
 
 div.ep_form_report {
-	display: inline;
-	padding: 12px;
-	padding-bottom:10px;
-	padding-right:0px;
+	position: relative;
+	clear: both;
+	margin-top: 10px;
 }
 
-.ep_form_report a
+div.ep_form_report a
 {
-	margin-left: 2px;
 	font-size: 1.0em;
 	font-family: "Helvetica", Arial,sans-serif !important;
 	color: #555;
+}
+
+div.ep_form_report img
+{
+	vertical-align: bottom;
 }
 
 /* extras for input box borders */
