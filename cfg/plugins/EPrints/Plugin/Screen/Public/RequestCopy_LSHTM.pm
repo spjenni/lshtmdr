@@ -146,7 +146,6 @@ sub action_request
                 document => defined $doc ? $doc->render_value( "main" ) : $session->make_doc_fragment,
                 eprint  => $eprint->render_citation_link ) );
 
-		$session->get_repository->log("######:");  
         $result = EPrints::Email::send_mail(
                 session => $session,
                 langid => $session->get_langid,
