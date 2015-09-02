@@ -76,8 +76,19 @@ sub action_request
                 document => defined $doc ? $doc->render_value( "main" ) : $session->make_doc_fragment,
                 requester => $request->render_citation( "requester", requester_email=>$email ),
                 reason => $request->is_set( "reason" ) ? $request->render_value( "reason" )
-                        : $session->html_phrase( "Plugin/Screen/EPrint/RequestRemoval:reason" ) ) );
-
+                        : $session->html_phrase( "Plugin/Screen/EPrint/RequestRemoval:reason" ),
+                                 
+                # SJ: other form fields added to $mail
+                variables_required => $request->is_set( "variables_required" ) ? $request->render_value( "variables_required" )
+                        : $session->html_phrase( "Plugin/Screen/EPrint/RequestCopy_LSHTM:variables_required" ),     
+         
+				supporting_information => $request->is_set( "supporting_information" ) ? $request->render_value( "supporting_information" )
+                        : $session->html_phrase( "Plugin/Screen/EPrint/RequestCopy_LSHTM:supporting_information" ),     
+   
+				organisation => $request->is_set( "organisation" ) ? $request->render_value( "organisation" )
+                        : $session->html_phrase( "Plugin/Screen/EPrint/RequestCopy_LSHTM:organisation" )    
+                ) );
+     
         my $result;
         if( defined $user && defined $doc )
         {
@@ -135,7 +146,7 @@ sub action_request
                 document => defined $doc ? $doc->render_value( "main" ) : $session->make_doc_fragment,
                 eprint  => $eprint->render_citation_link ) );
 
-
+		$session->get_repository->log("######:");  
         $result = EPrints::Email::send_mail(
                 session => $session,
                 langid => $session->get_langid,
@@ -144,7 +155,7 @@ sub action_request
                 message => $mail,
                 sig => $session->html_phrase( "mail_sig" )
         );
-
+	
         if( !$result )
         {
                 $self->{processor}->add_message( "error", $session->html_phrase( "general:email_failed" ) );

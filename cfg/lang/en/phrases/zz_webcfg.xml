@@ -554,6 +554,18 @@
 
 <epc:pin name="reason"/>
 
+<p>Variables requested:</p>
+
+<epc:pin name="variables_required"/>
+
+<p>Additional information:</p>
+
+<epc:pin name="supporting_information"/>
+
+<p>Organisation:</p>
+
+<epc:pin name="organisation"/>
+
 <p>Please consider removing restrictions or uploading the data to the archive so that it will be available immediately to future searchers.</p>
 </epp:phrase>
 
@@ -908,7 +920,11 @@ terms.</p></epp:phrase>
 	</table>
 	</epp:phrase>
 
-
-
+	<!-- RequestCopy_LSHTM phrases -->
+	<epp:phrase id="Plugin/Screen/EPrint/RequestCopy_LSHTM:variables_required">No variables were provided</epp:phrase>
+	
+	<epp:phrase id="Plugin/Screen/EPrint/RequestCopy_LSHTM:supporting_information">No supporting information was provided</epp:phrase>
+		
+	<epp:phrase id="Plugin/Screen/EPrint/RequestCopy_LSHTM:organisation">No organisation was provided</epp:phrase>
 
 </epp:phrases>

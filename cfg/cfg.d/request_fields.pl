@@ -8,7 +8,6 @@ push @{$c->{fields}->{request}},
 {
 	name => 'organisation',
 	type => 'text',
-    required => 0,
 },
 {
 	name   => 'time_period',
@@ -24,12 +23,11 @@ push @{$c->{fields}->{request}},
             type     => 'date',
         },
    ],
-     required => 1,
+   required => 1,
 },
 {
 	name   => 'terms_and_conditions',
     type   => 'boolean',
-     required => 0,
 },
 {
 	name   => 'variables_required',
