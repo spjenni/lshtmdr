@@ -693,7 +693,7 @@ terms.</p></epp:phrase>
 
     <epp:phrase id="request_fieldhelp_reason">Describe the purpose of the analysis that you wish to perform and methods that will be applied.</epp:phrase>
 
-    <epp:phrase id="Plugin/Screen/Public/RequestCopy:title">Data Request</epp:phrase>
+    <epp:phrase id="Plugin/Screen/Public/RequestCopy:title">Request Form</epp:phrase>
 
     <epp:phrase id="Plugin/Screen/Items:title">User Workarea</epp:phrase>
 
@@ -855,7 +855,7 @@ terms.</p></epp:phrase>
 	
 	<epp:phrase id="Plugin/Screen/EPrint/NewVersion:action:new_version:description">Use this to submit a new version of this item. It will create an exact copy which you can then make changes to. This item and the new version will be linked. If you are unsure whether a new version is required please contact the <a href="mailto:researchdatamanagement@lshtm.ac.uk">Research Data Managment Support Service</a>.</epp:phrase>
     
-    <epp:phrase id="request:button">Request data</epp:phrase>
+    <epp:phrase id="request:button">Request access</epp:phrase>
     
      <epp:phrase id="lib/searchfield:help_set">Select one or more values from the list (hold Ctrl to select more than one option), and whether you want to search for records with any one or all of those values. Default is (Any).</epp:phrase>
     
