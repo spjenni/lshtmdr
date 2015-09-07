@@ -16,6 +16,11 @@ h1 {
   overflow: hidden;
 }
 
+/*needed to make expanded md of landing page larger*/ 
+#content td{
+  font-size: 13px;
+}
+
 
 div#lshtmdr_home_map {
  	width: 304 !important; 
