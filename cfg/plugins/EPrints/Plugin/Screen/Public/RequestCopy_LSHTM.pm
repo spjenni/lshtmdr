@@ -99,11 +99,12 @@ sub action_request
                 $url->query_form(
                                 screen => "Request::Respond",
                                 requestid => $request->id,
-                        );
-
-                $mail->appendChild( $session->html_phrase( "request/request_email:links",
-                        accept => $session->render_link( "$url&action=accept" ),
-                        reject => $session->render_link( "$url&action=reject" ) ) );
+                       );
+				
+				# SJ: GK request for link buttons to be removed
+                #$mail->appendChild( $session->html_phrase( "request/request_email:links",
+                #       accept => $session->render_link( "$url&action=accept" ),
+                #       reject => $session->render_link( "$url&action=reject" ) ) );
 
                 $result = EPrints::Email::send_mail(
                         session => $session,
