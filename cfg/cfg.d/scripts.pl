@@ -125,7 +125,7 @@ sub run_truncate_url
             if (length($url) > $len)
             {
                 $url_trunc =
-                    substr($url, 0, $len / 2) . " >"
+                    substr($url, 0, $len / 2) . " [...] "
                   . substr($url, -$len / 2);
             } ## end if (length($filetmp) >...)
             else
