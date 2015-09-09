@@ -870,9 +870,12 @@ terms.</p></epp:phrase>
     <!-- extras -->
     <epp:phrase id="viewname_eprint_title">Title</epp:phrase>
     
-    <epp:phrase id="cgi/MapView:title">Geographical locations of data collections</epp:phrase>
+    <epp:phrase id="cgi/MapView:title">Geographic location</epp:phrase>
 
-	<epp:phrase id="cgi/MapView:map_warning">Please note that the pins shown are centred in a geographical bounding box and therefore represent an approximation of the location of the study.</epp:phrase>
+	<epp:phrase id="cgi/MapView:map_warning">Map pins represent a geographic location relevant to the study. E.g. the broad area in which data collection took place. A pin is placed at the centre of a broad rectangular area and is not
+intended to represent an exact location.<br /><br />
+
+We seek to avoid placing pins on buildings. However, geographic changes  may result in this occurring over time. To request a change to a map pin's location, please email <a href="mailto:researchdatamanagement@lshtm.ac.uk">researchdatamanagement@lshtm.ac.uk</a></epp:phrase>
     
      <epp:phrase id="content_typename_data_visualisation">Graphical representation of data</epp:phrase>
 	
